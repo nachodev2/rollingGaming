@@ -2,7 +2,7 @@ import { Card, Button } from 'react-bootstrap';
 
 function CardProducto() {
   return (
-    <Card className='p-0 rounded-4 overflow-hidden cardProducto card me-3 mb-3'>
+    <Card className='p-0 rounded-4 overflow-hidden cardProducto card'>
       <Card.Img className='img-card' variant="top" src="https://wallup.net/wp-content/uploads/2017/03/27/420785-League_of_Legends-Ezreal.jpg" />
       <Card.Body className='bg-card'>
         <Card.Title className='titulo-card text-light'>League of Legends</Card.Title>
