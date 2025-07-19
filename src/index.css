@@ -9,14 +9,28 @@
   --azul-oscuro: #0f1546;      
 }
 
-.bg-card{
-    background-color: var(--azul-medio)!important;
+.contenedor-card .card{
+    border: 1px groove var(--celeste);
+}
+
+.card .bg-card{
+    background-color: var(--azul-medio);
 }
 
 .titulo-card{
     font-family: "Inter", sans-serif;
 }
 
-.star-color{
+.color-rosa{
     color: var(--rosa);
+}
+
+.card .btn-card{
+    background-image:linear-gradient(20deg, var(--violeta), var(--rosa));
+    border: var(--rosa);
+    width: 85%;
+}
+
+.card .btn-card:hover{
+    background-image:linear-gradient(20deg, var(--rosa), var(--violeta));
 }
