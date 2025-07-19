@@ -1,2 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+:root {
+  --celeste: #97e3fe;     
+  --rosa: #f394f8;        
+  --lavanda: #818de0;           
+  --violeta: #9a53d0;           
+  --azul-medio: #2843ad;        
+  --azul-oscuro: #0f1546;      
+}
 
+.bg-card{
+    background-color: var(--azul-medio)!important;
+}
+
+.titulo-card{
+    font-family: "Inter", sans-serif;
+}
+
+.star-color{
+    color: var(--rosa);
+}
