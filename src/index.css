@@ -26,6 +26,10 @@
     color: var(--rosa);
 }
 
+.text-color{
+    color: var(--celeste);
+}
+
 .card .btn-card {
     background-image: linear-gradient(20deg, var(--violeta), var(--rosa));
     border: none;

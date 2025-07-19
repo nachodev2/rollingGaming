@@ -13,7 +13,7 @@ function CardProducto() {
           <i class="bi bi-star-fill color-rosa me-1"></i>
           <i class="bi bi-star-fill color-rosa me-1"></i>
         </Card.Text>
-        <Card.Text className='text-light p-0'>
+        <Card.Text className='text-color p-0'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit omnis.
         </Card.Text>
         <Card.Text className='color-rosa fw-bold fs-4'>
