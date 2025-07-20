@@ -1,9 +1,9 @@
-import { Table, Container, Card, Row, Col } from "react-bootstrap";
+import { Table, Container, Card, Row, Col, Button } from "react-bootstrap";
 
 const Administrador = () => {
   return (
     <Container>
-      <section className="mt-3 mb-3 text-center">
+      <section className="mt-3 text-center">
         <Row className="justify-content-center">
           <Col xs={4}>
             <Card border="primary">
@@ -26,9 +26,20 @@ const Administrador = () => {
               </Card.Body>
             </Card>
           </Col>
-          
         </Row>
       </section>
+      <div className="d-flex justify-content-between align-items-center mt-5">
+        <h1 className="fs-4">Tabla de Juegos</h1>
+        <div>
+          <Button className="btn btn-primary me-2">
+            <i className="bi bi-file-earmark-plus"></i>
+          </Button>
+          {/* <Button variant="info" className="text-light">
+            <i className="bi bi-database-fill-up"></i>
+          </Button> */}
+        </div>
+      </div>
+      <hr />
       <Table striped bordered hover responsive variant="dark">
         <thead>
           <tr>
