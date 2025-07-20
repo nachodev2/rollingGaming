@@ -1,7 +1,22 @@
-.logoNav{
-    position: relative;
-    width: 100%;
-    max-width: 150px;
-    height: 100%;
-    max-height: 100px;
+.logoNav {
+  position: relative;
+  width: 100%;
+  max-width: 150px;
+  height: 100%;
+  max-height: 100px;
+}
+.colorNavbar {
+  background-color: #0f1546;
+}
+.textNavFooter {
+  font-weight: 800;
+  font-size: 18px !important;
+  color: #818de0 !important;
+  text-shadow: 2px 2px 4px #818de0;
+}
+.tituloNav{
+     font-weight: 1000;
+  font-size: 25px !important;
+  color: #818de0 !important;
+  text-shadow: 2px 2px 4px #818de0;
 }

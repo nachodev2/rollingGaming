@@ -3,22 +3,31 @@ import logo from "../imgNavbarFooter/Logotipo-rollinggames.png";
 const Menu = () => {
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+      <Navbar collapseOnSelect expand="lg" className="colorNavbar">
         <div className="d-flex justify-content-center w-25">
-        <img src={logo} alt="Logo de RollingGames" className="logoNav"/>
+          <img src={logo} alt="Logo de RollingGames" className="logoNav" />
         </div>
-        <Container >
-          <Navbar.Brand href="#home" className="text-start">
+        <Container>
+          <Navbar.Brand href="#home" className="text-start tituloNav">
             Rolling Games
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#features">Tienda</Nav.Link>
-              <Nav.Link href="#features">Favoritos</Nav.Link>
-              <Nav.Link href="#features">Contacto</Nav.Link>
-              <Nav.Link href="#pricing">Sobre nosotros</Nav.Link>
+              <Nav.Link href="#features" className="textNavFooter">
+                Tienda
+              </Nav.Link>
+              <Nav.Link href="#features" className="textNavFooter">
+                Favoritos
+              </Nav.Link>
+              <Nav.Link href="#features" className="textNavFooter">
+                Contacto
+              </Nav.Link>
+              <Nav.Link href="#pricing" className="textNavFooter">
+                Sobre nosotros
+              </Nav.Link>
               <NavDropdown
+                className=""
                 title="Categoria de Juegos"
                 id="collapsible-nav-dropdown"
               >
@@ -34,8 +43,10 @@ const Menu = () => {
               </NavDropdown>
             </Nav>
             <Nav>
-              <Nav.Link href="#deets">Iniciar Sesion</Nav.Link>
-              <Nav.Link eventKey={2} href="#memes">
+              <Nav.Link href="#deets" className="textNavFooter">
+                Iniciar Sesion
+              </Nav.Link>
+              <Nav.Link eventKey={2} href="#memes" className="textNavFooter">
                 Crear Cuenta
               </Nav.Link>
             </Nav>
