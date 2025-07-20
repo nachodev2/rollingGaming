@@ -1,10 +1,11 @@
+import Administrador from "./components/pages/Administrador"
 
 
 function App() {
 
   return (
     <>
-      
+      <Administrador></Administrador>
     </>
   )
 }
