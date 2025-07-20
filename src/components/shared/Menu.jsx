@@ -6,11 +6,12 @@ const Menu = () => {
       <Navbar collapseOnSelect expand="lg" className="colorNavbar">
         <div className="d-flex justify-content-center w-25">
           <img src={logo} alt="Logo de RollingGames" className="logoNav" />
-        </div>
-        <Container>
-          <Navbar.Brand href="#home" className="text-start tituloNav">
+          <Navbar.Brand href="#home" className="text-start tituloNav align-self-center">
             Rolling Games
           </Navbar.Brand>
+        </div>
+        <Container>
+          
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
