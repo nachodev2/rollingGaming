@@ -9,7 +9,7 @@ const FilaProducto = () => {
       <td>categoria</td>
       <td>precio</td>
       <td className="">
-        <Button className="me-lg-2 btn btn-warning">
+        <Button className="me-lg-2 btn">
           <i className="bi bi-pencil-square"></i>
         </Button>
         <Button variant="danger">

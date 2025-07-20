@@ -14,14 +14,14 @@ const Administrador = () => {
             </Card>
           </Col>
           <Col xs={4}>
-            <Card border="secondary">
+            <Card border="primary">
               <Card.Body>
                 <Card.Text>Usuarios: 2</Card.Text>
               </Card.Body>
             </Card>
           </Col>
           <Col xs={4}>
-            <Card border="info">
+            <Card border="primary">
               <Card.Body>
                 <Card.Text>Categorias: 5</Card.Text>
               </Card.Body>
