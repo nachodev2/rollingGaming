@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap"
 const FilaProducto = () => {
   return (
     <tr>
-      <td>imagen</td>
+      <td><img src="https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg" alt="" className="img-thumbnail"/></td>
       <td>nombre juego</td>
       <td>categoria</td>
       <td>precio</td>
