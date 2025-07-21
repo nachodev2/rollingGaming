@@ -1,5 +1,5 @@
 import { Table, Container, Card, Row, Col, Button } from "react-bootstrap";
-import FilaProducto from "./producto/FilaProducto";
+import FilaProductoTabla from "./producto/FilaProductoTabla";
 
 const Administrador = () => {
   return (
@@ -52,9 +52,9 @@ const Administrador = () => {
           </tr>
         </thead>
         <tbody>
-          <FilaProducto></FilaProducto>
-          <FilaProducto></FilaProducto>
-          <FilaProducto></FilaProducto>
+          <FilaProductoTabla></FilaProductoTabla>
+          <FilaProductoTabla></FilaProductoTabla>
+          <FilaProductoTabla></FilaProductoTabla>
         </tbody>
       </Table>
     </Container>
