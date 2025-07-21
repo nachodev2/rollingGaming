@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="style.css" />
 
 const CardProducto = () => {
   return (
