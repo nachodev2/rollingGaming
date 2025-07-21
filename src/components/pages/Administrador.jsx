@@ -35,9 +35,9 @@ const Administrador = () => {
           <Button className="btn btn-primary me-2">
             <i className="bi bi-file-earmark-plus"></i>
           </Button>
-          {/* <Button variant="info" className="text-light">
+           <Button variant="info">
             <i className="bi bi-database-fill-up"></i>
-          </Button> */}
+          </Button>
         </div>
       </div>
       <hr />
