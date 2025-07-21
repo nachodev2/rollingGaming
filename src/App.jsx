@@ -1,10 +1,10 @@
-import CardProducto from "./components/pages/producto/CardProducto"
+import FilaProducto from "./components/pages/producto/FilaProducto"
 
 function App() {
 
   return (
     <>
-      <CardProducto></CardProducto>
+      <FilaProducto></FilaProducto>
     </>
   )
 }
