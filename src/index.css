@@ -3,13 +3,13 @@
   width: 100%;
   max-width: 150px;
   height: 100%;
-  max-height: 100px;
+  max-height: 150px;
 }
 .logoFooter {
   position: relative;
-  width: 100%;
+  width: 85%;
   max-width: 250px;
-  height: 100%;
+  height: 85%;
   max-height: 250px;
 }
 .colorNavbar {
@@ -28,6 +28,17 @@
   color: #818de0 !important;
   text-shadow: 2px 2px 4px #818de0;
 }
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem;
+  gap: 1rem;
+}
+footer section {
+  flex: 1 1 250px;
+  min-width: 200px;
+}
 .textListFooter{
   text-decoration: none;
   color: #818de0
@@ -37,4 +48,27 @@
   font-size: 25px !important;
   color: #818de0 !important;
   text-shadow: 2px 2px 4px #818de0;
+}
+/* media pequeños */
+@media (max-width: 576px) {
+ footer {
+    justify-content: center;
+  }
+
+  footer section {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+/* media grandes */
+@media (min-width: 577px) and (max-width: 768px) {
+ 
+ footer {
+    justify-content: center;
+  }
+
+  footer section {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
 }
