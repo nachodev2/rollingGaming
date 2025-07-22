@@ -21,6 +21,10 @@
   color: #818de0 !important;
   text-shadow: 2px 2px 4px #818de0;
 }
+.textListFooter{
+  text-decoration: none;
+  color: #818de0
+}
 .tituloNav{
      font-weight: 1000;
   font-size: 25px !important;

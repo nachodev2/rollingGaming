@@ -27,21 +27,9 @@ const Menu = () => {
               <Nav.Link href="#pricing" className="textNavFooter">
                 Sobre nosotros
               </Nav.Link>
-              <NavDropdown
-                className=""
-                title="Categoria de Juegos"
-                id="collapsible-nav-dropdown"
-              >
-                <NavDropdown.Item href="#action/3.1">Accion</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Aventura</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Estrategia
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Mostrar más
-                </NavDropdown.Item>
-              </NavDropdown>
+                <Nav.Link href="#pricing" className="textNavFooter">
+                Categoria de juegos
+              </Nav.Link>
             </Nav>
             <Nav>
               <Nav.Link href="#deets" className="textNavFooter">
