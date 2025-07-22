@@ -9,21 +9,21 @@ const Administrador = () => {
           <Col xs={4}>
             <Card border="primary">
               <Card.Body>
-                <Card.Text>Juegos: 10</Card.Text>
+                <Card.Text>Juegos: <strong className="text-light">11</strong></Card.Text>
               </Card.Body>
             </Card>
           </Col>
           <Col xs={4}>
             <Card border="primary">
               <Card.Body>
-                <Card.Text>Usuarios: 2</Card.Text>
+                <Card.Text>Usuarios: <strong className="text-light">11</strong></Card.Text>
               </Card.Body>
             </Card>
           </Col>
           <Col xs={4}>
             <Card border="primary">
               <Card.Body>
-                <Card.Text>Categorias: 5</Card.Text>
+                <Card.Text>Categorias: <strong className="text-light">11</strong></Card.Text>
               </Card.Body>
             </Card>
           </Col>
