@@ -24,8 +24,6 @@ import { Card, Button } from 'react-bootstrap';
               <Button className='rounded-5 fw-bold py-2 btn-card'>Comprar <i class="bi bi-cart3 ms-2"></i></Button>
             </div>
           </Card.Body>
-
-
         </Card>
       </div>
     );
