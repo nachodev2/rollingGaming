@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import '/src/Error404.css';
 
 const Error404 = () => {
@@ -10,6 +11,11 @@ const Error404 = () => {
         className="error-image"
       />
       <p>Lo sentimos, la página que buscás no existe.</p>
+
+       <Link to="/" className="error-button">
+        Volver al inicio
+      </Link>
+
     </div>
   );
 };

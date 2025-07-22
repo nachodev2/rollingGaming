@@ -9,8 +9,45 @@
   height: auto;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
+  border-radius: 13px;
+  box-shadow: 0 9px 11px black;
 }
 
+ /*Boton volver al inicio */
+.error-button {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 12px 24px;
+  font-size: 1rem;
+  color: white;
+  background-color: #9a53d0;
+  text-decoration: none;
+  border-radius: 8px;
+  
+}
+.error-button:hover {
+  background-color: #2843ad;
+  color: whitesmoke;
+  transition: 0.7s ease;
+}
+
+
+/*media queries para el boton*/
+@media (max-width: 600px) {
+  .error-button {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .error-button {
+    font-size: 1.1rem;
+    padding: 14px 28px;
+  }
+}
+
+/*Media queries para la imagen*/
 /* Dispositivos pequeños */
 @media (max-width: 600px) {
   .error-container {
