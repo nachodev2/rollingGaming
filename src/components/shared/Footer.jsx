@@ -26,14 +26,14 @@ const Footer = () => {
       </section>
       <section>
         <h5 className="textNavFooter">Mas sobre nosotros</h5>
-          <ul class="m-0 list-unstyled text-light">
-            <li class="" className="textListFooter mb-1">Teléfono: +543815887741</li>
-            <li class="mb-1" className="textListFooter mb-1">Mail: Rollingshoes@gmail.com</li>
-            <li class="mb-1" className="textListFooter mb-1">
+          <ul className="m-0 list-unstyled textListFooter">
+            <li>Teléfono: +543815887741</li>
+            <li>Mail: Rollingshoes@gmail.com</li>
+            <li>
               Dirección: Gral. José María Paz 576, San Miguel de
               Tucumán, Tucumán
             </li>
-            <li class="mb-1" className="textListFooter mb-1">
+            <li>
             Nuestras redes sociales
             </li>
             <div class="text-center footerRedes">

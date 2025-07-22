@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Button, Container, Nav, Navbar, } from "react-bootstrap";
 import logo from "../imgNavbarFooter/Logotipo-rollinggames.png";
 const Menu = () => {
   return (
@@ -29,12 +29,12 @@ const Menu = () => {
               </Nav.Link>
             </Nav>
             <Nav>
-              <Nav.Link href="#deets" className="textNavFooter">
+              <Button href="#deets" className="textLogin me-4 colorLoginCrear rounded-3 border-2" >
                 Iniciar Sesion
-              </Nav.Link>
-              <Nav.Link eventKey={2} href="#memes" className="textNavFooter">
+              </Button>
+              <Button eventKey={2} href="#memes" className="textLogin me-4 colorLoginCrear rounded-3 border-2">
                 Crear Cuenta
-              </Nav.Link>
+              </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>
