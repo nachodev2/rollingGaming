@@ -19,9 +19,6 @@ const Menu = () => {
                 Tienda
               </Nav.Link>
               <Nav.Link href="#features" className="textNavFooter">
-                Favoritos
-              </Nav.Link>
-              <Nav.Link href="#features" className="textNavFooter">
                 Contacto
               </Nav.Link>
               <Nav.Link href="#pricing" className="textNavFooter">

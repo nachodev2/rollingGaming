@@ -10,7 +10,6 @@ const Footer = () => {
         <h4 className="textNavFooter">Rolling Games</h4>
         <ul className="m-0 list-unstyled text-light">  
           <li><a href="" className="textListFooter">Tienda</a></li>
-          <li><a href="" className="textListFooter">Favoritos</a></li>
           <li><a href="" className="textListFooter">Contacto</a></li>
           <li><a href="" className="textListFooter">Sobre nosotros</a></li>
           
