@@ -24,7 +24,15 @@
     border-style: groove;
 }
 
+<<<<<<< HEAD
 .img-card-Categoria{
     max-width: 80px;
 }
 
+=======
+.img-thumbnail {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+>>>>>>> a9871b476a3e23b00bf76c4f01e0ebd0232ab90e

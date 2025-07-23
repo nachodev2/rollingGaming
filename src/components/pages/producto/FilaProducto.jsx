@@ -1,4 +1,4 @@
-import { Row, Col } from "react-bootstrap"
+import { Row, Col } from "react-bootstrap";
 import CardProducto from "./CardProducto";
 
 const FilaProducto = () => {
