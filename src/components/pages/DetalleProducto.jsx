@@ -12,48 +12,31 @@ const DetalleProducto = () => {
     <div>
       <Container>
         <Row>
-          <Col sm={8}>
+          <Col sm={8} className="mt-5">
             <Carousel fade>
               <Carousel.Item>
                 <img
                   src="https://i.blogs.es/7d7bce/helldivers-2-1/1200_800.webp"
-                  alt=""
+                  alt="" className="carouselImg"
                 />
-                <Carousel.Caption>
-                  <h3>First slide label</h3>
-                  <p>
-                    Nulla vitae elit libero, a pharetra augue mollis interdum.
-                  </p>
-                </Carousel.Caption>
+  
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   src="https://culturageek.com.ar/wp-content/uploads/2025/05/helldivers-2-dev-working-to-address-complaints-after-escalat_qee7.webp"
-                  alt=""
+                  alt="" className="carouselImg"
                 />
-                <Carousel.Caption>
-                  <h3>Second slide label</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
-                </Carousel.Caption>
+
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   src="https://cdn.mos.cms.futurecdn.net/dohDeBShUEmCJhhdTVEdWQ-650-80.jpg.webp"
-                  alt=""
+                  alt="" className="carouselImg"
                 />
-                <Carousel.Caption>
-                  <h3>Third slide label</h3>
-                  <p>
-                    Praesent commodo cursus magna, vel scelerisque nisl
-                    consectetur.
-                  </p>
-                </Carousel.Caption>
               </Carousel.Item>
             </Carousel>
           </Col>
-          <Col sm={4}>
+          <Col sm={4} className="mt-5">
             <Card className="">
               <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
               <Card.Body>
@@ -76,7 +59,7 @@ const DetalleProducto = () => {
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col className="mt-5">
             <table>
               <thead>
                 <tr>
@@ -114,7 +97,7 @@ const DetalleProducto = () => {
               </tbody>
             </table>
           </Col>
-          <Col>
+          <Col className="mt-5">
             <h4>Reseñas</h4>
            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae quasi itaque suscipit ipsum. Mollitia nesciunt omnis architecto deserunt accusantium deleniti alias quo quae, iusto numquam, qui voluptates labore ducimus voluptas?</p>
            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ipsum odio eum quia, eaque error. Qui explicabo illo repudiandae alias.</p>
