@@ -24,6 +24,10 @@
     border-style: groove;
 }
 
+.img-card-Categoria{
+    max-width: 80px;
+}
+
 .img-thumbnail {
   width: 100px;
   height: 100px;
