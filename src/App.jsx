@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router';
 import Inicio from './components/pages/Inicio.jsx';
 import CarroCompras from './components/pages/CarroCompras.jsx';
+import CarroComprasVacio from './components/pages/CarroComprasVacio.jsx';
 import DetalleProducto from './components/pages/DetalleProducto.jsx';
 import Login from './components/pages/Login.jsx';
 import Registro from './components/pages/Registro.jsx';
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Inicio />} />
             <Route path="/carro-compras" element={<CarroCompras />} />
+            <Route path="/carro-compras-vacio" element={<CarroComprasVacio />} />
             <Route path="/detalle-producto/:id" element={<DetalleProducto />} />
             <Route path="/login" element={<Login />} />
             <Route path="/registro" element={<Registro />} />
