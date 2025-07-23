@@ -6,29 +6,26 @@ const Menu = () => {
       <Navbar collapseOnSelect expand="lg" className="colorNavbar">
        
         <Container fluid>
-           <div className="d-flex justify-content-center w-25 align-items-center celular">
-          <img src={logo} alt="Logo de RollingGames" className="logoNav" />
-          
-        </div>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <img src={logo} alt="Logo de RollingGames" className="logoNav" />
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" className="colorToggle" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#features" className="textNavFooter">
+              <Nav.Link href="#features" className="textNavFooter ">
                 Tienda
               </Nav.Link>
-              <Nav.Link href="#features" className="textNavFooter">
+              <Nav.Link href="#features" className="textNavFooter ">
                 Contacto
               </Nav.Link>
-              <Nav.Link href="#pricing" className="textNavFooter">
+              <Nav.Link href="#pricing" className="textNavFooter ">
                 Sobre nosotros
               </Nav.Link>
              
             </Nav>
             <Nav>
-              <Button href="#deets" className="textLogin me-4 colorLoginCrear rounded-3 border-2" >
+              <Button href="#deets" className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3" >
                 Iniciar Sesion
               </Button>
-              <Button eventKey={2} href="#memes" className="textLogin me-4 colorLoginCrear rounded-3 border-2">
+              <Button eventKey={2} href="#memes" className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3">
                 Crear Cuenta
               </Button>
             </Nav>

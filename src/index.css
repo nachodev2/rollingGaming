@@ -15,7 +15,7 @@
 .colorNavbar {
   background-color: #0f1546;
 }
-.colorLoginCrear{
+.colorToggle{
   background-color: #f394f8  !important
 } 
 .textLogin{
@@ -61,7 +61,7 @@ footer section {
   }
 }
 /* media grandes */
-@media (min-width: 577px) and (max-width: 768px) {
+@media (min-width: 577px) and (max-width: 1124px) {
  
  footer {
     justify-content: center;
