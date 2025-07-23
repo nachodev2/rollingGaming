@@ -11,7 +11,15 @@
   margin-bottom: 1.5rem;
   border-radius: 13px;
   box-shadow: 0 9px 11px black;
+  object-fit: contain;
 }
+
+.error-image:hover {
+  filter: brightness(1.2) contrast(1);
+  transition: transform 0.8s ease, filter 0.8s ease;
+  transform: scale(1.03);
+}
+
 
  /*Boton volver al inicio */
 .error-button {
@@ -23,7 +31,7 @@
   background-color: #9a53d0;
   text-decoration: none;
   border-radius: 8px;
-  
+
 }
 .error-button:hover {
   background-color: #2843ad;
@@ -47,7 +55,7 @@
   }
 }
 
-/*Media queries para la imagen*/
+/*Media queries para la imagen y texto*/
 /* Dispositivos pequeños */
 @media (max-width: 600px) {
   .error-container {
@@ -90,5 +98,22 @@
 
   p {
     font-size: 1.2rem;
+  }
+
+   .error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 2rem;
+    box-sizing: border-box;
+  }
+
+  .error-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
   }
 }
