@@ -6,7 +6,7 @@ const Registro = () => {
       <h2 className="text-center mb-4">Crear una Cuenta</h2>
       <Form>
         <Row className="mb-3">
-          <Form.Group as={Col} md="6" controlId="">
+          <Form.Group as={Col} md="6" controlId="formUsuario">
             <Form.Label>Usuario</Form.Label>
             <Form.Control
               type="text"
@@ -14,7 +14,7 @@ const Registro = () => {
             />
           </Form.Group>
 
-          <Form.Group as={Col} md="6" controlId="">
+          <Form.Group as={Col} md="6" controlId="formNombre">
             <Form.Label>Nombre</Form.Label>
             <Form.Control type="text" placeholder="Ingresa tu nombre" />
           </Form.Group>
@@ -22,7 +22,7 @@ const Registro = () => {
 
         <Row className="mb-3">
           <Form.Label>Fecha de Nacimiento</Form.Label>
-          <Form.Group  as={Col} md="4" controlId="">
+          <Form.Group  as={Col} md="4" controlId="formFechaAnio">
             <Form.Select>
               <option>Año</option>
               <option value="2010">2010</option>
@@ -89,7 +89,7 @@ const Registro = () => {
             </Form.Select>
           </Form.Group>
 
-          <Form.Group as={Col} md="4" controlId="">
+          <Form.Group as={Col} md="4" controlId="formFechaMes">
             <Form.Select aria-label="Default select example">
               <option>Mes</option>
               <option value="1">Enero</option>
@@ -107,7 +107,7 @@ const Registro = () => {
             </Form.Select>
           </Form.Group>
 
-          <Form.Group as={Col} md="4" controlId="">
+          <Form.Group as={Col} md="4" controlId="formFechaDia">
             <Form.Select aria-label="Default select example">
               <option>Día</option>
               <option value="1">1</option>
@@ -145,18 +145,18 @@ const Registro = () => {
           </Form.Group>
         </Row>
 
-        <Form.Group className="mb-3" controlId="">
+        <Form.Group className="mb-3" controlId="formCorreo">
           <Form.Label>Correo Electrónico</Form.Label>
           <Form.Control type="email" placeholder="correo@rollinggaming.com" />
         </Form.Group>
 
         <Row className="mb-3">
-          <Form.Group as={Col} md="6" controlId="">
+          <Form.Group as={Col} md="6" controlId="formContrasenia">
             <Form.Label>Contraseña</Form.Label>
             <Form.Control type="password" placeholder="Crea una contraseña" />
           </Form.Group>
 
-          <Form.Group as={Col} md="6" controlId="">
+          <Form.Group as={Col} md="6" controlId="formRepetirContrasenia">
             <Form.Label>Repetir Contraseña</Form.Label>
             <Form.Control
               type="password"
