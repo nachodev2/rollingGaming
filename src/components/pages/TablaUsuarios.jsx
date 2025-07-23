@@ -1,13 +1,15 @@
-import React from 'react';
+import FilaUsuariosTabla from "./FilaUsuariosTabla";
+import { Table, Container, Card, Row, Col, Button } from "react-bootstrap";
+
 
 const TablaUsuarios = () => {
     return (
         <>
       <div className="d-flex justify-content-between align-items-center mt-5">
-        <h1 className="fs-4">Tabla de Juegos</h1>
+        <h1 className="fs-4">Tabla de Usuarios</h1>
         <div>
           <Button className="btn btn-primary me-2">
-            <i className="bi bi-file-earmark-plus"></i>
+            <i class="bi bi-person-add"></i>
           </Button>
           <Button variant="info">
             <i className="bi bi-database-fill-up"></i>
@@ -18,17 +20,18 @@ const TablaUsuarios = () => {
       <Table striped bordered hover responsive variant="dark">
         <thead>
           <tr>
-            <th>Imagen</th>
+            <th>#</th>
+            <th>Usuario</th>
             <th>Nombre</th>
-            <th>Categoria</th>
-            <th>Precio</th>
+            <th>Email</th>
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
-          <FilaProductoTabla></FilaProductoTabla>
-          <FilaProductoTabla></FilaProductoTabla>
-          <FilaProductoTabla></FilaProductoTabla>
+          <FilaUsuariosTabla></FilaUsuariosTabla>
+          <FilaUsuariosTabla></FilaUsuariosTabla>
+          <FilaUsuariosTabla></FilaUsuariosTabla>
+          
         </tbody>
       </Table>
     </>

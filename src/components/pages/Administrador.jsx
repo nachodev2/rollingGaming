@@ -1,5 +1,7 @@
 import { Table, Container, Card, Row, Col, Button } from "react-bootstrap";
 import FilaProductoTabla from "./producto/FilaProductoTabla";
+import TablaJuegos from "./TablaJuegos";
+import TablaUsuarios from "./TablaUsuarios";
 
 const Administrador = () => {
   return (
@@ -29,34 +31,8 @@ const Administrador = () => {
           </Col>
         </Row>
       </section>
-      <div className="d-flex justify-content-between align-items-center mt-5">
-        <h1 className="fs-4">Tabla de Juegos</h1>
-        <div>
-          <Button className="btn btn-primary me-2">
-            <i className="bi bi-file-earmark-plus"></i>
-          </Button>
-           <Button variant="info">
-            <i className="bi bi-database-fill-up"></i>
-          </Button>
-        </div>
-      </div>
-      <hr />
-      <Table striped bordered hover responsive variant="dark">
-        <thead>
-          <tr>
-            <th>Imagen</th>
-            <th>Nombre</th>
-            <th>Categoria</th>
-            <th>Precio</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <FilaProductoTabla></FilaProductoTabla>
-          <FilaProductoTabla></FilaProductoTabla>
-          <FilaProductoTabla></FilaProductoTabla>
-        </tbody>
-      </Table>
+      <TablaJuegos />
+      <TablaUsuarios />
     </Container>
   );
 };
