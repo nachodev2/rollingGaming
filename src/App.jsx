@@ -1,4 +1,3 @@
-import FilaProducto from "./components/pages/producto/FilaProducto"
 import { BrowserRouter, Routes, Route } from 'react-router';
 import Inicio from './components/pages/Inicio.jsx';
 import CarroCompras from './components/pages/CarroCompras.jsx';
@@ -14,7 +13,6 @@ function App() {
 
   return (
     <>
-      <FilaProducto></FilaProducto>
       <BrowserRouter>
         <Menu></Menu>
         <main>
