@@ -9,6 +9,7 @@ import Administrador from './components/pages/Administrador.jsx';
 import Error404 from './components/pages/Error404.jsx';
 import Menu from './components/shared/Menu.jsx';
 import Footer from './components/shared/Footer.jsx';
+import Tienda from './components/pages/Tienda.jsx';
 
 function App() {
 
@@ -25,7 +26,6 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/registro" element={<Registro />} />
             <Route path="/administrador" element={<Administrador />} />
-            <Route path="/tienda" element={<Tienda />}></Route>
             <Route path="/tienda" element={<Tienda />}></Route>
             <Route path="*" element={<Error404 />} />
           </Routes>
