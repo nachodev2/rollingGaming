@@ -1,4 +1,5 @@
 import '../../tienda.css';
+import FilaProducto from './producto/FilaProducto';
 
 const Tienda = () => {
     return (
@@ -8,6 +9,11 @@ const Tienda = () => {
                 <span className="desde-abajo text-secondary subtitulo-tienda">Catálogo de Juegos</span>
             </h1>
             <p className="text-center text-light desde-izquierda w-100">Descubre tu próxima aventura</p>
+            <section className='h-100'>
+                <h3 className='text-white text-center mt-4'>Últimas Novedades</h3>
+                <FilaProducto></FilaProducto>
+            </section>
+
         </div>
     )
 }

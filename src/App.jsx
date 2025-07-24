@@ -15,10 +15,10 @@ function App() {
 
   return (
     <>
-    <Tienda></Tienda>
+      <Tienda></Tienda>
       <BrowserRouter>
         <Menu></Menu>
-        <main>
+        <main className='h-100'>
           <Routes>
             <Route path="/" element={<Inicio />} />
             <Route path="/carro-compras" element={<CarroCompras />} />

@@ -52,3 +52,8 @@
     opacity: 1;
   }
 }
+
+html, body {
+  height: auto;
+  overflow-y: auto;
+}
