@@ -8,7 +8,7 @@ import Registro from './components/pages/Registro.jsx';
 import Administrador from './components/pages/Administrador.jsx';
 import Error404 from './components/pages/Error404.jsx';
 import Menu from './components/shared/Menu.jsx';
-import SobreNosotros from './components/pages/sobreNosotros.jsx';
+import SobreNosotros from './components/pages/SobreNosotros.jsx';
 import Footer from './components/shared/Footer.jsx';
 
 function App() {
