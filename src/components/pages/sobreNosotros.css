@@ -45,7 +45,7 @@ h1 .highlight {
   color: #bbbbbb;
 }
 
-/* === NUEVO GRID RESPONSIVE === */
+/* NUEVO GRID RESPONSIVE */
 .grid-equipo {
   display: grid;
   gap: 2rem;
@@ -65,7 +65,7 @@ h1 .highlight {
   }
 }
 
-/* === CARD INTEGRANTE === */
+/* CARD INTEGRANTE */
 .card-integrante {
   background-color: #292944;
   border-radius: 12px;
@@ -88,13 +88,13 @@ h1 .highlight {
 }
 
 .avatar-img {
-  width: 100px;
-  height: 100px;
+  width: 130px;
+  height: 130px;
   object-fit: contain;
   margin-bottom: 1rem;
   border-radius: 50%;
   border: 2px solid #e58aff;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .card-integrante h3 {

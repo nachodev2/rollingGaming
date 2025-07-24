@@ -47,7 +47,7 @@ const SobreNosotros = () => {
         </div>
       </section>
 
-      <section className="seccion-valores">
+      <section className="seccion-valores mt-5">
         <h2>Nuestros Valores</h2>
         <div className="valores-container">
           {valores.map((valor, idx) => (
