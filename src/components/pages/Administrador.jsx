@@ -33,6 +33,7 @@ const Administrador = () => {
       </section>
       <TablaJuegos />
       <TablaUsuarios />
+      
     </Container>
   );
 };
