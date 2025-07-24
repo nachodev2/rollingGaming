@@ -9,11 +9,13 @@ import Administrador from './components/pages/Administrador.jsx';
 import Error404 from './components/pages/Error404.jsx';
 import Menu from './components/shared/Menu.jsx';
 import Footer from './components/shared/Footer.jsx';
+import FormularioProducto from './components/pages/producto/FormularioProducto.jsx';
 
 function App() {
 
   return (
     <>
+    <FormularioProducto />
       <BrowserRouter>
         <Menu></Menu>
         <main>
