@@ -51,9 +51,12 @@
     transform: translateX(0);
     opacity: 1;
   }
+<<<<<<< HEAD
 }
 
 html, body {
   height: auto;
   overflow-y: auto;
+=======
+>>>>>>> 846effa (Creé un archivo tienda.css y lo importé en mi componente Tienda)
 }

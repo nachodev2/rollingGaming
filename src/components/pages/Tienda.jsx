@@ -1,5 +1,8 @@
 import '../../tienda.css';
+<<<<<<< HEAD
 import FilaProducto from './producto/FilaProducto';
+=======
+>>>>>>> 846effa (Creé un archivo tienda.css y lo importé en mi componente Tienda)
 
 const Tienda = () => {
     return (
