@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router';
-import Inicio from './components/pages/Inicio.jsx';
+import Inicio from './components/pages/inicio/Inicio.jsx';
 import CarroCompras from './components/pages/CarroCompras.jsx';
 import CarroComprasVacio from './components/pages/CarroComprasVacio.jsx';
 import DetalleProducto from './components/pages/DetalleProducto.jsx';
@@ -9,6 +9,7 @@ import Administrador from './components/pages/Administrador.jsx';
 import Error404 from './components/pages/Error404.jsx';
 import Menu from './components/shared/Menu.jsx';
 import Footer from './components/shared/Footer.jsx';
+import Carousel from './components/pages/inicio/Carousel.jsx';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/registro" element={<Registro />} />
             <Route path="/administrador" element={<Administrador />} />
             <Route path="*" element={<Error404 />} />
+            <Route path="/carousel" element={<Carousel />} />
           </Routes>
         </main>
         <Footer></Footer>
