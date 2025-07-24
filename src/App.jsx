@@ -15,7 +15,6 @@ function App() {
 
   return (
     <>
-    <Tienda></Tienda>
       <BrowserRouter>
         <Menu></Menu>
         <main className='h-100'>
