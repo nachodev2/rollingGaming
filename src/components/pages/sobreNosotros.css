@@ -1,0 +1,130 @@
+/* General */
+.sobre-nosotros-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Titulares */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+h1 .highlight {
+  color: #e58aff;
+}
+
+/* Sección Intro */
+.seccion-intro {
+  margin-bottom: 3rem;
+}
+
+.seccion-intro p {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+  color: #ccc;
+}
+
+/* Misión */
+.seccion-mision {
+  background-color: #1d1d2b;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.seccion-mision p {
+  font-style: italic;
+  max-width: 800px;
+  margin: auto;
+  color: #bbbbbb;
+}
+
+/* Grid de equipo */
+.seccion-equipo .grid-equipo {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 2rem;
+}
+
+.card-integrante {
+  background-color: #292944;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.card-integrante:hover {
+  transform: translateY(-5px);
+}
+
+.card-integrante .avatar {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Valores */
+.seccion-valores .valores-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card-valor {
+  background-color: #24243a;
+  border-radius: 10px;
+  padding: 1.5rem;
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.card-valor .icono {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Contacto */
+.seccion-contacto {
+  background-color: #1d1d2b;
+  padding: 2rem;
+  margin-top: 3rem;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.botones-contacto {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-contacto,
+.btn-secundario {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-contacto {
+  background-color: #e58aff;
+  color: #fff;
+}
+
+.btn-secundario {
+  background-color: #333;
+  color: #ccc;
+}
