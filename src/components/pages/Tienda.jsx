@@ -1,8 +1,5 @@
 import '../../tienda.css';
-<<<<<<< HEAD
 import FilaProducto from './producto/FilaProducto';
-=======
->>>>>>> 846effa (Creé un archivo tienda.css y lo importé en mi componente Tienda)
 
 const Tienda = () => {
     return (
@@ -16,7 +13,6 @@ const Tienda = () => {
                 <h3 className='text-white text-center mt-4'>Últimas Novedades</h3>
                 <FilaProducto></FilaProducto>
             </section>
-
         </div>
     )
 }
