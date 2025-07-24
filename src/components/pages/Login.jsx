@@ -3,12 +3,16 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { Image } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [show, setShow] = useState(false);
+  const navigate = useNavigate();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const handleRegistro = () => {};
+  const handleRegistro = () => {
+    navigate('/registro'); 
+  };
 
   return (
     <>
