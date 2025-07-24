@@ -2,8 +2,8 @@ import { Form, Row, Col, Button, Container } from "react-bootstrap";
 
 const Registro = () => {
   return (
-    <Container  className="my-5 ">
-      <h2 className="text-center mb-4">Crear una Cuenta</h2>
+    <Container className="my-5 px-4 border border-1 rounded-4 border-secondary">
+      <h2 className="text-center my-4">Crear una Cuenta</h2>
       <Form>
         <Row className="mb-3">
           <Form.Group as={Col} md="6" controlId="formUsuario">
@@ -11,19 +11,38 @@ const Registro = () => {
             <Form.Control
               type="text"
               placeholder="Elige un nombre de usuario"
+              required
+              minLength={5}
+              maxLength={15}
             />
+            <Form.Text id="formTextUsuario" className="text-danger">
+              Your password must be 8-20 characters long, contain letters and
+              numbers, and must not contain spaces, special characters, or
+              emoji.
+            </Form.Text>
           </Form.Group>
 
           <Form.Group as={Col} md="6" controlId="formNombre">
             <Form.Label>Nombre</Form.Label>
-            <Form.Control type="text" placeholder="Ingresa tu nombre" />
+            <Form.Control
+              type="text"
+              placeholder="Ingresa tu nombre"
+              required
+              minLength={5}
+              maxLength={25}
+            />
+            <Form.Text id="formTextNombre" className="text-danger">
+              Your password must be 8-20 characters long, contain letters and
+              numbers, and must not contain spaces, special characters, or
+              emoji.
+            </Form.Text>
           </Form.Group>
         </Row>
 
         <Row className="mb-3">
           <Form.Label>Fecha de Nacimiento</Form.Label>
-          <Form.Group  as={Col} md="4" controlId="formFechaAnio">
-            <Form.Select>
+          <Form.Group as={Col} md="4" controlId="formFechaAnio">
+            <Form.Select required>
               <option>Año</option>
               <option value="2010">2010</option>
               <option value="2009">2009</option>
@@ -90,7 +109,7 @@ const Registro = () => {
           </Form.Group>
 
           <Form.Group as={Col} md="4" controlId="formFechaMes">
-            <Form.Select aria-label="Default select example">
+            <Form.Select required>
               <option>Mes</option>
               <option value="1">Enero</option>
               <option value="2">Febrero</option>
@@ -108,7 +127,7 @@ const Registro = () => {
           </Form.Group>
 
           <Form.Group as={Col} md="4" controlId="formFechaDia">
-            <Form.Select aria-label="Default select example">
+            <Form.Select required>
               <option>Día</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -147,13 +166,34 @@ const Registro = () => {
 
         <Form.Group className="mb-3" controlId="formCorreo">
           <Form.Label>Correo Electrónico</Form.Label>
-          <Form.Control type="email" placeholder="correo@rollinggaming.com" />
+          <Form.Control
+            type="email"
+            placeholder="correo@rollinggaming.com"
+            required
+            minLength={5}
+            maxLength={25}
+          />
+          <Form.Text id="formTextCorreo" className="text-danger">
+            Your password must be 8-20 characters long, contain letters and
+            numbers, and must not contain spaces, special characters, or emoji.
+          </Form.Text>
         </Form.Group>
 
         <Row className="mb-3">
-          <Form.Group as={Col} md="6" controlId="formContrasenia">
+          <Form.Group as={Col} md="6" controlId="formContrasenia" >
             <Form.Label>Contraseña</Form.Label>
-            <Form.Control type="password" placeholder="Crea una contraseña" />
+            <Form.Control
+              type="password"
+              placeholder="Crea una contraseña"
+              required
+              minLength={5}
+              maxLength={25}
+            />
+            <Form.Text id="formTextContrasenia" className="text-danger">
+              Your password must be 8-20 characters long, contain letters and
+              numbers, and must not contain spaces, special characters, or
+              emoji.
+            </Form.Text>
           </Form.Group>
 
           <Form.Group as={Col} md="6" controlId="formRepetirContrasenia">
@@ -161,12 +201,20 @@ const Registro = () => {
             <Form.Control
               type="password"
               placeholder="Confirma la contraseña"
+              required
+              minLength={5}
+              maxLength={25}
             />
+            <Form.Text id="formTextRepetirContrasenia" className="text-danger">
+              Your password must be 8-20 characters long, contain letters and
+              numbers, and must not contain spaces, special characters, or
+              emoji.
+            </Form.Text>
           </Form.Group>
         </Row>
 
-        <div className="d-grid mt-4 " >
-          <Button variant="primary" type="submit" size="lg">
+        <div className="d-grid my-4 ">
+          <Button variant="primary" type="submit" size="lg" >
             Registrarse
           </Button>
         </div>

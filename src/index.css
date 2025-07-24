@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 .contenedor-card .card {
     border-width: 1px;
     border-style: groove;
     transition: transform 0.3s ease;
-    box-shadow: none!important;
+    box-shadow: none !important;
     background-color: #0f1546;
 }
 
@@ -19,15 +24,15 @@
 
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 2px 10px #9d24a3!important;
+    box-shadow: 0 2px 10px #9d24a3 !important;
     border-width: 1px;
     border-style: groove;
 }
-.img-thumbnail {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
+
+.img-card-Categoria {
+    max-width: 80px;
 }
+
 
 /* imagenes de carusel de fdetalle  */
 .carouselImg{
@@ -46,4 +51,66 @@
 .detalleJuego{
  width: 100%;
   height: 500px !important;
+  }
+
+.img-thumbnail {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }
+
+.text-white {
+    color: white;
+}
+
+.desde-izquierda, .desde-arriba, .desde-abajo {
+  opacity: 0;
+  display: inline-block;
+  animation-fill-mode: forwards;
+}
+
+.desde-arriba {
+  animation: aparecer-arriba 1s ease-out 0.3s forwards;
+}
+
+.desde-abajo {
+  animation: aparecer-abajo 1s ease-out 1.2s forwards;
+}
+
+.desde-izquierda{
+    animation: aparecer-izquierda 2.5s ease-out 0.3s forwards;
+}
+
+@keyframes aparecer-arriba {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes aparecer-abajo {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes aparecer-izquierda {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+ }
