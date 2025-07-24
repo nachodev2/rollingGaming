@@ -10,6 +10,7 @@ import Error404 from './components/pages/Error404.jsx';
 import Menu from './components/shared/Menu.jsx';
 import SobreNosotros from './components/pages/SobreNosotros.jsx';
 import Footer from './components/shared/Footer.jsx';
+import Tienda from './components/pages/Tienda.jsx';
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
     <>
       <BrowserRouter>
         <Menu></Menu>
-        <main>
+        <main className='h-100'>
           <Routes>
             <Route path="/" element={<Inicio />} />
             <Route path="/carro-compras" element={<CarroCompras />} />
@@ -27,6 +28,7 @@ function App() {
             <Route path="/registro" element={<Registro />} />
             <Route path="/administrador" element={<Administrador />} />
             <Route path="/sobre-nosotros" element={<SobreNosotros />} />
+            <Route path="/tienda" element={<Tienda />}></Route>
             <Route path="*" element={<Error404 />} />
           </Routes>
         </main>
