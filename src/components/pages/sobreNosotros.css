@@ -86,7 +86,6 @@ h1 .highlight {
   margin: 0 auto;
   animation: fadeInUp 0.6s ease forwards;
   opacity: 0;
-  cursor: pointer;
 }
 
 .card-integrante:hover {
@@ -134,6 +133,12 @@ h1 .highlight {
   flex: 1 1 250px;
   max-width: 300px;
   text-align: center;
+}
+
+.card-valor:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(255, 238, 0, 0.201);
+  transition: box-shadow 0.3s ease;
 }
 
 .card-valor .icono {
