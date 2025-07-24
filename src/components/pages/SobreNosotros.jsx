@@ -1,12 +1,12 @@
 import './sobreNosotros.css';
 
 const integrantes = [
-  { nombre: 'nombre', rol: 'Developer', descripcion: 'descripcion.' },
-  { nombre: 'nombre', rol: 'Developer', descripcion: 'descripcion.' },
-  { nombre: 'nombre', rol: 'Developer', descripcion: 'descripcion.' },
-  { nombre: 'nombre', rol: 'Developer', descripcion: 'descripcion.' },
-  { nombre: 'nombre', rol: 'Developer', descripcion: 'descripcion.' },
-  { nombre: 'nombre', rol: 'Developer', descripcion: 'descripcion.' },
+  { nombre: 'Alessandra Borges Licciardi', rol: 'Developer', descripcion: 'descripcion.', img: '/public/avatar_1.png'  },
+  { nombre: 'Ignacio Tomás Ruiz', rol: 'Developer', descripcion: 'descripcion.', img: '/public/avatar_3.png'},
+  { nombre: 'Ximena Barrientos', rol: 'Developer', descripcion: 'descripcion.', img: '/public/avatar_4.png'},
+  { nombre: 'José Luis Baza', rol: 'Developer', descripcion: 'descripcion.', img: '/public/avatar_2.png'},
+  { nombre: 'Luciana Ruiz', rol: 'Developer', descripcion: 'descripcion.', img: '/public/avatar_5.png'},
+  { nombre: 'José Romero', rol: 'Developer', descripcion: 'descripcion.', img: '/public/avatar_6.png'},
 ];
 
 const valores = [
@@ -26,22 +26,41 @@ const SobreNosotros = () => {
 
       <section className="seccion-mision">
         <h2>Nuestra Misión</h2>
-        <p>“Crear el destino ideal para gamers en todo el mundo, donde descubrir, explorar y disfrutar videojuegos sea una experiencia inolvidable. Creemos en el poder de los juegos para conectar personas, inspirar creatividad y construir recuerdos duraderos.”</p>
+        <p>“Crear el destino ideal para gamers en todo el mundo, donde descubrir, explorar y disfrutar videojuegos sea una experiencia inolvidable.”</p>
       </section>
 
       <section className="seccion-equipo">
         <h2>Nuestro Equipo</h2>
-        <div className="grid-equipo">
-          {integrantes.map((persona, idx) => (
-            <div className="card-integrante" key={idx}>
-              <div className="avatar">👤</div>
-              <h3>{persona.nombre}</h3>
-              <h4>{persona.rol}</h4>
-              <p>{persona.descripcion}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+          <div className="fila fila-1">
+             {integrantes.slice(0, 4).map((persona, idx) => (
+          <div
+        className="card-integrante"
+        key={idx}
+        style={{ animationDelay: `${idx * 0.15}s` }}
+          >
+        <img src={persona.img} alt={persona.nombre} className="avatar-img" />
+        <h3>{persona.nombre}</h3>
+        <h4>{persona.rol}</h4>
+        <p>{persona.descripcion}</p>
+      </div>
+    ))}
+  </div>
+
+  <div className="fila fila-2">
+    {integrantes.slice(4).map((persona, idx) => (
+      <div
+        className="card-integrante"
+        key={idx + 4}
+        style={{ animationDelay: `${(idx + 4) * 0.15}s` }}
+      >
+        <img src={persona.img} alt={persona.nombre} className="avatar-img" />
+        <h3>{persona.nombre}</h3>
+        <h4>{persona.rol}</h4>
+        <p>{persona.descripcion}</p>
+      </div>
+    ))}
+  </div>
+</section>
 
       <section className="seccion-valores">
         <h2>Nuestros Valores</h2>
