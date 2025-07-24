@@ -5,23 +5,65 @@ const FormularioProducto = () => {
       <h1>Añadir un juego</h1>
       <hr />
       <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
+        <Form.Group className="mb-3" controlId="nombreJuego">
+          <Form.Label>Nombre del juego</Form.Label>
+          <Form.Control type="text" placeholder="Enter email" />
           <Form.Text className="text-danger">
-            We'll never share your email with anyone else.
+            aqui ira el codigo para el error
           </Form.Text>
         </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
+        <Form.Group className="mb-3" controlId="categoriaJuego">
+          <Form.Label>Categoria</Form.Label>
+          <Form.Select id="categoriaJuego">
+            <option>Elige una categoria</option>
+            <option value="accionAventura">Accion y aventura</option>
+            <option value="estrategia">Estrategia</option>
+            <option value="juegoRol">Juego de Rol</option>
+            <option value="lucha">Lucha</option>
+            <option value="simulacion">Simulacion</option>
+            <option value="tiros">Tiros</option>
+          </Form.Select>
+          <Form.Text className="text-danger">
+            aqui ira el codigo para el error
+          </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Precio</Form.Label>
+          <Form.Control type="number" placeholder="Enter email" />
+          <Form.Text className="text-danger">
+            aqui ira el codigo para el error
+          </Form.Text>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Imagen</Form.Label>
+          <Form.Control type="text" placeholder="Enter email" />
+          <Form.Text className="text-danger">
+            aqui ira el codigo para el error
+          </Form.Text>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Descripcion</Form.Label>
+          <Form.Control type="text" placeholder="Enter email" />
+          <Form.Text className="text-danger">
+            aqui ira el codigo para el error
+          </Form.Text>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Desarrollador</Form.Label>
+          <Form.Control type="text" placeholder="Enter email" />
+          <Form.Text className="text-danger">
+            aqui ira el codigo para el error
+          </Form.Text>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Requisitos del sistema</Form.Label>
+          <Form.Control type="text" placeholder="Enter email" />
+          <Form.Text className="text-danger">
+            aqui ira el codigo para el error
+          </Form.Text>
         </Form.Group>
         <Button variant="primary" type="submit">
-          Submit
+          Enviar
         </Button>
       </Form>
     </Container>
