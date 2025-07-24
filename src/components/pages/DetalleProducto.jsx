@@ -10,7 +10,7 @@ import {
 const DetalleProducto = () => {
   return (
     <div>
-      <Container>
+      <Container fluid>
         <Row>
           <Col sm={8} className="mt-5">
             <Carousel fade>
@@ -37,7 +37,7 @@ const DetalleProducto = () => {
             </Carousel>
           </Col>
           <Col sm={4} className="mt-5">
-            <Card className="">
+            <Card className="detalleJuego">
               <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
@@ -63,45 +63,45 @@ const DetalleProducto = () => {
             <table>
               <thead>
                 <tr>
-                  <th>Componente</th>
-                  <th>Requisitos Mínimos</th>
-                  <th>Requisitos Óptimos</th>
+                  <th className="fs-5">Componente</th>
+                  <th className="fs-5">Requisitos Mínimos</th>
+                  <th className="fs-5">Requisitos Óptimos</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Procesador</td>
-                  <td>Intel Core i3 / AMD Ryzen 3</td>
-                  <td>Intel Core i7 / AMD Ryzen 7</td>
+                  <td className="tablaCeldas">Procesador</td>
+                  <td className="tablaCeldas">Intel Core i3 / AMD Ryzen 3</td>
+                  <td className="tablaCeldas">Intel Core i7 / AMD Ryzen 7</td>
                 </tr>
                 <tr>
-                  <td>Memoria RAM</td>
-                  <td>8 GB</td>
-                  <td>16 GB</td>
+                  <td className="tablaCeldas">Memoria RAM</td>
+                  <td className="tablaCeldas">8 GB</td>
+                  <td className="tablaCeldas">16 GB</td>
                 </tr>
                 <tr>
-                  <td>Tarjeta Gráfica</td>
-                  <td>NVIDIA GTX 750 / AMD R7 260</td>
-                  <td>NVIDIA RTX 3060 / AMD RX 6700</td>
+                  <td className="tablaCeldas">Tarjeta Gráfica</td>
+                  <td className="tablaCeldas">NVIDIA GTX 750 / AMD R7 260</td>
+                  <td className="tablaCeldas">NVIDIA RTX 3060 / AMD RX 6700</td>
                 </tr>
                 <tr>
-                  <td>Almacenamiento</td>
-                  <td>50 GB HDD</td>
-                  <td>50 GB SSD</td>
+                  <td className="tablaCeldas">Almacenamiento</td>
+                  <td className="tablaCeldas">50 GB HDD</td>
+                  <td className="tablaCeldas">50 GB SSD</td>
                 </tr>
                 <tr>
-                  <td>Sistema Operativo</td>
-                  <td>Windows 10 (64-bit)</td>
-                  <td>Windows 11 (64-bit)</td>
+                  <td className="tablaCeldas">Sistema Operativo</td>
+                  <td className="tablaCeldas">Windows 10 (64-bit)</td>
+                  <td className="tablaCeldas">Windows 11 (64-bit)</td>
                 </tr>
               </tbody>
             </table>
           </Col>
           <Col className="mt-5">
-            <h4>Reseñas</h4>
-           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae quasi itaque suscipit ipsum. Mollitia nesciunt omnis architecto deserunt accusantium deleniti alias quo quae, iusto numquam, qui voluptates labore ducimus voluptas?</p>
-           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ipsum odio eum quia, eaque error. Qui explicabo illo repudiandae alias.</p>
-           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum esse cum nulla, facere id molestiae consectetur animi doloremque voluptatem omnis.</p>
+            <h4 className="fs-3">Reseñas</h4>
+           <p className="mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae quasi itaque suscipit ipsum. Mollitia nesciunt omnis architecto deserunt accusantium deleniti alias quo quae, iusto numquam, qui voluptates labore ducimus voluptas?</p>
+           <p className="mb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ipsum odio eum quia, eaque error. Qui explicabo illo repudiandae alias.</p>
+           <p className="mb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum esse cum nulla, facere id molestiae consectetur animi doloremque voluptatem omnis.</p>
           </Col>
         </Row>
       </Container>
