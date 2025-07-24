@@ -1,3 +1,5 @@
+import '../../tienda.css';
+
 const Tienda = () => {
     return (
         <div>
