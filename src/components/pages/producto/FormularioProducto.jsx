@@ -27,35 +27,35 @@ const FormularioProducto = () => {
             aqui ira el codigo para el error
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="precioJuego">
           <Form.Label>Precio</Form.Label>
           <Form.Control type="number" placeholder="Enter email" />
           <Form.Text className="text-danger">
             aqui ira el codigo para el error
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="imagenJuego">
           <Form.Label>Imagen</Form.Label>
           <Form.Control type="text" placeholder="Enter email" />
           <Form.Text className="text-danger">
             aqui ira el codigo para el error
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="descripcionJuego">
           <Form.Label>Descripcion</Form.Label>
           <Form.Control type="text" placeholder="Enter email" />
           <Form.Text className="text-danger">
             aqui ira el codigo para el error
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="desarrolladorJuego">
           <Form.Label>Desarrollador</Form.Label>
           <Form.Control type="text" placeholder="Enter email" />
           <Form.Text className="text-danger">
             aqui ira el codigo para el error
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="requisitosJuego">
           <Form.Label>Requisitos del sistema</Form.Label>
           <Form.Control type="text" placeholder="Enter email" />
           <Form.Text className="text-danger">
