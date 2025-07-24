@@ -9,6 +9,8 @@ const Tienda = () => {
                 <span className="desde-abajo text-secondary subtitulo-tienda">Catálogo de Juegos</span>
             </h1>
             <p className="text-center text-light desde-izquierda lead w-100">Descubre tu próxima aventura</p>
+
+
             <section className='desde-abajo py-3'>
                 <h2 className='text-white text-center mb-5'>Últimas Novedades</h2>
                 <FilaProducto></FilaProducto>
@@ -19,7 +21,7 @@ const Tienda = () => {
             </section>
             <section className='py-3'>
                 <h2 className='text-white text-center mb-3'>Todos los Juegos</h2>
-                <p className='text-center text-secondary mb-5 lead'>Nuestra colección completa te espera</p>
+                <p className='text-center text-light mb-5 lead'>Nuestra colección completa te espera</p>
                 <FilaProducto></FilaProducto>
                 <FilaProducto></FilaProducto>
             </section>
