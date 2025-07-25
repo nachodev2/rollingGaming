@@ -1,10 +1,11 @@
-import { Button, Container, Nav, Navbar } from "react-bootstrap";
-import "./navFooter.css"
+import { Button, Container, Form, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router";
+import "./navFooter.css";
 const Menu = () => {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" className="colorNavbar">
-        <Container  className="d-flex align-items-center justify-content-between">
+        <Container className="d-flex align-items-center justify-content-between">
           <div className="d-flex align-items-center">
             <img
               src="/logoNavFooter.png"
@@ -18,15 +19,21 @@ const Menu = () => {
           />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mx-auto d-flex gap-3 me-4">
-             <Navbar.Brand href="#home" className="textNavFooter">Rolling Games</Navbar.Brand>
-              <Nav.Link href="#features" className="textNavFooter ">
+              <Navbar.Brand href="#home" className="textNavFooter">
+                Rolling Games
+              </Navbar.Brand>
+              <Nav.Link as={Link} to="/tienda" className="textNavFooter">
                 Tienda
               </Nav.Link>
-              <Nav.Link href="#features" className="textNavFooter ">
+              <Nav.Link as={Link} to="/contacto" className="textNavFooter">
                 Contacto
               </Nav.Link>
-              <Nav.Link href="#pricing" className="textNavFooter ">
-                Sobre nosotros
+              <Nav.Link
+                as={Link}
+                to="/sobre-nosotros"
+                className="textNavFooter"
+              >
+                Sobre Nosotros
               </Nav.Link>
             </Nav>
             <Nav className="ms-auto d-flex flex-row align-items-center margenT">

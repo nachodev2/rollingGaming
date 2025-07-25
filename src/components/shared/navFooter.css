@@ -16,7 +16,7 @@
   background-color: #0f1546;
 }
 .colorToggle{
-  background-color: #f394f8  !important
+  background-color: #EA39B8 !important
 } 
 .textLogin{
   color: rgb(253, 252, 252) !important;
@@ -40,8 +40,10 @@ footer section {
   min-width: 200px;
 }
 .textListFooter{
+
   text-decoration: none;
   color: #818de0
+
 }
 .tituloNav{
      font-weight: 1000;
