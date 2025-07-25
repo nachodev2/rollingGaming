@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route } from 'react-router';
 import Inicio from './components/pages/inicio/Inicio.jsx';
 import CarroCompras from './components/pages/CarroCompras.jsx';
@@ -14,17 +15,20 @@ import Tienda from './components/pages/Tienda.jsx';
 import FavoritosVacio from './components/pages/favoritos/FavoritosVacio.jsx';
 import FilaCardCategorias from './components/pages/inicio/FilaCardCategorias.jsx';
 
-function App() {
 
+function App() {
   return (
     <>
       <BrowserRouter>
         <Menu></Menu>
-        <main className='h-100'>
+        <main className="h-100">
           <Routes>
             <Route path="/" element={<Inicio />} />
             <Route path="/carro-compras" element={<CarroCompras />} />
-            <Route path="/carro-compras-vacio" element={<CarroComprasVacio />} />
+            <Route
+              path="/carro-compras-vacio"
+              element={<CarroComprasVacio />}
+            />
             <Route path="/detalle-producto/:id" element={<DetalleProducto />} />
             <Route path="/login" element={<Login />} />
             <Route path="/registro" element={<Registro />} />
@@ -39,8 +43,7 @@ function App() {
         <Footer></Footer>
       </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
-
+export default App;
