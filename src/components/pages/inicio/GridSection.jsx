@@ -1,5 +1,4 @@
-// src/components/GridSection.jsx
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import TwoColumnCard from './TwoColumnCard';
 import './inicio.css';
@@ -96,21 +95,21 @@ const GridSection = () => {
     }
   ];
 
-  const cardRefs = useRef([]); // Usaremos un array de refs para observar cada Card directamente
-  const [visibleStates, setVisibleStates] = useState(cardsData.map(() => false)); // Estado para cada tarjeta
+  const cardRefs = useRef([]); 
+  const [visibleStates, setVisibleStates] = useState(cardsData.map(() => false)); 
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const index = parseInt(entry.target.dataset.index, 10); // Obtener el índice del dataset
+            const index = parseInt(entry.target.dataset.index, 10); 
             setVisibleStates((prev) => {
               const newState = [...prev];
               newState[index] = true;
               return newState;
             });
-            observer.unobserve(entry.target); // Dejar de observar una vez visible
+            observer.unobserve(entry.target); 
           }
         });
       },
@@ -120,21 +119,15 @@ const GridSection = () => {
         threshold: 0.1,
       }
     );
-
-    // Observar cada TwoColumnCard real
     cardRefs.current.forEach(card => {
-      // Asegurarse de que la referencia exista antes de observar
       if (card) observer.observe(card);
     });
-
     return () => {
-      // Limpiar observadores al desmontar el componente
       cardRefs.current.forEach(card => {
         if (card) observer.unobserve(card);
       });
     };
   }, []);
-
   return (
     <section className="grid-page-section py-5">
       <Container fluid>
@@ -143,12 +136,12 @@ const GridSection = () => {
             <Col lg={6} md={12} key={index}>
               <TwoColumnCard
                 {...card}
-                // Asignar la ref a la instancia de TwoColumnCard y el data-index
+                
                 ref={(el) => {
                   cardRefs.current[index] = el;
-                  if (el) el.dataset.index = index; // Asegurarse de que el elemento DOM tenga el data-index
+                  if (el) el.dataset.index = index; 
                 }}
-                // Construir la clase de animación que incluye la dirección y el estado de visibilidad
+                
                 animationClass={`
                   ${(index % 2 === 0) ? 'fade-in-left' : 'fade-in-right'}
                   ${visibleStates[index] ? 'is-visible' : ''}

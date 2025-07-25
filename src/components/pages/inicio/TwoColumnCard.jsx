@@ -19,7 +19,7 @@ const TwoColumnCard = forwardRef(({
     <Col md={6} className="two-col-card-text-col d-flex flex-column justify-content-center align-items-start p-4" style={{ backgroundColor: leftBgColor, color: textColor }}>
       {label && <div className="two-col-card-label mb-2">{label}</div>}
       {/* Hacemos el título clickeable */}
-      <a href="#" className="two-col-card-title-link"> {/* Nuevo link para el título */}
+      <a href="#" className="two-col-card-title-link">
         <h2 className="two-col-card-title mb-3">{title}</h2>
       </a>
       {subtitle && <p className="two-col-card-subtitle mb-3">{subtitle}</p>}
@@ -33,7 +33,6 @@ const TwoColumnCard = forwardRef(({
 
   const imageContent = (
     <Col md={6} className="two-col-card-image-col">
-      {/* Contenedor para la imagen con overflow hidden para el zoom */}
       <div className="two-col-card-image-wrapper">
         <img src={imageUrl} alt={imageAlt} className="two-col-card-image" />
       </div>
