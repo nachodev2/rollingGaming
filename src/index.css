@@ -35,6 +35,10 @@
     max-width: 80px;
 }
 
+.taxtosCard{
+  color: #32FBE2;
+}
+
 .img-thumbnail {
     width: 100px;
     height: 100px;
@@ -94,4 +98,4 @@
     transform: translateX(0);
     opacity: 1;
   }
-  }
+
