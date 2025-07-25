@@ -7,21 +7,21 @@ const Administrador = () => {
     <Container>
       <section className="mt-3 text-center">
         <Row className="justify-content-center">
-          <Col xs={4}>
+          <Col xs={6} lg={4} className="mb-3">
             <Card border="primary">
               <Card.Body>
                 <Card.Text>Juegos: <strong className="text-light">11</strong></Card.Text>
               </Card.Body>
             </Card>
           </Col>
-          <Col xs={4}>
+          <Col xs={6} lg={4} className="mb-3">
             <Card border="primary">
               <Card.Body>
                 <Card.Text>Usuarios: <strong className="text-light">11</strong></Card.Text>
               </Card.Body>
             </Card>
           </Col>
-          <Col xs={4}>
+          <Col xs={6} lg={4} className="mb-3">
             <Card border="primary">
               <Card.Body>
                 <Card.Text>Categorias: <strong className="text-light">11</strong></Card.Text>
