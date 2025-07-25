@@ -9,7 +9,7 @@ import Administrador from './components/pages/Administrador.jsx';
 import Error404 from './components/pages/Error404.jsx';
 import Menu from './components/shared/Menu.jsx';
 import Footer from './components/shared/Footer.jsx';
-import Carousel from './components/pages/inicio/Carousel.jsx';
+import Garantias from './components/pages/inicio/Garantias.jsx';
 import Tienda from './components/pages/Tienda.jsx';
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
             <Route path="/administrador" element={<Administrador />} />
             <Route path="/tienda" element={<Tienda />}></Route>
             <Route path="*" element={<Error404 />} />
-            <Route path="/carousel" element={<Carousel />} />
+            <Route path="/garantias" element={<Garantias />} />
           </Routes>
         </main>
         <Footer></Footer>
