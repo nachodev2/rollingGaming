@@ -12,6 +12,8 @@ import SobreNosotros from './components/pages/SobreNosotros.jsx';
 import Footer from './components/shared/Footer.jsx';
 import Tienda from './components/pages/Tienda.jsx';
 import FavoritosVacio from './components/pages/favoritos/FavoritosVacio.jsx';
+import GridSection from './components/pages/inicio/GridSection.jsx';
+import TwoColumnCard from './components/pages/inicio/TwoColumnCard.jsx';
 
 function App() {
 
@@ -21,7 +23,7 @@ function App() {
         <Menu></Menu>
         <main className='h-100'>
           <Routes>
-            <Route path="/" element={<Inicio />} />
+            <Route path="/inicio" element={<Inicio />} />
             <Route path="/carro-compras" element={<CarroCompras />} />
             <Route path="/carro-compras-vacio" element={<CarroComprasVacio />} />
             <Route path="/detalle-producto/:id" element={<DetalleProducto />} />
@@ -32,7 +34,8 @@ function App() {
             <Route path="/tienda" element={<Tienda />}></Route>
             <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
             <Route path="*" element={<Error404 />} />
-            <Route path="/inicio" element={<Inicio />} />
+            <Route path="/grid-section" element={<GridSection />} />
+            <Route path="/two-column-card" element={<TwoColumnCard />} />
           </Routes>
         </main>
         <Footer></Footer>
