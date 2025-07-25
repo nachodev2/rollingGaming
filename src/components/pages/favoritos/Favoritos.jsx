@@ -13,12 +13,12 @@ const Favoritos = () => {
   }
 
   return (
-    <Container className="my-5">
+    <Container className="my-4">
       <h2 className="text-center mb-4">Tus Favoritos</h2>
       <Row xs={1} md={2} lg={3} className="g-4">
         {favoritos.map((juego, idx) => (
           <Col key={idx}>
-            <Card className="h-100 border-secondary rounded-4 overflow-hidden">
+            <Card className="h-100 border-info rounded-4 overflow-hidden card-favoritos">
               <Card.Img variant="top" src={juego.imagen} />
               <Card.Body className='d-flex flex-column justify-content-between'>
                 <div>
@@ -26,12 +26,11 @@ const Favoritos = () => {
                   <Card.Text>{juego.descripcion}</Card.Text>
                 </div>
                 <div>
-                  <p className="fw-bold text-secondary fs-5">${juego.precio}</p>
+                  <p className="fw-bold text-danger fs-5">${juego.precio}</p>
                   <Button
-                    variant="outline-danger"
+                    variant="outline-primary"
                     onClick={() => eliminarDeFavoritos(juego.id)}
-                    className="w-100"
-                  >
+                    className="w-100 rounded-3">
                     Quitar de Favoritos <i className="bi bi-trash ms-2"></i>
                   </Button>
                 </div>
