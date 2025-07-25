@@ -1,12 +1,11 @@
 import { Button, Container, Nav, Navbar, } from "react-bootstrap";
-import logo from "../imgNavbarFooter/Logotipo-rollinggames.png";
 const Menu = () => {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" className="colorNavbar">
        
         <Container fluid>
-              <img src={logo} alt="Logo de RollingGames" className="logoNav" />
+              <img src="/logoNavFooter.png" alt="Logo de RollingGames" className="logoNav" />
           <Navbar.Toggle aria-controls="responsive-navbar-nav" className="colorToggle" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">

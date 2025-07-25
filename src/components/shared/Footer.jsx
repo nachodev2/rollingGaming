@@ -1,10 +1,10 @@
-import logo from "../imgNavbarFooter/Logotipo-rollinggames.png"
+
 
 const Footer = () => {
   return (
     <footer className="colorNavbar d-flex justify-content-around">
       <section>
-        <img src={logo} alt="Logo de RollingGames" className="logoFooter"/>
+        <img src="/logoNavFooter.png" alt="Logo de RollingGames" className="logoFooter"/>
       </section>
       <section>
         <h4 className="textNavFooter">Rolling Games</h4>
