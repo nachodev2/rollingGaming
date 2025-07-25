@@ -67,12 +67,6 @@ h1 .highlight {
   }
 }
 
-@media (min-width: 1200px) {
-  .grid-equipo {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 /* CARD INTEGRANTE */
 .card-integrante {
   background-color: #292944;
