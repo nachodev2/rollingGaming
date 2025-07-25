@@ -71,38 +71,38 @@ const FormularioProducto = () => {
           </Form.Text>
         </Form.Group>
         <Row>
-          <h5>Requisitos del sistema</h5>
+          <h5>Requisitos mínimos del sistema</h5>
           <Form.Group as={Col} className="mb-3" controlId="microprocesador"> 
             <Form.Label>Microprocesador</Form.Label>
-            <Form.Control type="text" required />
+            <Form.Control type="text" required placeholder="Ej: Ryzen 5 5600"/>
             <Form.Text className="text-danger">
               aqui ira el codigo para el error
             </Form.Text>
           </Form.Group>
           <Form.Group as={Col} className="mb-3" controlId="memoriaRam"> 
             <Form.Label>RAM</Form.Label>
-            <Form.Control type="text" required />
+            <Form.Control type="text" required placeholder="Ej: 8GB"/>
             <Form.Text className="text-danger">
               aqui ira el codigo para el error
             </Form.Text>
           </Form.Group>
           <Form.Group as={Col} className="mb-3" controlId="grafica"> 
             <Form.Label>Grafica</Form.Label>
-            <Form.Control type="text" required />
+            <Form.Control type="text" required placeholder="Ej: 6GB"/>
             <Form.Text className="text-danger">
               aqui ira el codigo para el error
             </Form.Text>
           </Form.Group>
           <Form.Group as={Col} className="mb-3" controlId="almacenamiento"> 
             <Form.Label>Almacenamiento</Form.Label>
-            <Form.Control type="text" required />
+            <Form.Control type="text" required placeholder="480 GB"/>
             <Form.Text className="text-danger">
               aqui ira el codigo para el error
             </Form.Text>
           </Form.Group>
           <Form.Group as={Col} className="mb-3" controlId="sistemaOperativo"> 
             <Form.Label>Sist. Operativo</Form.Label>
-            <Form.Control type="text" required />
+            <Form.Control type="text" required placeholder="Windows 10"/>
             <Form.Text className="text-danger">
               aqui ira el codigo para el error
             </Form.Text>
