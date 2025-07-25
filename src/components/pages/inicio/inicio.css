@@ -189,13 +189,12 @@
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #ff00c8;
-    text-shadow: 0 0 1px #000000;
+    color: #ffff;
 }
 
 .garantia-text {
     font-size: 1.2rem;
-    color: #dffcff;
+    color: #ff00c8;
     margin-bottom: 0;
     line-height: 1.3;
 }
@@ -272,7 +271,7 @@
 
 .two-col-card-title-link:hover {
   color: #00ffff;
-  text-decoration: none; /* MODIFICACIÓN: No se subraya al pasar el mouse */
+  text-decoration: none;
 }
 
 .two-col-card-title {

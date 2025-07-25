@@ -22,7 +22,7 @@ function App() {
         <Menu></Menu>
         <main className='h-100'>
           <Routes>
-            <Route path="/inicio" element={<Inicio />} />
+            <Route path="/" element={<Inicio />} />
             <Route path="/carro-compras" element={<CarroCompras />} />
             <Route path="/carro-compras-vacio" element={<CarroComprasVacio />} />
             <Route path="/detalle-producto/:id" element={<DetalleProducto />} />
