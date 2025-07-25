@@ -70,21 +70,8 @@ const FormularioProducto = () => {
             aqui ira el codigo para el error
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="requisitosJuego">
-          <Form.Label>Requisitos del sistema</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Ej: En PC, los requisitos mínimos incluyen un procesador de 3 GHz, 2 GB de RAM, 12 GB de espacio libre en disco y un sistema operativo Windows 7 o superior."
-            as="textarea"
-            rows={2}
-            required minLength={5} maxLength={250}
-          />
-          <Form.Text className="text-danger">
-            aqui ira el codigo para el error
-          </Form.Text>
-        </Form.Group>
         <Row>
-          <h5>Requerimientos del sistema</h5>
+          <h5>Requisitos del sistema</h5>
           <Form.Group as={Col} className="mb-3" controlId="microprocesador"> 
             <Form.Label>Microprocesador</Form.Label>
             <Form.Control type="text" required />
