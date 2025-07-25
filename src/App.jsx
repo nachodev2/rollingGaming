@@ -10,7 +10,6 @@ import Error404 from './components/pages/Error404.jsx';
 import Menu from './components/shared/Menu.jsx';
 import SobreNosotros from './components/pages/SobreNosotros.jsx';
 import Footer from './components/shared/Footer.jsx';
-import Garantias from './components/pages/inicio/Garantias.jsx';
 import Tienda from './components/pages/Tienda.jsx';
 import FavoritosVacio from './components/pages/favoritos/FavoritosVacio.jsx';
 
@@ -33,7 +32,7 @@ function App() {
             <Route path="/tienda" element={<Tienda />}></Route>
             <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
             <Route path="*" element={<Error404 />} />
-            <Route path="/garantias" element={<Garantias />} />
+            <Route path="/inicio" element={<Inicio />} />
           </Routes>
         </main>
         <Footer></Footer>

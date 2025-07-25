@@ -12,7 +12,7 @@ function CarouselPublicidadJuegos() {
           <div className="carousel-image-wrapper">
             <img src="/eafc26.png" alt="" />
             <div className="carousel-caption-left">
-              <h2 className="display-5">EA SPORTS FC™ 26 Ultimate Edition</h2>
+              <h2 className="display-5 titulo-carousel">EA SPORTS FC™ 26 Ultimate Edition</h2>
               <Link to="/Error404">
               <button className="reserve-btn">
                 RESERVAR <span>&#8250;</span>
@@ -29,7 +29,7 @@ function CarouselPublicidadJuegos() {
           <div className="carousel-image-wrapper">
             <img src="/acshadows.png" alt="" />
             <div className="carousel-caption-left">
-              <h2 className="display-5">ASSASSIN'S CREED SHADOWS</h2>
+              <h2 className="display-5 titulo-carousel">ASSASSIN'S CREED SHADOWS</h2>
               <Link to="/Error404">
               <button className="reserve-btn-red">
                 COMPRAR <span>&#8250;</span>
@@ -46,7 +46,7 @@ function CarouselPublicidadJuegos() {
           <div className="carousel-image-wrapper">
             <img src="/codww2.png" alt="" />
             <div className="carousel-caption-left">
-              <h2 className="display-5">CALL OF DUTY WWII</h2>
+              <h2 className="display-5 titulo-carousel">CALL OF DUTY WWII</h2>
               <Link to="/Error404">
               <button className="reserve-btn-yellow">
                 COMPRAR <span>&#8250;</span>

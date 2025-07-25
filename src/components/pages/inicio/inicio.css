@@ -150,6 +150,10 @@
   transform: none;
 }
 
+.titulo-carousel{
+  font-family: var(--bs-body-font-family);
+}
+
 /* Garantias Card */
 .garantia-card {
     background-color: #23253a;
