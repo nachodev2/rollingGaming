@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { Image } from "react-bootstrap";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 function Login() {
   const [show, setShow] = useState(false);
