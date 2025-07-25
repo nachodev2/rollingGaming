@@ -17,16 +17,24 @@
 }
 .colorToggle{
   background-color: #EA39B8 !important
+  
 } 
 .textLogin{
   color: rgb(253, 252, 252) !important;
-
+  transition: 1s;
+}
+.textLogin:hover{
+  font-size: 15px;
 }
 .textNavFooter {
   font-weight: 800;
   font-size: 18px !important;
   color: #f8f8f8 !important;
   text-shadow: 2px 2px 4px #818de0;
+  transition: 1s
+}
+.textNavFooter:hover{
+font-size: 30px !important;
 }
 footer {
   display: flex;
