@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router';
-import Inicio from './components/pages/Inicio.jsx';
+import Inicio from './components/pages/inicio/Inicio.jsx';
 import CarroCompras from './components/pages/CarroCompras.jsx';
 import CarroComprasVacio from './components/pages/CarroComprasVacio.jsx';
 import DetalleProducto from './components/pages/DetalleProducto.jsx';
@@ -12,6 +12,7 @@ import SobreNosotros from './components/pages/SobreNosotros.jsx';
 import Footer from './components/shared/Footer.jsx';
 import Tienda from './components/pages/Tienda.jsx';
 import FavoritosVacio from './components/pages/favoritos/FavoritosVacio.jsx';
+import FilaCardCategorias from './components/pages/inicio/FilaCardCategorias.jsx';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
             <Route path="/tienda" element={<Tienda />}></Route>
             <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
             <Route path="*" element={<Error404 />} />
+            <Route path="/fila-card-categorias" element={<FilaCardCategorias />} />
           </Routes>
         </main>
         <Footer></Footer>
