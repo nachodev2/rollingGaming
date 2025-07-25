@@ -12,12 +12,14 @@ import SobreNosotros from './components/pages/SobreNosotros.jsx';
 import Footer from './components/shared/Footer.jsx';
 import Tienda from './components/pages/Tienda.jsx';
 import FavoritosVacio from './components/pages/favoritos/FavoritosVacio.jsx';
+import FormularioProducto from './components/pages/producto/FormularioProducto.jsx';
 
 function App() {
 
   return (
     <>
       <BrowserRouter>
+      <FormularioProducto></FormularioProducto>
         <Menu></Menu>
         <main className='h-100'>
           <Routes>
