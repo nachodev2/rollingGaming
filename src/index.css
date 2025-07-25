@@ -46,12 +46,22 @@
   text-align: left;
   border-bottom: 2px solid #9d24a3 !important; 
 }
+.tablaEstilizada {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  margin-top: 20px;
+}
 
 /* card en detalle producto */
 .detalleJuego{
  width: 100%;
   height: 100% !important;
   }
+
+.taxtosCard{
+  color: #32FBE2;
+}
 
 .img-thumbnail {
     width: 100px;
