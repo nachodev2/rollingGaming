@@ -1,24 +1,151 @@
 .carousel-slide-content {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 500px; /* Ajusta según tu diseño */
+  align-items: stretch;
+  justify-content: flex-start;
+  height: 650px;
   width: 100%;
-  gap: 40px;
+  gap: 0;
 }
 
+.carousel-image-wrapper {
+  flex: 1 1 0%;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay oscuro con gradiente */
+.carousel-image-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to right, #121313 12%, rgba(10,26,31,0) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* El contenido va sobre el gradiente */
 .carousel-caption-left {
-  flex: 1;
-  text-align: left;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 2;
   max-width: 40%;
+  width: 40%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  height: auto;
 }
 
-.carousel-slide-content img {
-  flex: 1;
-  max-width: 50%;
-  height: auto;
-  object-fit: contain;
-  display: block;
+.carousel-caption-left h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+}
+
+.reserve-btn {
+  background: #a6ff1a;
+  color: #0a1a1f;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  padding: 0.7rem 2rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.reserve-btn:hover {
+  background: #8edc14;
+}
+
+.reserve-btn-red {
+  background: #ff0000;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  padding: 0.7rem 2rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.reserve-btn-red:hover {
+  background: #a00101;
+}
+
+.reserve-btn-yellow {
+  background: #f1ce0c;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  padding: 0.7rem 2rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.reserve-btn-yellow:hover {
+  background: #a8910b;
+}
+
+.carousel-caption-left a {
+  text-decoration: none;
+}
+
+/* Flechas del carousel pegadas a los bordes */
+.carousel-control-prev {
+  left: 0;
+  width: auto;
+  padding-left: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+.carousel-control-next {
+  right: 0;
+  width: auto;
+  padding-right: 10px;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  top: 0;
+  bottom: 0;
+  transform: none;
 }
