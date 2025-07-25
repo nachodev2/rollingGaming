@@ -16,10 +16,12 @@ const Menu = () => {
             className="colorToggle"
           />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mx-auto d-flex gap-5 me-4">
-              <link to="" className="textNavFooter ">
+            <Nav className="mx-auto d-flex gap-3 me-4">
+             <Navbar.Brand href="#home">Rolling Games</Navbar.Brand>
+
+              <Nav.Link href="#features" className="textNavFooter ">
                 Tienda
-              </link>
+              </Nav.Link>
               <Nav.Link href="#features" className="textNavFooter ">
                 Contacto
               </Nav.Link>
@@ -27,7 +29,7 @@ const Menu = () => {
                 Sobre nosotros
               </Nav.Link>
             </Nav>
-            <Nav className="ms-auto d-flex flex-row align-items-center ms-5">
+            <Nav className="ms-auto d-flex flex-row align-items-center margenT">
               <Button
                 href="#deets"
                 className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3"

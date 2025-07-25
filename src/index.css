@@ -60,6 +60,9 @@ footer section {
     flex: 1 1 45%;
     max-width: 45%;
   }
+  .margenT{
+    margin-top: 8px;
+  }
 }
 /* media grandes */
 @media (min-width: 577px) and (max-width: 1124px) {
