@@ -83,6 +83,23 @@ const FormularioProducto = () => {
             aqui ira el codigo para el error
           </Form.Text>
         </Form.Group>
+        <Row>
+          <h5>Requerimientos del sistema</h5>
+          <Form.Group as={Col} className="mb-3" controlId="microprocesador"> 
+            <Form.Label>Microprocesador</Form.Label>
+            <Form.Control type="text" required />
+            <Form.Text className="text-danger">
+              aqui ira el codigo para el error
+            </Form.Text>
+          </Form.Group>
+          <Form.Group as={Col} className="mb-3" controlId="memoriaRam"> 
+            <Form.Label>Memoria RAM</Form.Label>
+            <Form.Control type="text" required />
+            <Form.Text className="text-danger">
+              aqui ira el codigo para el error
+            </Form.Text>
+          </Form.Group>
+        </Row>
         <Button variant="primary" type="submit" className="mb-3">
           Enviar
         </Button>
