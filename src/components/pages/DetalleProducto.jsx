@@ -1,5 +1,5 @@
 import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
-
+import "./detalleProducto.css"
 const DetalleProducto = () => {
   return (
     <div>
