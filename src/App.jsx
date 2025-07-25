@@ -12,8 +12,7 @@ import SobreNosotros from './components/pages/SobreNosotros.jsx';
 import Footer from './components/shared/Footer.jsx';
 import Tienda from './components/pages/Tienda.jsx';
 import FavoritosVacio from './components/pages/favoritos/FavoritosVacio.jsx';
-import GridSection from './components/pages/inicio/GridSection.jsx';
-import TwoColumnCard from './components/pages/inicio/TwoColumnCard.jsx';
+import FilaCardCategorias from './components/pages/inicio/FilaCardCategorias.jsx';
 
 function App() {
 
@@ -34,8 +33,7 @@ function App() {
             <Route path="/tienda" element={<Tienda />}></Route>
             <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
             <Route path="*" element={<Error404 />} />
-            <Route path="/grid-section" element={<GridSection />} />
-            <Route path="/two-column-card" element={<TwoColumnCard />} />
+            <Route path="/fila-card-categorias" element={<FilaCardCategorias />} />
           </Routes>
         </main>
         <Footer></Footer>

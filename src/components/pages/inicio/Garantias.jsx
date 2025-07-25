@@ -1,4 +1,4 @@
-import './inicio.css'; // Asegúrate de que este CSS todavía contenga los estilos específicos de tus cards
+import './inicio.css';
 
 const items = [
   {
@@ -20,7 +20,7 @@ const items = [
 
 const Garantias = () => (
   <div className="garantias-section">
-    <h1 className="garantias-titulo text-center mt-5 mb-5">Nuestras Garantías</h1>
+    <h1 className="garantias-titulo text-center mt-5 mb-5 display-2">Nuestras Garantías</h1>
     <div className="container">
       <div className="row justify-content-center g-4">
         {items.map((item, idx) => (
