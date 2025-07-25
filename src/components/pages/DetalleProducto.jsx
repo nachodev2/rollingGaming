@@ -2,7 +2,6 @@ import {
   Container,
   Row,
   Col,
-  Carousel,
   Card,
   ListGroup,
 } from "react-bootstrap";
@@ -10,51 +9,30 @@ import {
 const DetalleProducto = () => {
   return (
     <div>
-      <Container fluid>
+      <Container>
         <Row>
           <Col sm={8} className="mt-5">
-            <Carousel fade>
-              <Carousel.Item>
-                <img
-                  src="https://i.blogs.es/7d7bce/helldivers-2-1/1200_800.webp"
-                  alt="" className="carouselImg"
-                />
-  
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  src="https://culturageek.com.ar/wp-content/uploads/2025/05/helldivers-2-dev-working-to-address-complaints-after-escalat_qee7.webp"
-                  alt="" className="carouselImg"
-                />
-
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  src="https://cdn.mos.cms.futurecdn.net/dohDeBShUEmCJhhdTVEdWQ-650-80.jpg.webp"
-                  alt="" className="carouselImg"
-                />
-              </Carousel.Item>
-            </Carousel>
+          <section className="">
+            <h2>Titulo de juego</h2>
+            <img src="https://blog.latam.playstation.com/tachyon/sites/3/2024/12/7f1951713450e3a8d5026e39c444fdaf30f3ece2.png?resize=1088%2C612&zoom=0.87" alt=""  className="detalleImg"/>
+          </section>
           </Col>
           <Col sm={4} className="mt-5">
             <Card className="detalleJuego">
-              <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
               <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>Descripcion</Card.Title>
                 <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  Aqui va toda la descripcion del juego 
                 </Card.Text>
               </Card.Body>
               <ListGroup className="list-group-flush">
-                <ListGroup.Item>Cras justo odio</ListGroup.Item>
-                <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-                <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                <ListGroup.Item>Desarrollador</ListGroup.Item>
+                <ListGroup.Item>Precio</ListGroup.Item>
               </ListGroup>
-              <Card.Body>
-                <Card.Link href="#">Card Link</Card.Link>
-                <Card.Link href="#">Another Link</Card.Link>
-              </Card.Body>
+              <Card.Footer>
+                <Card.Link href="#">categoria</Card.Link>
+                <Card.Link href="#">categoria</Card.Link>
+              </Card.Footer>
             </Card>
           </Col>
         </Row>
