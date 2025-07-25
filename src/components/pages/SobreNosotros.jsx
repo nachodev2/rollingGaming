@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import './sobreNosotros.css';
 
 const integrantes = [
@@ -64,8 +65,12 @@ const SobreNosotros = () => {
         <h2>¿Querés contactarnos?</h2>
         <p>¿Tenés dudas o sugerencias? ¡Nos encantaría escucharte!</p>
         <div className="botones-contacto">
-          <button className="btn-contacto">Contactanos</button>
+          <Link to='/Error404'>
+           <button className="btn-contacto">Contactanos</button>
+           </Link>
+           <Link to='/Registro'>
           <button className="btn-secundario">Unite a la Comunidad</button>
+            </Link>
         </div>
       </section>
     </main>
