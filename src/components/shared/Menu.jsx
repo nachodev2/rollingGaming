@@ -1,30 +1,44 @@
-import { Button, Container, Nav, Navbar, } from "react-bootstrap";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
 const Menu = () => {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" className="colorNavbar">
-       
-        <Container fluid>
-              <img src="/logoNavFooter.png" alt="Logo de RollingGames" className="logoNav" />
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" className="colorToggle" />
+        <Container  className="d-flex align-items-center justify-content-between">
+          <div className="d-flex align-items-center">
+            <img
+              src="/logoNavFooter.png"
+              alt="Logo de RollingGames"
+              className="logoNav"
+            />
+          </div>
+          <Navbar.Toggle
+            aria-controls="responsive-navbar-nav"
+            className="colorToggle"
+          />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="#features" className="textNavFooter ">
+            <Nav className="mx-auto d-flex gap-5 me-4">
+              <link to="" className="textNavFooter ">
                 Tienda
-              </Nav.Link>
+              </link>
               <Nav.Link href="#features" className="textNavFooter ">
                 Contacto
               </Nav.Link>
               <Nav.Link href="#pricing" className="textNavFooter ">
                 Sobre nosotros
               </Nav.Link>
-             
             </Nav>
-            <Nav>
-              <Button href="#deets" className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3" >
+            <Nav className="ms-auto d-flex flex-row align-items-center ms-5">
+              <Button
+                href="#deets"
+                className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3"
+              >
                 Iniciar Sesion
               </Button>
-              <Button eventKey={2} href="#memes" className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3">
+              <Button
+                eventKey={2}
+                href="#memes"
+                className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3"
+              >
                 Crear Cuenta
               </Button>
             </Nav>
