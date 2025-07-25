@@ -1,4 +1,4 @@
-
+import "./navFooter.css"
 
 const Footer = () => {
   return (

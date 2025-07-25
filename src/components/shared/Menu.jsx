@@ -1,4 +1,5 @@
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import "./navFooter.css"
 const Menu = () => {
   return (
     <div>
@@ -17,8 +18,7 @@ const Menu = () => {
           />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mx-auto d-flex gap-3 me-4">
-             <Navbar.Brand href="#home">Rolling Games</Navbar.Brand>
-
+             <Navbar.Brand href="#home" className="textNavFooter">Rolling Games</Navbar.Brand>
               <Nav.Link href="#features" className="textNavFooter ">
                 Tienda
               </Nav.Link>
