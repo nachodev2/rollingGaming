@@ -13,10 +13,14 @@ import Footer from './components/shared/Footer.jsx';
 import Tienda from './components/pages/Tienda.jsx';
 import FavoritosVacio from './components/pages/favoritos/FavoritosVacio.jsx';
 
+import { FavoritosProvider } from './components/pages/favoritos/FavoritosContext.jsx'; 
+
+
 function App() {
 
   return (
     <>
+    <FavoritosProvider> 
       <BrowserRouter>
         <Menu></Menu>
         <main className='h-100'>
@@ -36,6 +40,7 @@ function App() {
         </main>
         <Footer></Footer>
       </BrowserRouter>
+      </FavoritosProvider> 
     </>
   )
 }
