@@ -19,4 +19,3 @@ function FavoritosVacio() {
 }
 
 export default FavoritosVacio;
-
