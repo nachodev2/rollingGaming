@@ -11,6 +11,7 @@ import Menu from './components/shared/Menu.jsx';
 import SobreNosotros from './components/pages/SobreNosotros.jsx';
 import Footer from './components/shared/Footer.jsx';
 import Tienda from './components/pages/Tienda.jsx';
+import FavoritosVacio from './components/pages/favoritos/FavoritosVacio.jsx';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
             <Route path="/administrador" element={<Administrador />} />
             <Route path="/sobre-nosotros" element={<SobreNosotros />} />
             <Route path="/tienda" element={<Tienda />}></Route>
+            <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
         </main>
