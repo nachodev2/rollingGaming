@@ -12,6 +12,7 @@ import SobreNosotros from './components/pages/SobreNosotros.jsx';
 import Footer from './components/shared/Footer.jsx';
 import Tienda from './components/pages/Tienda.jsx';
 import FavoritosVacio from './components/pages/favoritos/FavoritosVacio.jsx';
+import Favoritos from './components/pages/favoritos/Favoritos.jsx';
 
 import { FavoritosProvider } from './components/pages/favoritos/FavoritosContext.jsx'; 
 
@@ -20,26 +21,27 @@ function App() {
 
   return (
     <>
-    <FavoritosProvider> 
-      <BrowserRouter>
-        <Menu></Menu>
-        <main className='h-100'>
-          <Routes>
-            <Route path="/" element={<Inicio />} />
-            <Route path="/carro-compras" element={<CarroCompras />} />
-            <Route path="/carro-compras-vacio" element={<CarroComprasVacio />} />
-            <Route path="/detalle-producto/:id" element={<DetalleProducto />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/registro" element={<Registro />} />
-            <Route path="/administrador" element={<Administrador />} />
-            <Route path="/sobre-nosotros" element={<SobreNosotros />} />
-            <Route path="/tienda" element={<Tienda />}></Route>
-            <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
-            <Route path="*" element={<Error404 />} />
-          </Routes>
-        </main>
-        <Footer></Footer>
-      </BrowserRouter>
+     <FavoritosProvider> 
+       <BrowserRouter>
+         <Menu></Menu>
+          <main className='h-100'>
+           <Routes>
+             <Route path="/" element={<Inicio />} />
+             <Route path="/carro-compras" element={<CarroCompras />} />
+             <Route path="/carro-compras-vacio" element={<CarroComprasVacio />} />
+             <Route path="/detalle-producto/:id" element={<DetalleProducto />} />
+             <Route path="/login" element={<Login />} />
+             <Route path="/registro" element={<Registro />} />
+             <Route path="/administrador" element={<Administrador />} />
+             <Route path="/sobre-nosotros" element={<SobreNosotros />} />
+             <Route path="/tienda" element={<Tienda />}></Route>
+             <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
+             <Route path="/favoritos" element={<Favoritos />} />
+             <Route path="*" element={<Error404 />} />
+            </Routes>
+          </main>
+         <Footer></Footer>
+       </BrowserRouter>
       </FavoritosProvider> 
     </>
   )
