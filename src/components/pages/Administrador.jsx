@@ -1,5 +1,4 @@
-import { Table, Container, Card, Row, Col, Button } from "react-bootstrap";
-import FilaProductoTabla from "./producto/FilaProductoTabla";
+import {Container, Card, Row, Col} from "react-bootstrap";
 import TablaJuegos from "./TablaJuegos";
 import TablaUsuarios from "./TablaUsuarios";
 
