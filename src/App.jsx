@@ -1,5 +1,6 @@
+
 import { BrowserRouter, Routes, Route } from 'react-router';
-import Inicio from './components/pages/Inicio.jsx';
+import Inicio from './components/pages/inicio/Inicio.jsx';
 import CarroCompras from './components/pages/CarroCompras.jsx';
 import CarroComprasVacio from './components/pages/CarroComprasVacio.jsx';
 import DetalleProducto from './components/pages/DetalleProducto.jsx';
@@ -18,7 +19,6 @@ import { FavoritosProvider } from './components/pages/favoritos/FavoritosContext
 
 
 function App() {
-
   return (
     <>
      <FavoritosProvider> 
@@ -44,8 +44,7 @@ function App() {
        </BrowserRouter>
       </FavoritosProvider> 
     </>
-  )
+  );
 }
 
-export default App
-
+export default App;

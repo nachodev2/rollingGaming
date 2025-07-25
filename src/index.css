@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 #root {
@@ -31,6 +33,10 @@
 
 .img-card-Categoria {
     max-width: 80px;
+}
+
+.taxtosCard{
+  color: #32FBE2;
 }
 
 .img-thumbnail {
@@ -92,4 +98,4 @@
     transform: translateX(0);
     opacity: 1;
   }
-}
+
