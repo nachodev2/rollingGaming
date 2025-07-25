@@ -34,9 +34,10 @@
 }
 
 .img-thumbnail {
-    width: 100px;
-    height: 100px;
+    max-width: 80px;
     object-fit: cover;
+    aspect-ratio: 1/1;
+    border-radius: 10%;
 }
 
 .text-white {
