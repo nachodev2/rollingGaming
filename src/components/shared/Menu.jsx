@@ -7,11 +7,12 @@ const Menu = () => {
       <Navbar collapseOnSelect expand="lg" className="colorNavbar">
         <Container className="d-flex align-items-center justify-content-between">
           <div className="d-flex align-items-center">
-            <img
+            <Link to="/inicio">   <img
               src="/logoNavFooter.png"
               alt="Logo de RollingGames"
               className="logoNav"
-            />
+            /></Link>
+         
           </div>
           <Navbar.Toggle
             aria-controls="responsive-navbar-nav"
