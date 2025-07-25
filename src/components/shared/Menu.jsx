@@ -20,9 +20,9 @@ const Menu = () => {
           />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mx-auto d-flex gap-3 me-4">
-              <Navbar.Brand href="#home" className="textNavFooter">
-                Rolling Games
-              </Navbar.Brand>
+            <Nav.Link as={Link} to="/" className="textNavFooter">
+                Inicio
+              </Nav.Link>
               <Nav.Link as={Link} to="/tienda" className="textNavFooter">
                 Tienda
               </Nav.Link>
