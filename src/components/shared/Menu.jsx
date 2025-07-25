@@ -7,7 +7,7 @@ const Menu = () => {
       <Navbar collapseOnSelect expand="lg" className="colorNavbar">
         <Container className="d-flex align-items-center justify-content-between">
           <div className="d-flex align-items-center">
-            <Link to="/inicio">   <img
+            <Link to="/">   <img
               src="/logoNavFooter.png"
               alt="Logo de RollingGames"
               className="logoNav"

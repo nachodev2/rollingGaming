@@ -7,10 +7,9 @@
 }
 .logoFooter {
   position: relative;
-  width: 85%;
+  width: 100%;
   max-width: 250px;
   height: 85%;
-  max-height: 250px;
 }
 .colorNavbar {
   background-color: #0f1546;
@@ -34,7 +33,7 @@
   transition: 1s
 }
 .textNavFooter:hover{
-font-size: 30px !important;
+font-size: 20px !important;
 }
 footer {
   display: flex;

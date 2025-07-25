@@ -64,7 +64,7 @@ const Footer = () => {
             Dirección: Gral. José María Paz 576, San Miguel de Tucumán, Tucumán
           </li>
           <li className="mb-3">Nuestras redes sociales</li>
-          <div class="text-center footerRedes"></div>
+          <div className="text-center footerRedes"></div>
         </ul>
       </section>
     </footer>
