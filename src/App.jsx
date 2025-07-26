@@ -23,28 +23,7 @@ import ScrollToTop from './components/shared/ScrollToTop.jsx';
 function App() {
   return (
     <>
-     <FavoritosProvider> 
-       <BrowserRouter>
-         <Menu></Menu>
-          <main className='h-100'>
-           <Routes>
-             <Route path="/" element={<Inicio />} />
-             <Route path="/carro-compras" element={<CarroCompras />} />
-             <Route path="/carro-compras-vacio" element={<CarroComprasVacio />} />
-             <Route path="/detalle-producto/:id" element={<DetalleProducto />} />
-             <Route path="/login" element={<Login />} />
-             <Route path="/registro" element={<Registro />} />
-             <Route path="/administrador" element={<Administrador />} />
-             <Route path="/sobre-nosotros" element={<SobreNosotros />} />
-             <Route path="/tienda" element={<Tienda />}></Route>
-             <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
-             <Route path="/favoritos" element={<Favoritos />} />
-             <Route path="*" element={<Error404 />} />
-            </Routes>
-          </main>
-         <Footer></Footer>
-       </BrowserRouter>
-      </FavoritosProvider> 
+      <FavoritosProvider>
       <BrowserRouter>
         <ScrollToTop />
         <Menu></Menu>
@@ -63,12 +42,14 @@ function App() {
             <Route path="/sobre-nosotros" element={<SobreNosotros />} />
             <Route path="/tienda" element={<Tienda />}></Route>
             <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
+            <Route path="/favoritos" element={<Favoritos />} />
             <Route path="*" element={<Error404 />} />
             <Route path="/fila-card-categorias" element={<FilaCardCategorias />} />
           </Routes>
         </main>
         <Footer></Footer>
       </BrowserRouter>
+      </FavoritosProvider>
     </>
   );
 }
