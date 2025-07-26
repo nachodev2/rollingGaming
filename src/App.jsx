@@ -18,9 +18,19 @@ import Favoritos from './components/pages/favoritos/Favoritos.jsx';
 import { FavoritosProvider } from './components/pages/favoritos/FavoritosContext.jsx'; 
 import FilaCardCategorias from './components/pages/inicio/FilaCardCategorias.jsx';
 import ScrollToTop from './components/shared/ScrollToTop.jsx';
+import { useState } from 'react';
+import FormularioProducto from './components/pages/administrador/FormularioProducto.jsx';
 
 
 function App() {
+
+  const [juegos, setJuegos] = useState([])
+
+  const cargarJuegos = (juegoNuevo) => {
+    setJuegos([...juegos , juegoNuevo])
+    return true
+  }
+
   return (
     <>
       <FavoritosProvider>
@@ -38,13 +48,14 @@ function App() {
             <Route path="/detalle-producto" element={<DetalleProducto />} />
             <Route path="/login" element={<Login />} />
             <Route path="/registro" element={<Registro />} />
-            <Route path="/administrador" element={<Administrador />} />
+            <Route path="/administrador" element={<Administrador cargarJuegos = {cargarJuegos} juegos = {juegos} setJuegos = {setJuegos}/>} />
             <Route path="/sobre-nosotros" element={<SobreNosotros />} />
             <Route path="/tienda" element={<Tienda />}></Route>
             <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
             <Route path="/favoritos" element={<Favoritos />} />
             <Route path="*" element={<Error404 />} />
             <Route path="/fila-card-categorias" element={<FilaCardCategorias />} />
+            <Route path='/formulario-producto' element={<FormularioProducto/>}></Route>
           </Routes>
         </main>
         <Footer></Footer>
