@@ -9,7 +9,7 @@ const TablaUsuarios = () => {
         <h1 className="fs-4">Tabla de Usuarios</h1>
         <div>
           <Button className="btn btn-primary me-2">
-            <i class="bi bi-person-add"></i>
+            <i className="bi bi-person-add"></i>
           </Button>
           <Button variant="info">
             <i className="bi bi-database-fill-up"></i>

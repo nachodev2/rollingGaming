@@ -59,12 +59,22 @@ const Footer = () => {
         <h5 className="textNavFooter">Mas sobre nosotros</h5>
         <ul className="m-0 list-unstyled textListFooter">
           <li className="mb-3">Teléfono: +543815887741</li>
-          <li className="mb-3">Mail: Rollingshoes@gmail.com</li>
+          <li className="mb-3">Mail: Rollingaming@gmail.com</li>
           <li className="mb-3">
             Dirección: Gral. José María Paz 576, San Miguel de Tucumán, Tucumán
           </li>
           <li className="mb-3">Nuestras redes sociales</li>
-          <div className="text-center footerRedes"></div>
+          <div className="text-center d-flex justify-content-start gap-3">
+            <Link to="/error404" className="text-light fs-4">
+              <i className="bi bi-facebook"></i>
+            </Link>
+            <Link to="/error404" className="text-light fs-4">
+              <i className="bi bi-instagram"></i>
+            </Link>
+            <Link to="/error404" className="text-light fs-4">
+              <i className="bi bi-twitter-x"></i>
+            </Link>
+          </div>
         </ul>
       </section>
     </footer>

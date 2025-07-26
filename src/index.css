@@ -7,6 +7,10 @@
   flex-direction: column;
   min-height: 100vh;
 }
+main {
+  flex-grow: 1;
+}
+
 .contenedor-card .card {
     border-width: 1px;
     border-style: groove;
@@ -40,62 +44,12 @@
 }
 
 .img-thumbnail {
-    width: 100px;
-    height: 100px;
+    max-width: 80px;
     object-fit: cover;
+    aspect-ratio: 1/1;
+    border-radius: 10%;
 }
 
 .text-white {
     color: white;
-}
-
-.desde-izquierda, .desde-arriba, .desde-abajo {
-  opacity: 0;
-  display: inline-block;
-  animation-fill-mode: forwards;
-}
-
-.desde-arriba {
-  animation: aparecer-arriba 1s ease-out 0.3s forwards;
-}
-
-.desde-abajo {
-  animation: aparecer-abajo 1s ease-out 1.2s forwards;
-}
-
-.desde-izquierda{
-    animation: aparecer-izquierda 2.5s ease-out 0.3s forwards;
-}
-
-@keyframes aparecer-arriba {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes aparecer-abajo {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes aparecer-izquierda {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
 }

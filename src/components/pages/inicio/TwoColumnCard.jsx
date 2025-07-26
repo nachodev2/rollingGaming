@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 import { Card, Row, Col, Button } from 'react-bootstrap';
 import './inicio.css';
+import { Link } from 'react-router';
 
 const TwoColumnCard = forwardRef(({
   label,
@@ -8,6 +9,7 @@ const TwoColumnCard = forwardRef(({
   subtitle,
   buttonText,
   buttonVariant = 'warning',
+  buttonLink,
   leftBgColor,
   textColor = '#fff',
   imageUrl,
@@ -19,14 +21,16 @@ const TwoColumnCard = forwardRef(({
     <Col md={6} className="two-col-card-text-col d-flex flex-column justify-content-center align-items-start p-4" style={{ backgroundColor: leftBgColor, color: textColor }}>
       {label && <div className="two-col-card-label mb-2">{label}</div>}
       {/* Hacemos el título clickeable */}
-      <a href="#" className="two-col-card-title-link">
+      <Link to={buttonLink || '#'} className="text-decoration-none text-white">
         <h2 className="two-col-card-title mb-3">{title}</h2>
-      </a>
+      </Link>
       {subtitle && <p className="two-col-card-subtitle mb-3">{subtitle}</p>}
       {buttonText && (
-        <Button variant={buttonVariant} className="two-col-card-button">
-          {buttonText} &gt;
-        </Button>
+        <Link to={buttonLink || '#'} className="text-decoration-none">
+          <Button variant={buttonVariant} className="two-col-card-button">
+            {buttonText} &gt;
+          </Button>
+        </Link>
       )}
     </Col>
   );
