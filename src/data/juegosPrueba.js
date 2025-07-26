@@ -5,7 +5,7 @@ const productos = [
     desarrollador: "Santa Monica Studio",
     categoria: "accionAventura",
     precio: 69.99,
-    imagen: "https://cdn1.epicgames.com/offer/98b0b36b64b944e88c63dbf3a0581b99/gow_ragnarok_2560x1440-4de568f3d9ed.jpg",
+    imagen: "https://cdn1.epicgames.com/spt-assets/edaff839f0734d16bc89d2ddb1dc9339/steel-magnolia-1h9av.jpg",
     descripcion: "La esperada secuela de God of War (2018), donde Kratos y su hijo Atreus enfrentan el apocalipsis nórdico. Gráficos espectaculares, combate brutal y una historia cargada de emociones.",
     requisitos: "PlayStation 5. No disponible en PC."
   },
@@ -25,7 +25,7 @@ const productos = [
     desarrollador: "EA Sports",
     categoria: "simulacion",
     precio: 59.99,
-    imagen: "https://cdn1.epicgames.com/offer/309f0fd7e2c04a37b2a338e91dece623/EGS_EASPORTSFC24StandardEdition_ElectronicArts_S1_2560x1440-5e2c9ae4ad24124d0c2b2be7f9aa077f",
+    imagen: "https://cdn2.unrealengine.com/egs-easportsfc25ultimateedition-eacanada-editions-g1a-01-1920x1080-a5e0646a5b8a.jpg",
     descripcion: "El simulador de fútbol más famoso del mundo regresa con gráficos mejorados, inteligencia artificial refinada y licencias oficiales.",
     requisitos: "PC con Intel i5, 8 GB RAM, GTX 1050Ti, 50 GB espacio, Windows 10."
   },
@@ -65,7 +65,7 @@ const productos = [
     desarrollador: "Square Enix",
     categoria: "juegoRol",
     precio: 74.99,
-    imagen: "https://image.api.playstation.com/vulcan/ap/rnd/202210/3100/2tCiDsIIBvwU0T9r0DKr2Z1U.png",
+    imagen: "https://cdn1.epicgames.com/spt-assets/91fdf8a25bef498984af2e46d106c664/skobeloff-nd736.jpg?resize=1&w=480&h=270&quality=medium",
     descripcion: "Una entrega oscura y madura en la saga Final Fantasy, con un sistema de combate espectacular y narrativa cinematográfica.",
     requisitos: "Exclusivo para PS5."
   },
@@ -95,7 +95,7 @@ const productos = [
     desarrollador: "Polyphony Digital",
     categoria: "simulacion",
     precio: 59.99,
-    imagen: "https://image.api.playstation.com/vulcan/ap/rnd/202011/1021/0HK0X6H1B4s57X8a1MdFDmG5.png",
+    imagen: "https://external-game-cover-image-cf.store.on.epicgames.com/101006?resize=1&w=360&h=480&quality=medium",
     descripcion: "El simulador de carreras definitivo para fanáticos del automovilismo, con más de 400 autos y circuitos icónicos.",
     requisitos: "Exclusivo para PlayStation 5."
   }
