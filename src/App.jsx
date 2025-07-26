@@ -1,25 +1,27 @@
 
 import { BrowserRouter, Routes, Route } from 'react-router';
 import Inicio from './components/pages/inicio/Inicio.jsx';
-import CarroCompras from './components/pages/CarroCompras.jsx';
-import CarroComprasVacio from './components/pages/CarroComprasVacio.jsx';
-import DetalleProducto from './components/pages/DetalleProducto.jsx';
-import Login from './components/pages/Login.jsx';
-import Registro from './components/pages/Registro.jsx';
-import Administrador from './components/pages/Administrador.jsx';
-import Error404 from './components/pages/Error404.jsx';
+import CarroCompras from './components/pages/carro-compras/CarroCompras.jsx';
+import CarroComprasVacio from './components/pages/carro-compras/CarroComprasVacio.jsx';
+import DetalleProducto from './components/pages/producto/DetalleProducto.jsx';
+import Login from './components/pages/login-registro/Login.jsx';
+import Registro from './components/pages/login-registro/Registro.jsx';
+import Administrador from './components/pages/administrador/Administrador.jsx';
+import Error404 from './components/pages/error404/Error404.jsx';
 import Menu from './components/shared/Menu.jsx';
-import SobreNosotros from './components/pages/SobreNosotros.jsx';
+import SobreNosotros from './components/pages/sobre-nosotros/SobreNosotros.jsx';
 import Footer from './components/shared/Footer.jsx';
-import Tienda from './components/pages/Tienda.jsx';
+import Tienda from './components/pages/tienda/Tienda.jsx';
 import FavoritosVacio from './components/pages/favoritos/FavoritosVacio.jsx';
 import FilaCardCategorias from './components/pages/inicio/FilaCardCategorias.jsx';
+import ScrollToTop from './components/shared/ScrollToTop.jsx';
 
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Menu></Menu>
         <main className="h-100">
           <Routes>
@@ -29,7 +31,7 @@ function App() {
               path="/carro-compras-vacio"
               element={<CarroComprasVacio />}
             />
-            <Route path="/detalle-producto/:id" element={<DetalleProducto />} />
+            <Route path="/detalle-producto" element={<DetalleProducto />} />
             <Route path="/login" element={<Login />} />
             <Route path="/registro" element={<Registro />} />
             <Route path="/administrador" element={<Administrador />} />

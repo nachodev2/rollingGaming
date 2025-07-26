@@ -1,7 +1,9 @@
 import { Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router';
 
 const CardProducto = () => {
   return (
+    
     <div className="contenedor-card">
       <Card className='p-0 rounded-4 overflow-hidden card border-secondary'>
         <Card.Img variant="top" src="https://wallup.net/wp-content/uploads/2017/03/27/420785-League_of_Legends-Ezreal.jpg" />

@@ -1,4 +1,4 @@
-import FilaProductoTabla from "./producto/FilaProductoTabla";
+import FilaProductoTabla from "./FilaProductoTabla";
 import { Table, Button } from "react-bootstrap";
 
 const TablaJuegos = () => {
