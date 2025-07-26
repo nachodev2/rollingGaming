@@ -3,12 +3,16 @@ import TablaJuegos from "./TablaJuegos";
 import TablaUsuarios from "./TablaUsuarios";
 import { useState } from "react";
 
+
 const Administrador = ({cargarJuegos, juegos, setJuegos}) => {
+
+
   const[mostrarTablaJuegos, setMostrarTablaJuegos] = useState(true);
 
   const handleToggleChange=() => {
     setMostrarTablaJuegos(!mostrarTablaJuegos);
   }
+
 
   return (
     <Container>
@@ -49,7 +53,9 @@ const Administrador = ({cargarJuegos, juegos, setJuegos}) => {
           />
         </Form>
       </section>
+
        {mostrarTablaJuegos ? <TablaJuegos cargarJuegos = {cargarJuegos} juegos = {juegos} setJuegos = {setJuegos}/> : <TablaUsuarios />}
+
       
     </Container>
   );

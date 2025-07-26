@@ -1,6 +1,7 @@
 import { Button } from "react-bootstrap"
 
 
+
 const FilaProductoTabla = ({juego}) => {
   console.log(juego)
   return (
@@ -22,3 +23,5 @@ const FilaProductoTabla = ({juego}) => {
 }
 
 export default FilaProductoTabla
+
+
