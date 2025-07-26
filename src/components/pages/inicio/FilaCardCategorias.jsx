@@ -1,7 +1,8 @@
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import './inicio.css';
+import { Link} from 'react-router';
 
-const CardCategorias = () => {
+const FilaCardCategorias = () => {
   return (
     <>
     <h2 className='text-center my-5 display-2'>Categorías</h2>
@@ -15,9 +16,11 @@ const CardCategorias = () => {
                 <Card.Text className='text-color p-0'>
                   1 juego
                 </Card.Text>
+                <Link to='/Error404' className="text-decoration-none">
                 <div className="d-flex justify-content-center">
                   <Button className='rounded-5 fw-bold py-2 btn-card'>Ver más <i className="bi bi-eye ms-2"></i></Button>
                 </div>
+                </Link>
               </Card.Body>
             </Card>
         </Col>
@@ -29,9 +32,11 @@ const CardCategorias = () => {
                 <Card.Text className='text-color p-0'>
                   1 juego
                 </Card.Text>
+                <Link to='/Error404' className="text-decoration-none">
                 <div className="d-flex justify-content-center">
                   <Button className='rounded-5 fw-bold py-2 btn-card'>Ver más <i className="bi bi-eye ms-2"></i></Button>
                 </div>
+                </Link>
               </Card.Body>
             </Card>
         </Col>
@@ -43,9 +48,11 @@ const CardCategorias = () => {
                 <Card.Text className='text-color p-0'>
                   1 juego
                 </Card.Text>
+                <Link to='/Error404' className="text-decoration-none">
                 <div className="d-flex justify-content-center">
                   <Button className='rounded-5 fw-bold py-2 btn-card'>Ver más <i className="bi bi-eye ms-2"></i></Button>
                 </div>
+                </Link>
               </Card.Body>
             </Card>
         </Col>
@@ -55,4 +62,4 @@ const CardCategorias = () => {
   );
 }
 
-export default CardCategorias;
+export default FilaCardCategorias;

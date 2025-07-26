@@ -2,7 +2,7 @@ import { Container, Row, Col, Button, Card, Carousel } from 'react-bootstrap';
 import CarouselPublicidadJuegos from './Carousel';
 import Garantias from './Garantias';
 import GridSection from './GridSection';
-import CardCategorias from './FilaCardCategorias';
+import FilaCardCategorias from './FilaCardCategorias';
 
 const Inicio = () => {
   return (
@@ -20,8 +20,8 @@ const Inicio = () => {
         </GridSection>
       </section>
       <section>
-        <CardCategorias>
-        </CardCategorias>
+        <FilaCardCategorias>
+        </FilaCardCategorias>
       </section>
     </>
   )
