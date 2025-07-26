@@ -1,6 +1,9 @@
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router";
 import "./navFooter.css";
+import Login from "../pages/login-registro/Login";
+
+
 const Menu = () => {
   return (
     <div>
@@ -38,19 +41,14 @@ const Menu = () => {
               </Nav.Link>
             </Nav>
             <Nav className="ms-auto d-flex flex-row align-items-center margenT">
+              <Login></Login>
+              <Link to="/registro">
               <Button
-                href="#deets"
-                className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3"
-              >
-                Iniciar Sesion
-              </Button>
-              <Button
-                eventKey={2}
-                href="#memes"
                 className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3"
               >
                 Crear Cuenta
               </Button>
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
