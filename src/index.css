@@ -7,6 +7,10 @@
   flex-direction: column;
   min-height: 100vh;
 }
+main {
+  flex-grow: 1;
+}
+
 .contenedor-card .card {
     border-width: 1px;
     border-style: groove;
