@@ -3,14 +3,15 @@ import CardProducto from "./CardProducto";
 
 const FilaProducto = () => {
   return (
-    <Row xs={1} md={3} lg={4} className="px-5 mb-4 contenedor-card g-4">
-      <Col><CardProducto /></Col>
-      <Col><CardProducto /></Col>
-      <Col><CardProducto /></Col>
-      <Col><CardProducto /></Col>
-    </Row>
+    <div className="px-5">
+      <Row xs={1} md={3} lg={4} className="mb-4 g-4">
+        <Col><CardProducto /></Col>
+        <Col><CardProducto /></Col>
+        <Col><CardProducto /></Col>
+        <Col><CardProducto /></Col>
+      </Row>
+    </div>
   )
 }
 
 export default FilaProducto;  
- 
