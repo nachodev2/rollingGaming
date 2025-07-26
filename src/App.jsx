@@ -16,6 +16,7 @@ import FavoritosVacio from './components/pages/favoritos/FavoritosVacio.jsx';
 import FilaCardCategorias from './components/pages/inicio/FilaCardCategorias.jsx';
 import ScrollToTop from './components/shared/ScrollToTop.jsx';
 import { useState } from 'react';
+import FormularioProducto from './components/pages/administrador/FormularioProducto.jsx';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
             <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
             <Route path="*" element={<Error404 />} />
             <Route path="/fila-card-categorias" element={<FilaCardCategorias />} />
+            <Route path='/formulario-producto' element={<FormularioProducto/>}></Route>
           </Routes>
         </main>
         <Footer></Footer>
