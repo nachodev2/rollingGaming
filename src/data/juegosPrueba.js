@@ -1,4 +1,4 @@
-export const productos = [
+const productos = [
   {
     id: 1,
     nombreJuego: "God of War: Ragnarök",
@@ -101,3 +101,4 @@ export const productos = [
   }
 ];
 
+export default productos;

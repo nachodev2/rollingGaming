@@ -43,7 +43,7 @@ function App() {
             <Route path="/detalle-producto" element={<DetalleProducto />} />
             <Route path="/login" element={<Login />} />
             <Route path="/registro" element={<Registro />} />
-            <Route path="/administrador" element={<Administrador cargarJuegos = {cargarJuegos}/>} />
+            <Route path="/administrador" element={<Administrador cargarJuegos = {cargarJuegos} juegos = {juegos}/>} />
             <Route path="/sobre-nosotros" element={<SobreNosotros />} />
             <Route path="/tienda" element={<Tienda />}></Route>
             <Route path="/favoritos-vacio" element={<FavoritosVacio />} />

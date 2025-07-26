@@ -3,7 +3,7 @@ import TablaJuegos from "./TablaJuegos";
 import TablaUsuarios from "./TablaUsuarios";
 import { useState } from "react";
 
-const Administrador = ({cargarJuegos}) => {
+const Administrador = ({cargarJuegos, juegos}) => {
   const[mostrarTablaJuegos, setMostrarTablaJuegos] = useState(true);
 
   const handleToggleChange=() => {
@@ -49,7 +49,7 @@ const Administrador = ({cargarJuegos}) => {
           />
         </Form>
       </section>
-       {mostrarTablaJuegos ? <TablaJuegos cargarJuegos = {cargarJuegos}/> : <TablaUsuarios />}
+       {mostrarTablaJuegos ? <TablaJuegos cargarJuegos = {cargarJuegos} juegos = {juegos}/> : <TablaUsuarios />}
       
     </Container>
   );

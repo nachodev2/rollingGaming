@@ -1,10 +1,16 @@
 import FilaProductoTabla from "./FilaProductoTabla";
 import { Table, Button } from "react-bootstrap";
+import juegosPrueba from "../../../data/juegosPrueba";
+
+let cargar = true;
 
 const TablaJuegos = ({ cargarJuegos }) => {
 
   const cargarJuegosPrueba = () => {
-    cargarJuegos()
+    if (cargar) {
+      cargarJuegos(juegosPrueba)
+      cargar = false;
+    }
   }
 
   return (
@@ -15,7 +21,7 @@ const TablaJuegos = ({ cargarJuegos }) => {
           <Button className="btn btn-primary me-2">
             <i className="bi bi-file-earmark-plus"></i>
           </Button>
-          <Button variant="info">
+          <Button variant="info" onClick={cargarJuegosPrueba}>
             <i className="bi bi-database-fill-up"></i>
           </Button>
         </div>
