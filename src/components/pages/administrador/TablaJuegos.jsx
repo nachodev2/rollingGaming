@@ -1,7 +1,12 @@
 import FilaProductoTabla from "./FilaProductoTabla";
 import { Table, Button } from "react-bootstrap";
 
-const TablaJuegos = () => {
+const TablaJuegos = ({ cargarJuegos }) => {
+
+  const cargarJuegosPrueba = () => {
+    cargarJuegos()
+  }
+
   return (
     <>
       <div className="d-flex justify-content-between align-items-center mt-5">
