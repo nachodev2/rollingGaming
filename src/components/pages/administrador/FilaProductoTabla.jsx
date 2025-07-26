@@ -9,7 +9,7 @@ const FilaProductoTabla = ({juego}) => {
       <td>{juego.nombreJuego}</td>
       <td>{juego.categoria}</td>
       <td>{juego.precio}</td>
-      <td className="">
+      <td>
         <Button className="me-2 mb-2 mb-md-1 btn">
           <i className="bi bi-pencil-square"></i>
         </Button>

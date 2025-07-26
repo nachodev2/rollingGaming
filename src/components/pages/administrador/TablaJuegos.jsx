@@ -5,16 +5,14 @@ import { Link } from "react-router";
 
 let cargar = true;
 
-const TablaJuegos = ({ cargarJuegos, juegos, setJuegos}) => {
+const TablaJuegos = ({juegos, setJuegos}) => {
 
   const cargarJuegosPrueba = () => {
     if (cargar) {
-      juegosPrueba.forEach(juego => {
-        cargarJuegos(juego);
-      })
-      cargar = false;
+        setJuegos(juegosPrueba)
+        cargar = false;
+      }
     }
-  }
 
   return (
     <>
@@ -42,7 +40,7 @@ const TablaJuegos = ({ cargarJuegos, juegos, setJuegos}) => {
         </thead>
         <tbody>
           {
-            juegos.map((juego, index) => <FilaProductoTabla key={index} cargarJuegos = {cargarJuegos} juego = {juego} setJuegos = {setJuegos}></FilaProductoTabla>)
+            juegos.map((juego, index) => <FilaProductoTabla key={index} juego = {juego} setJuegos = {setJuegos}></FilaProductoTabla>)
           }
         </tbody>
       </Table>
