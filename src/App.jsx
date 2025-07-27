@@ -59,7 +59,7 @@ const borrarProducto = (idJuego) => {
               path="/carro-compras-vacio"
               element={<CarroComprasVacio />}
             />
-            <Route path="/detalle-producto" element={<DetalleProducto />} />
+            <Route path="/detalle-producto/:id" element={<DetalleProducto />} />
             <Route path="/login" element={<Login />} />
             <Route path="/registro" element={<Registro />} />
             <Route
