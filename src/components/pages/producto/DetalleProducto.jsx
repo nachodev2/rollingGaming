@@ -3,17 +3,15 @@ import "./detalleProducto.css"
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 
-const DetalleProducto = ({buscarJuego}) => {
-  
+const DetalleProducto = ({ buscarJuego }) => {
+
   const { id } = useParams();
   const [juegoBuscado, setJuegoBuscado] = useState({});
 
-useEffect(() => {
-  console.log("ID recibido:", id);
-  const juego = buscarJuego(id);
-  console.log("Juego encontrado:", juego);
-  setJuegoBuscado(juego);
-}, []);
+  useEffect(() => {
+    const juego = buscarJuego(id);
+    setJuegoBuscado(juego);
+  }, []);
 
   return (
     <div>
@@ -23,8 +21,8 @@ useEffect(() => {
             <section>
               <h2>{juegoBuscado.nombreJuego}</h2>
               <img
-                src="https://blog.latam.playstation.com/tachyon/sites/3/2024/12/7f1951713450e3a8d5026e39c444fdaf30f3ece2.png?resize=1088%2C612&zoom=0.87"
-                alt=""
+                src={juegoBuscado.imagen}
+                alt={juegoBuscado.nombreJuego}
                 className="detalleImg"
               />
             </section>
@@ -32,16 +30,15 @@ useEffect(() => {
           <Col sm={4} className="mt-5">
             <Card className="detalleJuego ">
               <Card.Body>
-                <Card.Title className="taxtosCard">Descripcion</Card.Title>
-                <Card.Text className="taxtosCard">Aqui va toda la descripcion del juego</Card.Text>
+                <Card.Title className="taxtosCard">Descripción</Card.Title>
+                <Card.Text className="taxtosCard">{juegoBuscado.descripcion}</Card.Text>
               </Card.Body>
               <ListGroup className="list-group-flush ">
-                <ListGroup.Item>Desarrollador</ListGroup.Item>
-                <ListGroup.Item>Precio</ListGroup.Item>
+                <ListGroup.Item>{juegoBuscado.desarrollador}</ListGroup.Item>
+                <ListGroup.Item>{juegoBuscado.precio}</ListGroup.Item>
               </ListGroup>
               <Card.Footer className="d-flex justify-content-star gap-3" >
-                 <ListGroup.Item>Categoria</ListGroup.Item>
-                <ListGroup.Item>Categoria</ListGroup.Item>
+                <ListGroup.Item>{juegoBuscado.categoria}</ListGroup.Item>
               </Card.Footer>
             </Card>
           </Col>
@@ -58,28 +55,28 @@ useEffect(() => {
               <tbody>
                 <tr>
                   <td className="tablaCeldas">Procesador</td>
-                  <td className="tablaCeldas">Intel Core i3 / AMD Ryzen 3</td>
+                  <td className="tablaCeldas">{juegoBuscado.microprocesador}</td>
                 </tr>
                 <tr>
                   <td className="tablaCeldas">Memoria RAM</td>
-                  <td className="tablaCeldas">8 GB</td>
+                  <td className="tablaCeldas">{juegoBuscado.memoriaRam}</td>
                 </tr>
                 <tr>
                   <td className="tablaCeldas">Tarjeta Gráfica</td>
-                  <td className="tablaCeldas">NVIDIA GTX 750 / AMD R7 260</td>
+                  <td className="tablaCeldas">{juegoBuscado.grafica}</td>
                 </tr>
                 <tr>
                   <td className="tablaCeldas">Almacenamiento</td>
-                  <td className="tablaCeldas">50 GB HDD</td>
+                  <td className="tablaCeldas">{juegoBuscado.almacenamiento}</td>
                 </tr>
                 <tr>
                   <td className="tablaCeldas">Sistema Operativo</td>
-                  <td className="tablaCeldas">Windows 10 (64-bit)</td>
+                  <td className="tablaCeldas">{juegoBuscado.sistemaOperativo}</td>
                 </tr>
               </tbody>
             </table>
           </Col>
-          <Col className="mt-5"  xs={12} lg={4}>
+          <Col className="mt-5" xs={12} lg={4}>
             <h4 className="fs-3 mb-5">Reseñas</h4>
             <p className="mb-5">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
@@ -92,7 +89,7 @@ useEffect(() => {
               ipsum odio eum quia, eaque error. Qui explicabo illo repudiandae
               alias.
             </p>
-          
+
           </Col>
         </Row>
       </Container>
