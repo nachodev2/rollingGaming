@@ -4,7 +4,7 @@ import TablaUsuarios from "./TablaUsuarios";
 import { useState } from "react";
 
 
-const Administrador = ({cargarJuego, juegos, setJuegos}) => {
+const Administrador = ({cargarJuego, juegos, setJuegos,borrarProducto}) => {
 
 
   const[mostrarTablaJuegos, setMostrarTablaJuegos] = useState(true);
@@ -54,7 +54,7 @@ const Administrador = ({cargarJuego, juegos, setJuegos}) => {
         </Form>
       </section>
 
-       {mostrarTablaJuegos ? <TablaJuegos cargarJuego = {cargarJuego} juegos = {juegos} setJuegos = {setJuegos}/> : <TablaUsuarios />}
+       {mostrarTablaJuegos ? <TablaJuegos cargarJuego = {cargarJuego} juegos = {juegos} setJuegos = {setJuegos} borrarProducto={borrarProducto}/> : <TablaUsuarios />}
 
       
     </Container>

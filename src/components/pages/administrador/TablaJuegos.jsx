@@ -5,7 +5,7 @@ import { Link } from "react-router";
 
 let cargar = true;
 
-const TablaJuegos = ({juegos, setJuegos,cargarJuego}) => {
+const TablaJuegos = ({juegos, setJuegos,cargarJuego,borrarProducto}) => {
 
   const cargarJuegosPrueba = () => {
     if (cargar) {
@@ -40,7 +40,7 @@ const TablaJuegos = ({juegos, setJuegos,cargarJuego}) => {
         </thead>
         <tbody>
           {
-            juegos.map((juego, index) => <FilaProductoTabla key={index} juego = {juego} setJuegos = {setJuegos}></FilaProductoTabla>)
+            juegos.map((juego, index) => <FilaProductoTabla key={index} juego = {juego} setJuegos = {setJuegos} borrarProducto={borrarProducto}></FilaProductoTabla>)
           }
         </tbody>
       </Table>
