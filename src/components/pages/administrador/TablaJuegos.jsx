@@ -5,7 +5,7 @@ import { Link } from "react-router";
 
 let cargar = true;
 
-const TablaJuegos = ({juegos, setJuegos}) => {
+const TablaJuegos = ({juegos, setJuegos,cargarJuego}) => {
 
   const cargarJuegosPrueba = () => {
     if (cargar) {

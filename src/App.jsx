@@ -14,22 +14,30 @@ import Footer from './components/shared/Footer.jsx';
 import Tienda from './components/pages/tienda/Tienda.jsx';
 import FavoritosVacio from './components/pages/favoritos/FavoritosVacio.jsx';
 import Favoritos from './components/pages/favoritos/Favoritos.jsx';
-
 import { FavoritosProvider } from './components/pages/favoritos/FavoritosContext.jsx'; 
 import FilaCardCategorias from './components/pages/inicio/FilaCardCategorias.jsx';
 import ScrollToTop from './components/shared/ScrollToTop.jsx';
-import { useState } from 'react';
+import { useEffect, useState } from "react";
 import FormularioProducto from './components/pages/administrador/FormularioProducto.jsx';
-
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
+  // Obtener juegos del localStorage al iniciar
+  const juegosLocalStorage =
+    JSON.parse(localStorage.getItem("juegosKey")) || [];
+  const [juegos, setJuegos] = useState(juegosLocalStorage);
 
-  const [juegos, setJuegos] = useState([])
+  // Guardar juegos en localStorage cada vez que cambian
+  useEffect(() => {
+    localStorage.setItem("juegosKey", JSON.stringify(juegos));
+  }, [juegos]);
 
-  const cargarJuegos = (juegoNuevo) => {
-    setJuegos([...juegos , juegoNuevo])
-    return true
-  }
+  // Función para agregar un nuevo juego
+  const cargarJuego = (juegoNuevo) => {
+    juegoNuevo.id = uuidv4();
+    setJuegos([...juegos, juegoNuevo]);
+    return true;
+  };
 
   return (
     <>
@@ -48,14 +56,29 @@ function App() {
             <Route path="/detalle-producto" element={<DetalleProducto />} />
             <Route path="/login" element={<Login />} />
             <Route path="/registro" element={<Registro />} />
-            <Route path="/administrador" element={<Administrador cargarJuegos = {cargarJuegos} juegos = {juegos} setJuegos = {setJuegos}/>} />
+            <Route
+              path="/administrador"
+              element={
+                <Administrador
+                  cargarJuego={cargarJuego}
+                  juegos={juegos}
+                  setJuegos={setJuegos}
+                />
+              }
+            />
             <Route path="/sobre-nosotros" element={<SobreNosotros />} />
             <Route path="/tienda" element={<Tienda juegos={juegos} />} />
             <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
             <Route path="/favoritos" element={<Favoritos />} />
             <Route path="*" element={<Error404 />} />
-            <Route path="/fila-card-categorias" element={<FilaCardCategorias />} />
-            <Route path='/formulario-producto' element={<FormularioProducto/>}></Route>
+            <Route
+              path="/fila-card-categorias"
+              element={<FilaCardCategorias />}
+            />
+            <Route
+              path="/formulario-producto"
+              element={<FormularioProducto cargarJuego={cargarJuego} />}
+            />
           </Routes>
         </main>
         <Footer></Footer>

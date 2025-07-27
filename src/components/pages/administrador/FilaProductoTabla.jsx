@@ -1,4 +1,5 @@
 import { Button } from "react-bootstrap"
+import { Link } from "react-router"
 
 
 
@@ -9,11 +10,11 @@ const FilaProductoTabla = ({juego}) => {
       <td><img src={juego.imagen} alt={juego.nombreJuego} className="img-thumbnail"/></td>
       <td>{juego.nombreJuego}</td>
       <td>{juego.categoria}</td>
-      <td>{juego.precio}</td>
+      <td>USD {juego.precio}</td>
       <td>
-        <Button className="me-2 mb-2 mb-md-1 btn">
+        <Link to={"/formulario-producto"} className="me-2 mb-2 mb-md-1 btn btn-primary">
           <i className="bi bi-pencil-square"></i>
-        </Button>
+        </Link>
         <Button variant="danger" className="mb-2 mb-md-1 btn">
           <i className="bi bi-trash"></i>
         </Button>
