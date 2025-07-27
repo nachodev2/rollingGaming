@@ -3,19 +3,20 @@ import { Link } from "react-router";
 import "./navFooter.css";
 import Login from "../pages/login-registro/Login";
 
-
-const Menu = ({ setUsuarioLogeado,usuarioLogeado}) => {
+const Menu = ({ setUsuarioLogeado, usuarioLogeado }) => {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" className="colorNavbar">
         <Container className="d-flex align-items-center justify-content-between">
           <div className="d-flex align-items-center">
-            <Link to="/">   <img
-              src="/logoNavFooter.png"
-              alt="Logo de RollingGames"
-              className="logoNav"
-            /></Link>
-         
+            <Link to="/">
+              {" "}
+              <img
+                src="/logoNavFooter.png"
+                alt="Logo de RollingGames"
+                className="logoNav"
+              />
+            </Link>
           </div>
           <Navbar.Toggle
             aria-controls="responsive-navbar-nav"
@@ -23,7 +24,7 @@ const Menu = ({ setUsuarioLogeado,usuarioLogeado}) => {
           />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mx-auto d-flex gap-3 me-4">
-            <Nav.Link as={Link} to="/" className="textNavFooter">
+              <Nav.Link as={Link} to="/" className="textNavFooter">
                 Inicio
               </Nav.Link>
               <Nav.Link as={Link} to="/tienda" className="textNavFooter">
@@ -39,16 +40,27 @@ const Menu = ({ setUsuarioLogeado,usuarioLogeado}) => {
               >
                 Sobre Nosotros
               </Nav.Link>
+              {
+                usuarioLogeado ? (<> <Nav.Link as={Link} to="/administrador" className="textNavFooter">Administrador</Nav.Link> </>) : null
+              }
             </Nav>
             <Nav className="ms-auto d-flex flex-row align-items-center margenT">
-              <Login setUsuarioLogeado={setUsuarioLogeado} ></Login>
-              <Link to="/registro">
-              <Button
-                className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3"
-              >
-                Crear Cuenta
-              </Button>
-              </Link>
+              {usuarioLogeado ? (
+                <>
+                  <Button className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3 nav-link">
+                    Cerrar sesion
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Login setUsuarioLogeado={setUsuarioLogeado} />
+                  <Link to="/registro">
+                    <Button className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3">
+                      Crear Cuenta
+                    </Button>
+                  </Link>
+                </>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
