@@ -20,6 +20,7 @@ import ScrollToTop from './components/shared/ScrollToTop.jsx';
 import { useEffect, useState } from "react";
 import FormularioProducto from './components/pages/administrador/FormularioProducto.jsx';
 import { v4 as uuidv4 } from "uuid";
+import { set } from 'react-hook-form';
 
 function App() {
   // Obtener juegos del localStorage al iniciar
@@ -38,7 +39,12 @@ function App() {
     setJuegos([...juegos, juegoNuevo]);
     return true;
   };
-
+//Función para eliminar un juego
+const borrarProducto = (idJuego) => {
+  const juegosFiltrados = juegos.filter((juego) => juego.id !== idJuego);
+  setJuegos(juegosFiltrados);
+  return true;
+}
   return (
     <>
       <FavoritosProvider>
@@ -63,6 +69,7 @@ function App() {
                   cargarJuego={cargarJuego}
                   juegos={juegos}
                   setJuegos={setJuegos}
+                  borrarProducto={borrarProducto}
                 />
               }
             />
