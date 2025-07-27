@@ -1,17 +1,19 @@
 import { Row, Col } from "react-bootstrap";
 import CardProducto from "./CardProducto";
+import juegosPrueba from "../../../data/juegosPrueba.js";
 
-const FilaProducto = () => {
+const FilaProducto = ({ juegos }) => {
   return (
     <div className="px-5">
       <Row xs={1} md={3} lg={4} className="mb-4 g-4">
-        <Col><CardProducto /></Col>
-        <Col><CardProducto /></Col>
-        <Col><CardProducto /></Col>
-        <Col><CardProducto /></Col>
+        {juegosPrueba.map((juego) => (
+          <Col key={juego.id}>
+            <CardProducto juego={juego} />
+          </Col>
+        ))}
       </Row>
     </div>
-  )
-}
+  );
+};
 
-export default FilaProducto;  
+export default FilaProducto;

@@ -13,6 +13,9 @@ import SobreNosotros from './components/pages/sobre-nosotros/SobreNosotros.jsx';
 import Footer from './components/shared/Footer.jsx';
 import Tienda from './components/pages/tienda/Tienda.jsx';
 import FavoritosVacio from './components/pages/favoritos/FavoritosVacio.jsx';
+import Favoritos from './components/pages/favoritos/Favoritos.jsx';
+
+import { FavoritosProvider } from './components/pages/favoritos/FavoritosContext.jsx'; 
 import FilaCardCategorias from './components/pages/inicio/FilaCardCategorias.jsx';
 import ScrollToTop from './components/shared/ScrollToTop.jsx';
 import { useState } from 'react';
@@ -30,6 +33,7 @@ function App() {
 
   return (
     <>
+      <FavoritosProvider>
       <BrowserRouter>
         <ScrollToTop />
         <Menu></Menu>
@@ -46,8 +50,9 @@ function App() {
             <Route path="/registro" element={<Registro />} />
             <Route path="/administrador" element={<Administrador cargarJuegos = {cargarJuegos} juegos = {juegos} setJuegos = {setJuegos}/>} />
             <Route path="/sobre-nosotros" element={<SobreNosotros />} />
-            <Route path="/tienda" element={<Tienda />}></Route>
+            <Route path="/tienda" element={<Tienda juegos={juegos} />} />
             <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
+            <Route path="/favoritos" element={<Favoritos />} />
             <Route path="*" element={<Error404 />} />
             <Route path="/fila-card-categorias" element={<FilaCardCategorias />} />
             <Route path='/formulario-producto' element={<FormularioProducto/>}></Route>
@@ -55,6 +60,7 @@ function App() {
         </main>
         <Footer></Footer>
       </BrowserRouter>
+      </FavoritosProvider>
     </>
   );
 }
