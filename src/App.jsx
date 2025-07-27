@@ -47,9 +47,9 @@ const borrarProducto = (idJuego) => {
   return true;
 }
 
-const buscarJuego = (idJuego) => {
-  return juegos.find((juego) => juego.id === idJuego);
-}
+const buscarJuego = (id) => {
+  return juegos.find(juego => juego.id.toString() === id.toString());
+};
 
 
   return (

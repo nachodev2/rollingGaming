@@ -5,20 +5,23 @@ import { useEffect, useState } from "react";
 
 const DetalleProducto = ({buscarJuego}) => {
   
-  const [juegoBuscado, setJuegoBuscado] = useState();
+  const { id } = useParams();
+  const [juegoBuscado, setJuegoBuscado] = useState({});
 
-  useEffect(()=>{
-    const juego = buscarJuego(id);
-    setJuegoBuscado(juego);
-  } , []);
+useEffect(() => {
+  console.log("ID recibido:", id);
+  const juego = buscarJuego(id);
+  console.log("Juego encontrado:", juego);
+  setJuegoBuscado(juego);
+}, []);
 
   return (
     <div>
       <Container>
         <Row>
           <Col sm={8} className="mt-5">
-            <section className="">
-              <h2>Titulo de juego</h2>
+            <section>
+              <h2>{juegoBuscado.nombreJuego}</h2>
               <img
                 src="https://blog.latam.playstation.com/tachyon/sites/3/2024/12/7f1951713450e3a8d5026e39c444fdaf30f3ece2.png?resize=1088%2C612&zoom=0.87"
                 alt=""
