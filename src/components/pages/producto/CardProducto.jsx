@@ -11,12 +11,12 @@ const CardProducto = ({ juego }) => {
   return (
     <div className="contenedor-card w-100 h-100">
       <Card className="p-0 rounded-4 overflow-hidden card border-secondary h-100 d-flex flex-column">
-        <Card.Img variant="top" className="img-card" src={juego.imagen} />
+        <Card.Img variant="top" className="img-card" src={juego.imagen} alt={juego.nombreJuego}/>
 
         <Card.Body className="d-flex flex-column justify-content-between flex-grow-1 h-100">
           <div>
             <Card.Title className="titulo-card text-light text-truncate">
-              {juego.titulo}
+              {juego.nombreJuego}
             </Card.Title>
             <div className="d-flex justify-content-between align-items-center mb-2">
               <Card.Text className="mb-0">
