@@ -1,13 +1,17 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 
-// Creamos el contexto
 export const FavoritosContext = createContext();
 
-//Creamos el Provider que envolverá la app
 export const FavoritosProvider = ({ children }) => {
-  const [favoritos, setFavoritos] = useState([]);
+  const [favoritos, setFavoritos] = useState(() => {
+    const favoritosGuardados = localStorage.getItem('favoritos');
+    return favoritosGuardados ? JSON.parse(favoritosGuardados) : [];
+  });
 
-  // Agregar juego
+  useEffect(() => {
+    localStorage.setItem('favoritos', JSON.stringify(favoritos));
+  }, [favoritos]);
+
   const agregarAFavoritos = (juego) => {
     const yaEsta = favoritos.find((item) => item.id === juego.id);
     if (!yaEsta) {
@@ -15,12 +19,10 @@ export const FavoritosProvider = ({ children }) => {
     }
   };
 
-  // Quitar juego
   const quitarDeFavoritos = (id) => {
     setFavoritos((prev) => prev.filter((item) => item.id !== id));
   };
 
-  // Pasamos el valor a todos los componentes hijos
   return (
     <FavoritosContext.Provider value={{ favoritos, agregarAFavoritos, quitarDeFavoritos }}>
       {children}
