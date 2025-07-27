@@ -31,14 +31,14 @@ const FormularioProducto = () => {
               {...register("nombreJuego", {
                 required: "El nombre del juego es un dato obligatorio",
                 minLength: {
-                  value: 2,
+                  value: 3,
                   message:
-                    "El nombre del juego debe tener almenos 2 caracteres",
+                    "El nombre del juego debe tener al menos 3 caracteres",
                 },
                 maxLength: {
                   value: 100,
                   message:
-                    "El nombre del juego debe tener como maximo 100 caracteres",
+                    "El nombre del juego debe tener como máximo 100 caracteres",
                 },
               })}
             />
@@ -46,7 +46,7 @@ const FormularioProducto = () => {
               {errors.nombreJuego?.message}
             </Form.Text>
           </Form.Group>
-          <Form.Group as={Col} className="mb-3" controlId="desarrolladorJuego">
+          <Form.Group as={Col} className="mb-3" controlId="desarrollador">
             <Form.Label>Desarrollador</Form.Label>
             <Form.Control
               type="text"
@@ -54,36 +54,36 @@ const FormularioProducto = () => {
               required
               minLength={3}
               maxLength={100}
-              {...register("desarrolladorJuego", {
+              {...register("desarrollador", {
                 required: "El nombre del desarrollador es un dato obligatorio",
                 minLength: {
-                  value: 2,
+                  value: 3,
                   message:
-                    "El nombre del desarrollador debe tener almenos 2 caracteres",
+                    "El nombre del desarrollador debe tener al menos 3 caracteres",
                 },
                 maxLength: {
                   value: 100,
                   message:
-                    "El nombre del desarrollador debe tener como maximo 100 caracteres",
+                    "El nombre del desarrollador debe tener como máximo 100 caracteres",
                 },
               })}
             />
             <Form.Text className="text-danger">
-              {errors.desarrolladorJuego?.message}
+              {errors.desarrollador?.message}
             </Form.Text>
           </Form.Group>
         </Row>
         <Row>
-          <Form.Group as={Col} className="mb-3" controlId="categoriaJuego">
+          <Form.Group as={Col} className="mb-3" controlId="categoria">
             <Form.Label>Categoría</Form.Label>
             <Form.Select
               id="categoriaJuego"
               required
-              {...register("categoriaJuego", {
+              {...register("categoria", {
                 required: "Debe seleccionar una categoria",
               })}
             >
-              <option>Elige una categoría</option>
+              <option value="">Elige una categoría</option>
               <option value="accionAventura">Acción y aventura</option>
               <option value="estrategia">Estrategia</option>
               <option value="juegoRol">Juego de Rol</option>
@@ -92,10 +92,10 @@ const FormularioProducto = () => {
               <option value="tiros">Tiros</option>
             </Form.Select>
             <Form.Text className="text-danger">
-              {errors.categoriaJuego?.message}
+              {errors.categoria?.message}
             </Form.Text>
           </Form.Group>
-          <Form.Group as={Col} className="mb-3" controlId="precioJuego">
+          <Form.Group as={Col} className="mb-3" controlId="precio">
             <Form.Label>Precio</Form.Label>
             <Form.Control
               type="number"
@@ -123,28 +123,29 @@ const FormularioProducto = () => {
             </Form.Text>
           </Form.Group>
         </Row>
-        <Form.Group className="mb-3" controlId="imagenJuego">
+        <Form.Group className="mb-3" controlId="imagen">
           <Form.Label>Imagen URL</Form.Label>
           <Form.Control
             type="text"
             placeholder="Ej: https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg"
             required
             minLength={10}
-            {...register("imagenJuego", {
+            maxLength={300}
+            {...register("imagen", {
               required: "La url de la imagen es un dato obligatorio",
               pattern: {
                 value:
                   /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?(\.(jpg|jpeg|png|webp))$/,
                 message:
-                  "La imagen debe ser una url de imagen valida terminada en (jpg|jpeg|png|webp)",
+                  "La imagen debe ser una url válida terminada en (jpg|jpeg|png|webp)",
               },
             })}
           />
           <Form.Text className="text-danger">
-            {errors.imagenJuego?.message}
+            {errors.imagen?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="descripcionJuego">
+        <Form.Group className="mb-3" controlId="descripcion">
           <Form.Label>Descripción</Form.Label>
           <Form.Control
             type="text"
@@ -154,22 +155,22 @@ const FormularioProducto = () => {
             required
             minLength={10}
             maxLength={500}
-            {...register("descripcionJuego", {
+            {...register("descripcion", {
               required: "La descripción del juego es un dato obligatorio",
               minLength: {
                 value: 10,
                 message:
-                  "La descrición del juego debe tener almenos 10 caracteres",
+                  "La descripción del juego debe tener al menos 10 caracteres",
               },
               maxLength: {
                 value: 500,
                 message:
-                  "La descrición del juego debe tener como máximo 500 caracteres",
+                  "La descripción del juego debe tener como máximo 500 caracteres",
               },
             })}
           />
           <Form.Text className="text-danger">
-            {errors.descripcionJuego?.message}
+            {errors.descripcion?.message}
           </Form.Text>
         </Form.Group>
         <Row>
