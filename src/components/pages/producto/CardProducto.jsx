@@ -16,7 +16,7 @@ const CardProducto = ({ juego }) => {
         <Card.Body className="d-flex flex-column justify-content-between flex-grow-1 h-100">
           <div>
             <Card.Title className="titulo-card text-light text-truncate">
-              {juego.titulo}
+              {juego.nombreJuego}
             </Card.Title>
             <div className="d-flex justify-content-between align-items-center mb-2">
               <Card.Text className="mb-0">
