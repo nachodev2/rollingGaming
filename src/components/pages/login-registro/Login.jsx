@@ -3,20 +3,36 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { Image } from "react-bootstrap";
-import { useNavigate } from 'react-router';
+import { useNavigate } from "react-router";
+import { useForm } from "react-hook-form";
 
 function Login() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const usarioLogedo = (usuario) => {
+    console.log(usuario);
+    console.log(import.meta.env.VITE_API_EMAIL)
+    console.log(import.meta.env.VITE_API_PASSWORD);
+  };
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleRegistro = () => {
-    navigate('/registro'); 
+    navigate("/registro");
   };
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow} className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3">
+      <Button
+        variant="primary"
+        onClick={handleShow}
+        className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3"
+      >
         Iniciar Sesión
       </Button>
 
@@ -37,26 +53,60 @@ function Login() {
           ></Image>
         </div>
         <Modal.Body>
-          <Form.Group className="mb-3" controlId="formCorreo">
-            <Form.Label className="text-light">Correo Electrónico</Form.Label>
-            <Form.Control type="email" placeholder="correo@rollinggaming.com" />
-            <Form.Text id="formTextNombre" className="text-danger">
-              Your password must be 8-20 characters long, contain letters and
-              numbers, and must not contain spaces, special characters, or
-              emoji.
-            </Form.Text>
-          </Form.Group>
+          <Form onSubmit={handleSubmit(usarioLogedo)}>
+            <Form.Group className="mb-3" controlId="formCorreo">
+              <Form.Label className="text-light">Correo Electrónico</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="correo@rollinggaming.com"
+                {...register("email", {
+                  required: "Este campo es obligatorio",
+                  pattern: {
+                    value:
+                      /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+                    message: "el Email debe tener un formato válido",
+                    minLength: {
+                      value: 1,
+                    },
+                    maxLength: {
+                      value: 200,
+                    },
+                  },
+                })}
+              />
+              <Form.Text id="formTextNombre" className="text-danger">
+                {errors.email?.message}
+              </Form.Text>
+            </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formContrasenia">
-            <Form.Label className="text-light">Contraseña</Form.Label>
-            <Form.Control type="password" />
-            <Form.Text id="formTextNombre" className="text-danger">
-              Your password must be 8-20 characters long, contain letters and
-              numbers, and must not contain spaces, special characters, or
-              emoji.
-            </Form.Text>
-          </Form.Group>
-
+            <Form.Group className="mb-3" controlId="formContrasenia">
+              <Form.Label className="text-light">Contraseña</Form.Label>
+              <Form.Control
+                type="password"
+                {...register("password", {
+                  required: "Este campo es obligatorio",
+                  pattern: {
+                    value:
+                      /^(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/,
+                    message:
+                      "Debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial",
+                  },
+                  minLength: {
+                    value: 8,
+                    message: "La contraseña debe tener al menos 8 caracteres",
+                  },
+                  maxLength: {
+                    value: 50,
+                    message:
+                      "La contraseña no puede tener más de 50 caracteres",
+                  },
+                })}
+              />
+              <Form.Text id="formTextNombre" className="text-danger">
+                {errors.password?.message}
+              </Form.Text>
+            </Form.Group>
+          </Form>
           <Form>
             {["checkbox"].map((type) => (
               <div key={`default-${type}`} className="mb-3">
@@ -85,7 +135,9 @@ function Login() {
           <Button variant="secondary" onClick={handleClose}>
             Cerrar
           </Button>
-          <Button variant="light">Enviar</Button>
+          <Button variant="light" onClick={handleSubmit(usarioLogedo)}>
+            Enviar
+          </Button>
         </Modal.Footer>
       </Modal>
     </>
