@@ -8,11 +8,12 @@ const Registro = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const password = watch("Contrasenia");
+  const password = watch("Contrasenia")
+  ;
   return (
     <Container className="my-5 px-4 border border-1 rounded-4 border-secondary">
       <h2 className="text-center my-4">Crear una Cuenta</h2>
-      <Form>
+      <Form onSubmit={handleSubmit()}>
         <Row className="mb-3">
           <Form.Group as={Col} md="6" controlId="formUsuario">
             <Form.Label>Usuario</Form.Label>
@@ -208,24 +209,8 @@ const Registro = () => {
             <Form.Control
               type="password"
               placeholder="Crea una contraseña"
-              {...register("Contrasenia", {
-              required: "El Contraseña es obligatorio",
-              pattern: {
-                validate: (value) => value === password || "La contraseña no es la misma",
-              },
-            })}
-            />
-            <Form.Text id="formTextContrasenia" className="text-danger">
-            </Form.Text>
-          </Form.Group>
-
-          <Form.Group as={Col} md="6" controlId="formRepetirContrasenia">
-            <Form.Label>Repetir Contraseña</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Confirma la contraseña"
-              {...register("Contrasenia", {
-              required: "El Contraseña es obligatorio",
+             {...register("Contrasenia", {
+              required: "La Contraseña es obligatorio",
               pattern: {
                 value: /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/,
                 message: "La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula, al menos una mayúscula y al menos un caracter no alfanumérico",
@@ -240,8 +225,24 @@ const Registro = () => {
               },
             })}
             />
-            <Form.Text id="formTextRepetirContrasenia" className="text-danger">
+            <Form.Text id="formTextContrasenia" className="text-danger">
               {errors.Contrasenia?.message}
+            </Form.Text>
+          </Form.Group>
+
+          <Form.Group as={Col} md="6" controlId="formRepetirContrasenia">
+            <Form.Label>Repetir Contraseña</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Confirma la contraseña"
+              {...register("confirmarContrasenia", {
+                required: "Debes repetir exactamente la misma contraseña",
+                validate: (value) =>
+                  value === password || "Las contraseñas no coinciden",
+              })}
+            />
+            <Form.Text id="formTextRepetirContrasenia" className="text-danger">
+              {errors.confirmarContrasenia?.message}
             </Form.Text>
           </Form.Group>
         </Row>
