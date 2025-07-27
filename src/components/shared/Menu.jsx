@@ -1,9 +1,15 @@
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import "./navFooter.css";
 import Login from "../pages/login-registro/Login";
 
 const Menu = ({ setUsuarioLogeado, usuarioLogeado }) => {
+const cerrarSesion = () => {
+  setUsuarioLogeado(false);
+  sessionStorage.removeItem("usuarioLogeado");
+  navigate("/");
+}
+
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" className="colorNavbar">
@@ -47,7 +53,7 @@ const Menu = ({ setUsuarioLogeado, usuarioLogeado }) => {
             <Nav className="ms-auto d-flex flex-row align-items-center margenT">
               {usuarioLogeado ? (
                 <>
-                  <Button className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3 nav-link">
+                  <Button className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3" as={Link} to="/" onClick={cerrarSesion}>
                     Cerrar sesion
                   </Button>
                 </>
