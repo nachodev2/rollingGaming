@@ -4,7 +4,7 @@ import "./navFooter.css";
 import Login from "../pages/login-registro/Login";
 
 
-const Menu = () => {
+const Menu = ({ setUsuarioLogeado,usuarioLogeado}) => {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" className="colorNavbar">
@@ -41,7 +41,7 @@ const Menu = () => {
               </Nav.Link>
             </Nav>
             <Nav className="ms-auto d-flex flex-row align-items-center margenT">
-              <Login></Login>
+              <Login setUsuarioLogeado={setUsuarioLogeado} ></Login>
               <Link to="/registro">
               <Button
                 className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3"

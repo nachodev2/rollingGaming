@@ -6,17 +6,25 @@ import { Image } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 
-function Login() {
+function Login({ setUsuarioLogeado }){
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-
-  const usarioLogedo = (usuario) => {
-    console.log(usuario);
-    console.log(import.meta.env.VITE_API_EMAIL)
-    console.log(import.meta.env.VITE_API_PASSWORD);
+  
+  const usuarioLogeado = (usuario) => {
+    if (
+      usuario.email === import.meta.env.VITE_API_EMAIL &&
+      usuario.password === import.meta.env.VITE_API_CONTRASENIA
+    ) {
+      setUsuarioLogeado(true);
+      sessionStorage.setItem("usuarioLogeado", true);
+      navigate("/");
+      handleClose();
+    } else {
+      console.log("Error en las credenciales");
+    }
   };
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
@@ -53,7 +61,7 @@ function Login() {
           ></Image>
         </div>
         <Modal.Body>
-          <Form onSubmit={handleSubmit(usarioLogedo)}>
+          <Form onSubmit={handleSubmit(usuarioLogeado)}>
             <Form.Group className="mb-3" controlId="formCorreo">
               <Form.Label className="text-light">Correo Electrónico</Form.Label>
               <Form.Control
@@ -135,7 +143,7 @@ function Login() {
           <Button variant="secondary" onClick={handleClose}>
             Cerrar
           </Button>
-          <Button variant="light" onClick={handleSubmit(usarioLogedo)}>
+          <Button variant="light" onClick={handleSubmit(usuarioLogeado)}>
             Enviar
           </Button>
         </Modal.Footer>
