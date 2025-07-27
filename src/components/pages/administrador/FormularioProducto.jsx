@@ -1,5 +1,6 @@
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const FormularioProducto = ({cargarJuego}) => {
   const {
@@ -12,8 +13,20 @@ const FormularioProducto = ({cargarJuego}) => {
 
   const onSubmit=(juego)=> {
     console.log(juego);
-    cargarJuego(juego);
-    reset();
+    if (cargarJuego(juego)===true){
+      Swal.fire({
+          title: "Creaste un juego",
+          text: `El producto ${juego.nombreJuego} fue creado correctamente`,
+          icon: "success",
+        })
+        reset();
+    }else{
+      Swal.fire({
+          title: "Error al crear el juego",
+          text: `El producto ${juego.nombreJuego} no pudo ser creado`,
+          icon: "error",
+        })
+    }
   }
 
   return (
