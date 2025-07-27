@@ -16,7 +16,7 @@ function Login() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow} className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3">
         Iniciar Sesión
       </Button>
 
