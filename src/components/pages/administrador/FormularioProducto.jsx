@@ -1,5 +1,15 @@
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+
 const FormularioProducto = () => {
+   const {
+    register,
+    handleSubmit,
+    reset,
+    setValue,
+    formState: { errors },
+  } = useForm();
+
   return (
     <Container className="mt-3">
       <h1>Añadir un juego</h1>
@@ -8,9 +18,21 @@ const FormularioProducto = () => {
         <Row>
           <Form.Group as={Col} className="mb-3" controlId="nombreJuego">
             <Form.Label>Nombre del juego</Form.Label>
-            <Form.Control type="text" placeholder="Ej: League of Legends" required minLength={3} maxLength={100} />
+            <Form.Control type="text" placeholder="Ej: League of Legends" required minLength={3} maxLength={100} {...register("nombreJuego", {
+              required: "El nombre del juego es un dato obligatorio",
+              minLength: {
+                value: 2,
+                message:
+                  "El nombre del juego debe tener almenos 2 caracteres",
+              },
+              maxLength: {
+                value: 100,
+                message:
+                  "El nombre del juego debe tener como maximo 100 caracteres",
+              },
+            })}/>
             <Form.Text className="text-danger">
-              Aquí irá el código de error
+              {errors.nombreJuego?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group as={Col} className="mb-3" controlId="desarrolladorJuego">
@@ -39,9 +61,21 @@ const FormularioProducto = () => {
           </Form.Group>
           <Form.Group as={Col} className="mb-3" controlId="precioJuego">
             <Form.Label>Precio</Form.Label>
-            <Form.Control type="number" placeholder="Ej: 20" step={0.01} required min={0.01} max={1000}/>
+            <Form.Control type="number" placeholder="Ej: 20" step={0.01} required min={0.01} max={1000} {...register("precio", {
+              required: "El precio es un valor obligatorio",
+              min: {
+                value: 0.01,
+                message:
+                  "El precio minimo del juego debe ser de almenos USD 0.01",
+              },
+              max: {
+                value: 1000,
+                message:
+                  "El precio maximo del juego debe ser de hasta USD 1000",
+              },
+            })}/>
             <Form.Text className="text-danger">
-              Aquí irá el código de error
+              {errors.precio?.message}
             </Form.Text>
           </Form.Group>
         </Row>
