@@ -1,5 +1,5 @@
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import "./navFooter.css";
 import Login from "../pages/login-registro/Login";
 
