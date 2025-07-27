@@ -42,8 +42,8 @@ const CardProducto = ({ juego }) => {
                 }
               >
                 <i
-                  className={`bi ${yaEstaEnFavoritos ? "bi-heart-fill" : "bi-heart"
-                    } fs-4`}
+                  className={`text-secondary bi ${yaEstaEnFavoritos ? "bi-heart-fill" : "bi-heart"
+                    } fs-4 `}
                 ></i>
               </Button>
             </div>
