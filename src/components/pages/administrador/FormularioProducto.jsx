@@ -1,7 +1,7 @@
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 
-const FormularioProducto = () => {
+const FormularioProducto = ({cargarJuego}) => {
   const {
     register,
     handleSubmit,
@@ -12,6 +12,8 @@ const FormularioProducto = () => {
 
   const onSubmit=(juego)=> {
     console.log(juego);
+    cargarJuego(juego);
+    reset();
   }
 
   return (

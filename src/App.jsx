@@ -16,11 +16,12 @@ import FilaCardCategorias from "./components/pages/inicio/FilaCardCategorias.jsx
 import ScrollToTop from "./components/shared/ScrollToTop.jsx";
 import { useEffect, useState } from "react";
 import FormularioProducto from "./components/pages/administrador/FormularioProducto.jsx";
-
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   // Obtener juegos del localStorage al iniciar
-  const juegosLocalStorage = JSON.parse(localStorage.getItem("juegosKey")) || [];
+  const juegosLocalStorage =
+    JSON.parse(localStorage.getItem("juegosKey")) || [];
   const [juegos, setJuegos] = useState(juegosLocalStorage);
 
   // Guardar juegos en localStorage cada vez que cambian
@@ -29,7 +30,8 @@ function App() {
   }, [juegos]);
 
   // Función para agregar un nuevo juego
-  const cargarJuegos = (juegoNuevo) => {
+  const cargarJuego = (juegoNuevo) => {
+    juegoNuevo.id = uuidv4();
     setJuegos([...juegos, juegoNuevo]);
     return true;
   };
@@ -54,7 +56,7 @@ function App() {
               path="/administrador"
               element={
                 <Administrador
-                  cargarJuegos={cargarJuegos}
+                  cargarJuego={cargarJuego}
                   juegos={juegos}
                   setJuegos={setJuegos}
                 />
@@ -70,8 +72,8 @@ function App() {
             />
             <Route
               path="/formulario-producto"
-              element={<FormularioProducto />}
-            ></Route>
+              element={<FormularioProducto cargarJuego={cargarJuego} />}
+            />
           </Routes>
         </main>
         <Footer></Footer>
