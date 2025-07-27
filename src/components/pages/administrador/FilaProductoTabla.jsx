@@ -2,7 +2,7 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router";
 import Swal from "sweetalert2";
 
-const FilaProductoTabla = ({ juego,borrarProducto}) => {
+const FilaProductoTabla = ({ juego, borrarProducto }) => {
   const eliminarJuego = () => {
     Swal.fire({
       title: "¿Estas seguro de eliminar este juego?",
