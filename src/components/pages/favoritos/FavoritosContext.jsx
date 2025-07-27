@@ -1,15 +1,15 @@
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect } from "react";
 
 export const FavoritosContext = createContext();
 
 export const FavoritosProvider = ({ children }) => {
   const [favoritos, setFavoritos] = useState(() => {
-    const favoritosGuardados = localStorage.getItem('favoritos');
+    const favoritosGuardados = localStorage.getItem("favoritos");
     return favoritosGuardados ? JSON.parse(favoritosGuardados) : [];
   });
 
   useEffect(() => {
-    localStorage.setItem('favoritos', JSON.stringify(favoritos));
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
   }, [favoritos]);
 
   const agregarAFavoritos = (juego) => {
@@ -24,7 +24,9 @@ export const FavoritosProvider = ({ children }) => {
   };
 
   return (
-    <FavoritosContext.Provider value={{ favoritos, agregarAFavoritos, quitarDeFavoritos }}>
+    <FavoritosContext.Provider
+      value={{ favoritos, agregarAFavoritos, quitarDeFavoritos }}
+    >
       {children}
     </FavoritosContext.Provider>
   );

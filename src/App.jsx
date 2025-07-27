@@ -50,7 +50,7 @@ function App() {
             <Route path="/registro" element={<Registro />} />
             <Route path="/administrador" element={<Administrador cargarJuegos = {cargarJuegos} juegos = {juegos} setJuegos = {setJuegos}/>} />
             <Route path="/sobre-nosotros" element={<SobreNosotros />} />
-            <Route path="/tienda" element={<Tienda />}></Route>
+            <Route path="/tienda" element={<Tienda juegos={juegos} />} />
             <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
             <Route path="/favoritos" element={<Favoritos />} />
             <Route path="*" element={<Error404 />} />
