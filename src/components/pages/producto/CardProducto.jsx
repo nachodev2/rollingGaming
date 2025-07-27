@@ -1,8 +1,10 @@
 import { Card, Button } from "react-bootstrap";
 import { useContext } from "react";
 import { FavoritosContext } from "../favoritos/FavoritosContext";
+import { Link } from "react-router";
 
 const CardProducto = ({ juego }) => {
+
   const { agregarAFavoritos, quitarDeFavoritos, favoritos } =
     useContext(FavoritosContext);
 
@@ -57,9 +59,9 @@ const CardProducto = ({ juego }) => {
             </Card.Text>
 
             <div className="d-flex justify-content-center">
-              <Button className="rounded-5 fw-bold py-2 btn-card">
+              <Link to={`/detalle-producto/${juego.id}`} className="rounded-5 fw-bold py-2 btn btn-primary btn-card">
                 Comprar <i className="bi bi-cart3 ms-2"></i>
-              </Button>
+              </Link>
             </div>
           </div>
         </Card.Body>

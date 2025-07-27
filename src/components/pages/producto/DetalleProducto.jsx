@@ -1,6 +1,20 @@
 import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
 import "./detalleProducto.css"
-const DetalleProducto = () => {
+import { useParams } from "react-router";
+import { useEffect } from "react";
+
+const DetalleProducto = ({buscarJuego}) => {
+  
+  const {id} = useParams();
+  const juego = buscarJuego(id);
+  console.log("Desde detalle");
+  console.log(id);
+  console.log(juego);
+
+  useEffect(()=>{
+    const juegoBuscado = buscarJuego(id);
+  } , []);
+
   return (
     <div>
       <Container>

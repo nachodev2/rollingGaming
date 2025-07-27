@@ -37,6 +37,7 @@ function App() {
   const cargarJuego = (juegoNuevo) => {
     juegoNuevo.id = uuidv4();
     setJuegos([...juegos, juegoNuevo]);
+    console.log(juegoNuevo.id);
     return true;
   };
 //Función para eliminar un juego
@@ -45,6 +46,12 @@ const borrarProducto = (idJuego) => {
   setJuegos(juegosFiltrados);
   return true;
 }
+
+const buscarJuego = (idJuego) => {
+  return juegos.find((juego) => juego.id === idJuego);
+}
+
+
   return (
     <>
       <FavoritosProvider>
@@ -59,7 +66,7 @@ const borrarProducto = (idJuego) => {
               path="/carro-compras-vacio"
               element={<CarroComprasVacio />}
             />
-            <Route path="/detalle-producto/:id" element={<DetalleProducto />} />
+            <Route path="/detalle-producto/:id" element={<DetalleProducto buscarJuego={buscarJuego}/>} />
             <Route path="/login" element={<Login />} />
             <Route path="/registro" element={<Registro />} />
             <Route
