@@ -1,18 +1,15 @@
 import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
 import "./detalleProducto.css"
 import { useParams } from "react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const DetalleProducto = ({buscarJuego}) => {
   
-  const {id} = useParams();
-  const juego = buscarJuego(id);
-  console.log("Desde detalle");
-  console.log(id);
-  console.log(juego);
+  const [juegoBuscado, setJuegoBuscado] = useState();
 
   useEffect(()=>{
-    const juegoBuscado = buscarJuego(id);
+    const juego = buscarJuego(id);
+    setJuegoBuscado(juego);
   } , []);
 
   return (
