@@ -29,7 +29,7 @@ const TablaUsuarios = ({usuarios, setUsuarios}) => {
       <Table striped bordered hover responsive variant="dark">
         <thead>
           <tr>
-            <th>ID</th>
+            <th>#</th>
             <th>Usuario</th>
             <th>Nombre</th>
             <th>Email</th>
@@ -42,7 +42,7 @@ const TablaUsuarios = ({usuarios, setUsuarios}) => {
               key={index}
               usuario={usuario}
               setUsuarios={setUsuarios}
-              
+              fila={index+1}
             ></FilaUsuariosTabla>
           ))}
         </tbody>

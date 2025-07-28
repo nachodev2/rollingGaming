@@ -1,13 +1,14 @@
 import {Button } from "react-bootstrap";
 
-const FilaUsuariosTabla = () => {
+
+const FilaUsuariosTabla = ({usuario, fila}) => {
   return (
     <tr>
       
-      <td>1</td>
-      <td>usuario</td>
-      <td>nombre</td>
-      <td>email</td>
+      <td>{fila}</td>
+      <td>{usuario.usuario}</td>
+      <td>{usuario.nombre}</td>
+      <td>{usuario.correoElectronico}</td>
       <td className="">
         <Button className="me-2 mb-2 mb-md-1 btn">
           <i className="bi bi-pencil-square"></i>
