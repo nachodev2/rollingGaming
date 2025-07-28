@@ -2,6 +2,8 @@ import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
 import "./detalleProducto.css"
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
+import ComentariosConRating from "./ComentariosConRating";
+import comentariosDeEjemplo from "../../../data/comentariosDeEjemplo";
 
 const DetalleProducto = ({ buscarJuego }) => {
 
@@ -77,19 +79,7 @@ const DetalleProducto = ({ buscarJuego }) => {
             </table>
           </Col>
           <Col className="mt-5" xs={12} lg={4}>
-            <h4 className="fs-3 mb-5">Reseñas</h4>
-            <p className="mb-5">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
-              quasi itaque suscipit ipsum. Mollitia nesciunt omnis architecto
-              deserunt accusantium deleniti alias quo quae, iusto numquam, qui
-              voluptates labore ducimus voluptas?
-            </p>
-            <p className="mb-5">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta
-              ipsum odio eum quia, eaque error. Qui explicabo illo repudiandae
-              alias.
-            </p>
-
+            <ComentariosConRating comentarios={comentariosDeEjemplo}/>
           </Col>
         </Row>
       </Container>
