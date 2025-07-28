@@ -39,12 +39,12 @@ function App() {
     setJuegos([...juegos, juegoConIdYPunt]);
     return true;
   };
+
   const borrarProducto = (idJuego) => {
     const juegosFiltrados = juegos.filter((juego) => juego.id !== idJuego);
     setJuegos(juegosFiltrados);
     return true;
   };
-
 
   const usuarioLogeadoStorage =
     JSON.parse(sessionStorage.getItem("usuarioLogeado")) || false;
@@ -59,11 +59,11 @@ function App() {
   const buscarJuego = (id) => {
     return juegos.find((juego) => juego.id.toString() === id.toString());
   };
-  return (
 
+  return (
     <>
       <FavoritosProvider>
-        <CarritoProvider>
+        <CarritoProvider juegosDisponibles={juegos}>
           <BrowserRouter>
             <ScrollToTop />
             <Routes>
