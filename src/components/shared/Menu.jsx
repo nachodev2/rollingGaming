@@ -24,7 +24,6 @@ const Menu = ({
     <div>
       <Navbar collapseOnSelect expand="lg" className="colorNavbar">
         <Container className="d-flex align-items-center justify-content-between">
-          <BotonVolver></BotonVolver>
           <div className="d-flex align-items-center">
             <Link to="/">
               {" "}
