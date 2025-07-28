@@ -23,9 +23,7 @@ import { v4 as uuidv4 } from "uuid";
 import { set } from 'react-hook-form';
 
 function App() {
-  // --- Lógica existente para la gestión de juegos (Administrador/Tienda) ---
-  // Esta lógica permanece en App.jsx porque es para la lista general de juegos,
-  // no para el estado de favoritos o carrito.
+
   const juegosLocalStorage = JSON.parse(localStorage.getItem("juegosKey")) || [];
   const [juegos, setJuegos] = useState(juegosLocalStorage);
 
@@ -49,7 +47,6 @@ function App() {
 
   return (
     <>
-      {/* Envuelve toda la aplicación o las rutas que necesitan los contextos */}
       <FavoritosProvider>
         <CarritoProvider> {/* Nuevo CarritoProvider, envuelve también las rutas */}
           <BrowserRouter>
