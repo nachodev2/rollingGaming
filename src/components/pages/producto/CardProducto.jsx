@@ -1,8 +1,11 @@
+
+import React, { useContext } from "react";
 import { Card, Button } from "react-bootstrap";
-import { useContext } from "react";
 import { FavoritosContext } from "../favoritos/FavoritosContext";
 
-const CardProducto = ({ juego }) => {
+
+
+const CardProducto = ({ juego, onAgregar }) => {
   const { agregarAFavoritos, quitarDeFavoritos, favoritos } =
     useContext(FavoritosContext);
 
@@ -11,7 +14,7 @@ const CardProducto = ({ juego }) => {
   return (
     <div className="contenedor-card w-100 h-100">
       <Card className="p-0 rounded-4 overflow-hidden card border-secondary h-100 d-flex flex-column">
-        <Card.Img variant="top" className="img-card" src={juego.imagen} alt={juego.nombreJuego}/>
+        <Card.Img variant="top" className="img-card" src={juego.imagen} alt={juego.nombreJuego} />
 
         <Card.Body className="d-flex flex-column justify-content-between flex-grow-1 h-100">
           <div>
@@ -53,11 +56,14 @@ const CardProducto = ({ juego }) => {
           </div>
           <div className="mt-auto">
             <Card.Text className="text-secondary fw-bold fs-4 mt-2">
-              ${juego.precio}
+              ${juego.precio ? juego.precio.toLocaleString('es-AR') : 'N/A'}
             </Card.Text>
 
             <div className="d-flex justify-content-center">
-              <Button className="rounded-5 fw-bold py-2 btn-card">
+              <Button
+                className="rounded-5 fw-bold py-2 btn-card"
+                onClick={() => onAgregar(juego)}
+              >
                 Comprar <i className="bi bi-cart3 ms-2"></i>
               </Button>
             </div>
@@ -65,7 +71,6 @@ const CardProducto = ({ juego }) => {
         </Card.Body>
       </Card>
     </div>
-
   );
 };
 
