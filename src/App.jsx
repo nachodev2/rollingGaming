@@ -2,7 +2,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router';
 import Inicio from './components/pages/inicio/Inicio.jsx';
 import CarroCompras from './components/pages/carro-compras/CarroCompras.jsx';
-import CarroComprasVacio from './components/pages/carro-compras/CarroComprasVacio.jsx';
+import { CarritoProvider } from './components/pages/carro-compras/CarroComprasContext.jsx';
 import DetalleProducto from './components/pages/producto/DetalleProducto.jsx';
 import Login from './components/pages/login-registro/Login.jsx';
 import Registro from './components/pages/login-registro/Registro.jsx';
@@ -23,19 +23,16 @@ import LayoutConMenuYFooter from './components/layout/LayoutConMenuYFooter.jsx';
 import LayoutSinMenuNiFooter from './components/layout/LayoutSinMenuNiFooter.jsx';
 
 function App() {
-  // Obtener juegos del localStorage al iniciar
-  const juegosLocalStorage =
-    JSON.parse(localStorage.getItem("juegosKey")) || [];
+
+  const juegosLocalStorage = JSON.parse(localStorage.getItem("juegosKey")) || [];
   const [juegos, setJuegos] = useState(juegosLocalStorage);
 
-  // Guardar juegos en localStorage cada vez que cambian
   useEffect(() => {
     localStorage.setItem("juegosKey", JSON.stringify(juegos));
   }, [juegos]);
 
-  // Función para agregar un nuevo juego
   const cargarJuego = (juegoNuevo) => {
-    juegoNuevo.id = uuidv4();
+    juegoNuevo.id = uuidv4(); // Genera un ID único para el nuevo juego
     setJuegos([...juegos, juegoNuevo]);
     return true;
   };
@@ -47,44 +44,71 @@ function App() {
     return true;
   };
 
+  // --- FIN Lógica de juegos ---
+
   return (
     <>
       <FavoritosProvider>
-        <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-            {/* Rutas con Menu y Footer */}
-            <Route element={<LayoutConMenuYFooter />}>
-              <Route path="/" element={<Inicio />} />
-              <Route path="/carro-compras" element={<CarroCompras />} />
-              <Route path="/carro-compras-vacio" element={<CarroComprasVacio />} />
-              <Route path="/detalle-producto" element={<DetalleProducto />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/registro" element={<Registro />} />
-              <Route path="/administrador" element={
-                <Administrador
-                  cargarJuego={cargarJuego}
-                  juegos={juegos}
-                  setJuegos={setJuegos}
-                  borrarProducto={borrarProducto}
+        <CarritoProvider> {/* Nuevo CarritoProvider, envuelve también las rutas */}
+          <BrowserRouter>
+            <ScrollToTop />
+            {/* Si el Menu necesita el conteo del carrito/favoritos,
+                lo obtendrá de los contextos usando useContext() dentro de Menu */}
+            <Menu />
+            <main className="h-100">
+              <Routes>
+                <Route path="/" element={<Inicio />} />
+
+                {/* Las rutas de Tienda y CarroCompras YA NO NECESITAN PROPS para el carrito */}
+                {/* Ahora obtendrán el carrito y sus funciones directamente del CarritoContext */}
+                <Route
+                  path="/carro-compras"
+                  element={<CarroCompras />} // Ya no pasas props del carrito aquí
                 />
-              } />
-              <Route path="/sobre-nosotros" element={<SobreNosotros />} />
-              <Route path="/tienda" element={<Tienda juegos={juegos} />} />
-              <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
-              <Route path="/favoritos" element={<Favoritos />} />
-              <Route path="/fila-card-categorias" element={<FilaCardCategorias />} />
-              <Route path="/formulario-producto" element={<FormularioProducto cargarJuego={cargarJuego} />} />
-            </Route>
+                {/* Se mantiene la eliminación de la ruta directa a CarroComprasVacio */}
 
-            {/* Página de Error 404 sin Menu ni Footer */}
-            <Route element={<LayoutSinMenuNiFooter />}>
-              <Route path="*" element={<Error404 />} />
-            </Route>
+                <Route path="/detalle-producto" element={<DetalleProducto />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/registro" element={<Registro />} />
+                <Route
+                  path="/administrador"
+                  element={
+                    <Administrador
+                      cargarJuego={cargarJuego}
+                      juegos={juegos}
+                      setJuegos={setJuegos}
+                      borrarProducto={borrarProducto}
+                    />
+                  }
+                />
+                <Route path="/sobre-nosotros" element={<SobreNosotros />} />
 
-          </Routes>
-        </BrowserRouter>
-      </FavoritosProvider>
+                {/* La ruta de Tienda solo necesita la lista de 'juegos' (no de carrito) */}
+                {/* La función 'agregarAlCarrito' la obtendrá del CarritoContext */}
+                <Route
+                  path="/tienda"
+                  element={
+                    <Tienda juegos={juegos} /> // Solo pasas los juegos generales de la tienda
+                  }
+                />
+
+                <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
+                <Route path="/favoritos" element={<Favoritos />} />
+                <Route path="*" element={<Error404 />} />
+                <Route
+                  path="/fila-card-categorias"
+                  element={<FilaCardCategorias />}
+                />
+                <Route
+                  path="/formulario-producto"
+                  element={<FormularioProducto cargarJuego={cargarJuego} />}
+                />
+              </Routes>
+            </main>
+            <Footer></Footer>
+          </BrowserRouter>
+        </CarritoProvider> {/* Cierre de CarritoProvider */}
+      </FavoritosProvider> {/* Cierre de FavoritosProvider */}
     </>
   );
 }
