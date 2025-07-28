@@ -1,11 +1,11 @@
-
 import React, { useContext } from "react";
 import { Card, Button } from "react-bootstrap";
 import { FavoritosContext } from "../favoritos/FavoritosContext";
-
-
+import { Link } from "react-router";
+import Estrellas from "./Estrellas";
 
 const CardProducto = ({ juego, onAgregar }) => {
+
   const { agregarAFavoritos, quitarDeFavoritos, favoritos } =
     useContext(FavoritosContext);
 
@@ -13,21 +13,31 @@ const CardProducto = ({ juego, onAgregar }) => {
 
   return (
     <div className="contenedor-card w-100 h-100">
-      <Card className="p-0 rounded-4 overflow-hidden card border-secondary h-100 d-flex flex-column">
-        <Card.Img variant="top" className="img-card" src={juego.imagen} alt={juego.nombreJuego} />
-
+      <Card className="p-0 rounded-4 overflow-hidden border-secondary h-100 d-flex flex-column">
+        <Link
+          to={`/detalle-producto/${juego.id}`}
+          className="text-decoration-none"
+        >
+          <Card.Img
+            variant="top"
+            className="img-card"
+            src={juego.imagen}
+            alt={juego.nombreJuego}
+          />
+        </Link>
         <Card.Body className="d-flex flex-column justify-content-between flex-grow-1 h-100">
           <div>
-            <Card.Title className="titulo-card text-light text-truncate">
-              {juego.nombreJuego}
-            </Card.Title>
+            <Link
+              to={`/detalle-producto/${juego.id}`}
+              className="text-decoration-none"
+            >
+              <Card.Title className="titulo-card text-light text-truncate">
+                {juego.nombreJuego}
+              </Card.Title>
+            </Link>
             <div className="d-flex justify-content-between align-items-center mb-2">
               <Card.Text className="mb-0">
-                <i className="bi bi-star-fill me-1 text-secondary"></i>
-                <i className="bi bi-star-fill me-1 text-secondary"></i>
-                <i className="bi bi-star-fill me-1 text-secondary"></i>
-                <i className="bi bi-star-fill me-1 text-secondary"></i>
-                <i className="bi bi-star-fill me-1 text-secondary"></i>
+                <Estrellas puntuacion={juego.puntuacion} />
               </Card.Text>
 
               <Button
@@ -45,30 +55,32 @@ const CardProducto = ({ juego, onAgregar }) => {
                 }
               >
                 <i
-                  className={`text-secondary bi ${yaEstaEnFavoritos ? "bi-heart-fill" : "bi-heart"
-                    } fs-4 `}
+                  className={`text-secondary bi ${
+                    yaEstaEnFavoritos ? "bi-heart-fill" : "bi-heart"
+                  } fs-4`}
                 ></i>
               </Button>
             </div>
+
             <Card.Text className="descripcion-card">
               {juego.descripcion}
             </Card.Text>
           </div>
+
           <div className="mt-auto">
             <Card.Text className="text-secondary fw-bold fs-4 mt-2">
-              ${juego.precio ? juego.precio.toLocaleString('es-AR') : 'N/A'}
+              ${juego.precio ? juego.precio.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "N/A"}
             </Card.Text>
-
-            <div className="d-flex justify-content-center">
-              <Button
-                className="rounded-5 fw-bold py-2 btn-card"
-                onClick={() => onAgregar(juego)}
-              >
-                Comprar <i className="bi bi-cart3 ms-2"></i>
-              </Button>
-            </div>
           </div>
         </Card.Body>
+        <div className="d-grid gap-2 mb-3">
+          <Button
+            className="btn btn-primary rounded-5 fw-bold py-2 btn-card mx-auto"
+            onClick={() => onAgregar(juego)}
+          >
+            Comprar <i className="bi bi-cart3 ms-2"></i>
+          </Button>
+        </div>
       </Card>
     </div>
   );

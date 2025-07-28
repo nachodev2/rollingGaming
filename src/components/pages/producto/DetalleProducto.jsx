@@ -1,33 +1,52 @@
 import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
 import "./detalleProducto.css"
-const DetalleProducto = () => {
+import { useParams } from "react-router";
+import { useEffect, useState } from "react";
+import ComentariosConRating from "./ComentariosConRating";
+import comentariosDeEjemplo from "../../../data/comentariosDeEjemplo";
+
+const getTwoRandomComentarios = (comentarios) => {
+  const shuffled = [...comentarios].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, 2);
+};
+
+const DetalleProducto = ({ buscarJuego }) => {
+  const { id } = useParams();
+  const [juegoBuscado, setJuegoBuscado] = useState({});
+  const [comentariosFiltrados, setComentariosFiltrados] = useState([]);
+
+  useEffect(() => {
+    const juego = buscarJuego(id);
+    setJuegoBuscado(juego);
+    setComentariosFiltrados(getTwoRandomComentarios(comentariosDeEjemplo));
+  }, [id, buscarJuego]);
+
   return (
     <div>
       <Container>
         <Row>
           <Col sm={8} className="mt-5">
-            <section className="">
-              <h2>Titulo de juego</h2>
+            <section>
+              <h2>{juegoBuscado.nombreJuego}</h2>
               <img
-                src="https://blog.latam.playstation.com/tachyon/sites/3/2024/12/7f1951713450e3a8d5026e39c444fdaf30f3ece2.png?resize=1088%2C612&zoom=0.87"
-                alt=""
+                src={juegoBuscado.imagen}
+                alt={juegoBuscado.nombreJuego}
                 className="detalleImg"
               />
             </section>
           </Col>
           <Col sm={4} className="mt-5">
-            <Card className="detalleJuego ">
+            <Card className="detalleJuego border-1">
               <Card.Body>
-                <Card.Title className="taxtosCard">Descripcion</Card.Title>
-                <Card.Text className="taxtosCard">Aqui va toda la descripcion del juego</Card.Text>
+                <Card.Title className="taxtosCard">Descripción</Card.Title>
+                <Card.Text className="taxtosCard">{juegoBuscado.descripcion}</Card.Text>
               </Card.Body>
               <ListGroup className="list-group-flush ">
-                <ListGroup.Item>Desarrollador</ListGroup.Item>
-                <ListGroup.Item>Precio</ListGroup.Item>
+                <ListGroup.Item><span className="fw-bold me-1">Desarrollado por: </span> {juegoBuscado.desarrollador}</ListGroup.Item>
+                <ListGroup.Item> <span className="fw-bold me-1">Precio: </span>  ${juegoBuscado.precio}</ListGroup.Item>
               </ListGroup>
               <Card.Footer className="d-flex justify-content-star gap-3" >
-                 <ListGroup.Item>Categoria</ListGroup.Item>
-                <ListGroup.Item>Categoria</ListGroup.Item>
+                <ListGroup.Item><span className="fw-bold me-1">Categoría: </span> {juegoBuscado.categoria}</ListGroup.Item>
               </Card.Footer>
             </Card>
           </Col>
@@ -44,41 +63,29 @@ const DetalleProducto = () => {
               <tbody>
                 <tr>
                   <td className="tablaCeldas">Procesador</td>
-                  <td className="tablaCeldas">Intel Core i3 / AMD Ryzen 3</td>
+                  <td className="tablaCeldas">{juegoBuscado.microprocesador}</td>
                 </tr>
                 <tr>
                   <td className="tablaCeldas">Memoria RAM</td>
-                  <td className="tablaCeldas">8 GB</td>
+                  <td className="tablaCeldas">{juegoBuscado.memoriaRam}</td>
                 </tr>
                 <tr>
                   <td className="tablaCeldas">Tarjeta Gráfica</td>
-                  <td className="tablaCeldas">NVIDIA GTX 750 / AMD R7 260</td>
+                  <td className="tablaCeldas">{juegoBuscado.grafica}</td>
                 </tr>
                 <tr>
                   <td className="tablaCeldas">Almacenamiento</td>
-                  <td className="tablaCeldas">50 GB HDD</td>
+                  <td className="tablaCeldas">{juegoBuscado.almacenamiento}</td>
                 </tr>
                 <tr>
                   <td className="tablaCeldas">Sistema Operativo</td>
-                  <td className="tablaCeldas">Windows 10 (64-bit)</td>
+                  <td className="tablaCeldas">{juegoBuscado.sistemaOperativo}</td>
                 </tr>
               </tbody>
             </table>
           </Col>
-          <Col className="mt-5"  xs={12} lg={4}>
-            <h4 className="fs-3 mb-5">Reseñas</h4>
-            <p className="mb-5">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
-              quasi itaque suscipit ipsum. Mollitia nesciunt omnis architecto
-              deserunt accusantium deleniti alias quo quae, iusto numquam, qui
-              voluptates labore ducimus voluptas?
-            </p>
-            <p className="mb-5">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta
-              ipsum odio eum quia, eaque error. Qui explicabo illo repudiandae
-              alias.
-            </p>
-          
+          <Col className="mt-5" xs={12} lg={4}>
+            <ComentariosConRating comentarios={comentariosFiltrados}/>
           </Col>
         </Row>
       </Container>

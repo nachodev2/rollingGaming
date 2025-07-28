@@ -34,6 +34,7 @@ main {
   -webkit-line-clamp: 3;
   line-clamp: 3;
   -webkit-box-orient: vertical;
+  min-height: 4.5em;
 }
 
 
@@ -71,4 +72,8 @@ main {
 .img-card{
   object-fit: cover;
   height: 180px;
+}
+
+.container-btn-volver:hover{
+  background-color: #20265850;
 }
