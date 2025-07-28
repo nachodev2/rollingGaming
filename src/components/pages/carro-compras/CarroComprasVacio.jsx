@@ -1,6 +1,6 @@
 
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import './carroComprasVacio.css'; 
+import './carroCompras.css'; 
 import { Link } from 'react-router';
 import Login from '../login-registro/Login';
 function CarroComprasVacio () {
