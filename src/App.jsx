@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router";
+import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import Inicio from "./components/pages/inicio/Inicio.jsx";
 import CarroCompras from "./components/pages/carro-compras/CarroCompras.jsx";
-import { CarritoProvider } from "./components/pages/carro-compras/CarroComprasContext.jsx";
 import DetalleProducto from "./components/pages/producto/DetalleProducto.jsx";
 import Login from "./components/pages/login-registro/Login.jsx";
 import Registro from "./components/pages/login-registro/Registro.jsx";
@@ -9,20 +10,18 @@ import Administrador from "./components/pages/administrador/Administrador.jsx";
 import Error404 from "./components/pages/error404/Error404.jsx";
 import SobreNosotros from "./components/pages/sobre-nosotros/SobreNosotros.jsx";
 import Tienda from "./components/pages/tienda/Tienda.jsx";
-import FavoritosVacio from "./components/pages/favoritos/FavoritosVacio.jsx";
 import Favoritos from "./components/pages/favoritos/Favoritos.jsx";
-import { FavoritosProvider } from "./components/pages/favoritos/FavoritosContext.jsx";
+import FavoritosVacio from "./components/pages/favoritos/FavoritosVacio.jsx";
 import FilaCardCategorias from "./components/pages/inicio/FilaCardCategorias.jsx";
-import ScrollToTop from "./components/shared/ScrollToTop.jsx";
-import { useEffect, useState } from "react";
 import FormularioProducto from "./components/pages/administrador/FormularioProducto.jsx";
-import { v4 as uuidv4 } from "uuid";
+import ScrollToTop from "./components/shared/ScrollToTop.jsx";
+import { CarritoProvider } from "./components/pages/carro-compras/CarroComprasContext.jsx";
+import { FavoritosProvider } from "./components/pages/favoritos/FavoritosContext.jsx";
 import LayoutConMenuYFooter from "./components/layout/LayoutConMenuYFooter.jsx";
 import LayoutSinMenuNiFooter from "./components/layout/LayoutSinMenuNiFooter.jsx";
 
 function App() {
-  const juegosLocalStorage =
-    JSON.parse(localStorage.getItem("juegosKey")) || [];
+  const juegosLocalStorage = JSON.parse(localStorage.getItem("juegosKey")) || [];
   const [juegos, setJuegos] = useState(juegosLocalStorage);
 
   useEffect(() => {
@@ -40,6 +39,7 @@ function App() {
     return true;
   };
 
+
   const usuarioLogeadoStorage =
     JSON.parse(sessionStorage.getItem("usuarioLogeado")) || false;
   const [usuarioLogeado, setUsuarioLogeado] = useState(usuarioLogeadoStorage);
@@ -50,7 +50,11 @@ function App() {
     usuarioRegistradoLogStorage
   );
 
+  const buscarJuego = (id) => {
+    return juegos.find((juego) => juego.id.toString() === id.toString());
+  };
   return (
+
     <>
       <FavoritosProvider>
         <CarritoProvider>
@@ -69,7 +73,7 @@ function App() {
               >
                 <Route path="/" element={<Inicio />} />
                 <Route path="/carro-compras" element={<CarroCompras />} />
-                <Route path="/detalle-producto" element={<DetalleProducto />} />
+                <Route path="/detalle-producto/:id" element={<DetalleProducto buscarJuego={buscarJuego} />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/registro" element={<Registro />} />
                 <Route
@@ -96,7 +100,6 @@ function App() {
                   element={<FormularioProducto cargarJuego={cargarJuego} />}
                 />
               </Route>
-
               <Route element={<LayoutSinMenuNiFooter />}>
                 <Route path="*" element={<Error404 />} />
               </Route>
