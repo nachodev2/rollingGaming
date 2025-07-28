@@ -22,12 +22,6 @@ const Tienda = ({ juegos }) => {
         <h2 className='text-white text-center mb-5'>Últimas Novedades</h2>
         <FilaProducto juegos={juegos} onAgregar={agregarAlCarrito} />
       </section>
-
-      <section className='py-3 desde-abajo'>
-        <h2 className='text-white text-center mb-5'>Más Vendidos</h2>
-        <FilaProducto juegos={juegos} onAgregar={agregarAlCarrito} />
-      </section>
-
       <section className='py-3 desde-abajo'>
         <h2 className='text-white text-center mb-3'>Todos los Juegos</h2>
         <p className='text-center text-light mb-5 lead'>Nuestra colección completa te espera</p>
