@@ -4,6 +4,8 @@ import { FavoritosContext } from "../favoritos/FavoritosContext";
 import { Link } from "react-router";
 
 const CardProducto = ({ juego, onAgregar }) => {
+  console.log("Desde la card")
+  console.log(juego);
   const { agregarAFavoritos, quitarDeFavoritos, favoritos } =
     useContext(FavoritosContext);
 

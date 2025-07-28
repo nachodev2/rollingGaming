@@ -1,5 +1,5 @@
 
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import './tienda.css';
 import FilaProducto from '../producto/FilaProducto';
 import { CarritoContext } from '../carro-compras/CarroComprasContext';
