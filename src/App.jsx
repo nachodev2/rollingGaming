@@ -80,56 +80,42 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/registro" element={<Registro />} />
                 <Route
-                  path="/administrador"
                   element={
                     <ProtectoRutas
                       usuarioLogeado={usuarioLogeado}
                       usuarioRegistradoLog={usuarioRegistradoLog}
-                    >
-                      <Route
-                        index
-                        element={
-                          <Administrador
-                            cargarJuego={cargarJuego}
-                            juegos={juegos}
-                            setJuegos={setJuegos}
-                            borrarProducto={borrarProducto}
-                          />
-                        }
-                      ></Route>
-
-                      <Route
-                        path="formulario-producto"
-                        element={
-                          <FormularioProducto cargarJuego={cargarJuego} />
-                        }
+                    />
+                  }
+                >
+                  <Route
+                    path="/administrador"
+                    element={
+                      <Administrador
+                        cargarJuego={cargarJuego}
+                        juegos={juegos}
+                        setJuegos={setJuegos}
+                        borrarProducto={borrarProducto}
                       />
-                    </ProtectoRutas>
-                  }
-                />
-                <Route path="/favoritos-vacio" element={<ProtectoRutas
-                      usuarioLogeado={usuarioLogeado}
-                      usuarioRegistradoLog={usuarioRegistradoLog}
-                    >
-                    <FavoritosVacio />
-                    </ProtectoRutas>} />
-                <Route path="/favoritos" element={<ProtectoRutas
-                      usuarioLogeado={usuarioLogeado}
-                      usuarioRegistradoLog={usuarioRegistradoLog}
-                    >
-                    <Favoritos />
-                    </ProtectoRutas>} />
+                    }
+                  />
+                  <Route
+                    path="/formulario-producto"
+                    element={<FormularioProducto cargarJuego={cargarJuego} />}
+                  />
+                </Route>
                 <Route
-                  path="/carro-compras"
                   element={
                     <ProtectoRutas
                       usuarioLogeado={usuarioLogeado}
                       usuarioRegistradoLog={usuarioRegistradoLog}
-                    >
-                      <CarroCompras/>
-                    </ProtectoRutas>
+                    />
                   }
-                />
+                >
+                  <Route path="/favoritos" element={<Favoritos />} />
+                  <Route path="/carro-compras" element={<CarroCompras />} />
+                  <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
+                </Route>
+
                 <Route path="/sobre-nosotros" element={<SobreNosotros />} />
                 <Route path="/tienda" element={<Tienda juegos={juegos} />} />
                 <Route

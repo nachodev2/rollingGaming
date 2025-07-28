@@ -1,12 +1,10 @@
 import { Navigate, Outlet } from "react-router";
 
-const ProtectoRutas = ({ usuarioLogeado, usuarioRegistradoLog}) => {
-  if (!usuarioLogeado ) {
-    return <Navigate to={"/"}></Navigate>;
-  } if(!usuarioRegistradoLog){
-    return <Navigate to={"/"}></Navigate>;
+const ProtectoRutas = ({ usuarioLogeado, usuarioRegistradoLog }) => {
+  if (!usuarioLogeado && !usuarioRegistradoLog) {
+    return <Navigate to="/" />;
   }
-  return <Outlet></Outlet>;
+  return <Outlet />;
 };
 
 export default ProtectoRutas;
