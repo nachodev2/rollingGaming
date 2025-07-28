@@ -1,30 +1,28 @@
-
-import { BrowserRouter, Routes, Route } from 'react-router';
-import Inicio from './components/pages/inicio/Inicio.jsx';
-import CarroCompras from './components/pages/carro-compras/CarroCompras.jsx';
-import { CarritoProvider } from './components/pages/carro-compras/CarroComprasContext.jsx';
-import DetalleProducto from './components/pages/producto/DetalleProducto.jsx';
-import Login from './components/pages/login-registro/Login.jsx';
-import Registro from './components/pages/login-registro/Registro.jsx';
-import Administrador from './components/pages/administrador/Administrador.jsx';
-import Error404 from './components/pages/error404/Error404.jsx';
-import Menu from './components/shared/Menu.jsx';
-import SobreNosotros from './components/pages/sobre-nosotros/SobreNosotros.jsx';
-import Footer from './components/shared/Footer.jsx';
-import Tienda from './components/pages/tienda/Tienda.jsx';
-import FavoritosVacio from './components/pages/favoritos/FavoritosVacio.jsx';
-import Favoritos from './components/pages/favoritos/Favoritos.jsx';
-import { FavoritosProvider } from './components/pages/favoritos/FavoritosContext.jsx'; 
-import FilaCardCategorias from './components/pages/inicio/FilaCardCategorias.jsx';
-import ScrollToTop from './components/shared/ScrollToTop.jsx';
+import { BrowserRouter, Routes, Route } from "react-router";
+import Inicio from "./components/pages/inicio/Inicio.jsx";
+import CarroCompras from "./components/pages/carro-compras/CarroCompras.jsx";
+import { CarritoProvider } from "./components/pages/carro-compras/CarroComprasContext.jsx";
+import DetalleProducto from "./components/pages/producto/DetalleProducto.jsx";
+import Login from "./components/pages/login-registro/Login.jsx";
+import Registro from "./components/pages/login-registro/Registro.jsx";
+import Administrador from "./components/pages/administrador/Administrador.jsx";
+import Error404 from "./components/pages/error404/Error404.jsx";
+import Menu from "./components/shared/Menu.jsx";
+import SobreNosotros from "./components/pages/sobre-nosotros/SobreNosotros.jsx";
+import Footer from "./components/shared/Footer.jsx";
+import Tienda from "./components/pages/tienda/Tienda.jsx";
+import FavoritosVacio from "./components/pages/favoritos/FavoritosVacio.jsx";
+import Favoritos from "./components/pages/favoritos/Favoritos.jsx";
+import { FavoritosProvider } from "./components/pages/favoritos/FavoritosContext.jsx";
+import FilaCardCategorias from "./components/pages/inicio/FilaCardCategorias.jsx";
+import ScrollToTop from "./components/shared/ScrollToTop.jsx";
 import { useEffect, useState } from "react";
-import FormularioProducto from './components/pages/administrador/FormularioProducto.jsx';
+import FormularioProducto from "./components/pages/administrador/FormularioProducto.jsx";
 import { v4 as uuidv4 } from "uuid";
-import { set } from 'react-hook-form';
 
 function App() {
-
-  const juegosLocalStorage = JSON.parse(localStorage.getItem("juegosKey")) || [];
+  const juegosLocalStorage =
+    JSON.parse(localStorage.getItem("juegosKey")) || [];
   const [juegos, setJuegos] = useState(juegosLocalStorage);
 
   useEffect(() => {
@@ -32,7 +30,7 @@ function App() {
   }, [juegos]);
 
   const cargarJuego = (juegoNuevo) => {
-    juegoNuevo.id = uuidv4(); // Genera un ID único para el nuevo juego
+    juegoNuevo.id = uuidv4();
     setJuegos([...juegos, juegoNuevo]);
     return true;
   };
@@ -43,29 +41,17 @@ function App() {
     return true;
   };
 
-  // --- FIN Lógica de juegos ---
-
   return (
     <>
       <FavoritosProvider>
-        <CarritoProvider> {/* Nuevo CarritoProvider, envuelve también las rutas */}
+        <CarritoProvider>
           <BrowserRouter>
             <ScrollToTop />
-            {/* Si el Menu necesita el conteo del carrito/favoritos,
-                lo obtendrá de los contextos usando useContext() dentro de Menu */}
             <Menu />
             <main className="h-100">
               <Routes>
                 <Route path="/" element={<Inicio />} />
-
-                {/* Las rutas de Tienda y CarroCompras YA NO NECESITAN PROPS para el carrito */}
-                {/* Ahora obtendrán el carrito y sus funciones directamente del CarritoContext */}
-                <Route
-                  path="/carro-compras"
-                  element={<CarroCompras />} // Ya no pasas props del carrito aquí
-                />
-                {/* Se mantiene la eliminación de la ruta directa a CarroComprasVacio */}
-
+                <Route path="/carro-compras" element={<CarroCompras />} />
                 <Route path="/detalle-producto" element={<DetalleProducto />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/registro" element={<Registro />} />
@@ -81,15 +67,7 @@ function App() {
                   }
                 />
                 <Route path="/sobre-nosotros" element={<SobreNosotros />} />
-
-                {/* La ruta de Tienda solo necesita la lista de 'juegos' (no de carrito) */}
-                {/* La función 'agregarAlCarrito' la obtendrá del CarritoContext */}
-                <Route
-                  path="/tienda"
-                  element={
-                    <Tienda juegos={juegos} /> // Solo pasas los juegos generales de la tienda
-                  }
-                />
+                <Route path="/tienda" element={<Tienda juegos={juegos} />} />
 
                 <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
                 <Route path="/favoritos" element={<Favoritos />} />
@@ -106,8 +84,8 @@ function App() {
             </main>
             <Footer></Footer>
           </BrowserRouter>
-        </CarritoProvider> {/* Cierre de CarritoProvider */}
-      </FavoritosProvider> {/* Cierre de FavoritosProvider */}
+        </CarritoProvider>{" "}
+      </FavoritosProvider>{" "}
     </>
   );
 }
