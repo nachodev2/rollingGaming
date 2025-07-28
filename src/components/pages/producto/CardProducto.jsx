@@ -5,8 +5,7 @@ import { Link } from "react-router";
 import Estrellas from "./Estrellas";
 
 const CardProducto = ({ juego, onAgregar }) => {
-  console.log("Desde la card");
-  console.log(juego);
+  
   const { agregarAFavoritos, quitarDeFavoritos, favoritos } =
     useContext(FavoritosContext);
 
