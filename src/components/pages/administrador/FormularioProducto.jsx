@@ -238,7 +238,7 @@ const FormularioProducto = ({cargarJuego}) => {
           </Form.Group>
           <Form.Group as={Col} className="mb-3" controlId="grafica">
             <Form.Label>Gráfica</Form.Label>
-            <Form.Control type="text" required placeholder="Ej: NVIDIA GTX 750"minLength={2}
+            <Form.Control type="text" required placeholder="Ej: NVIDIA GTX 750" minLength={2}
               maxLength={20}
               {...register("grafica", {
                 required: "La tarjeta gráfica es un dato obligatorio",

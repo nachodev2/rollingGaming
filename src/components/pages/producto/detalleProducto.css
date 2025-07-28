@@ -21,4 +21,16 @@
 .detalleJuego{
   /*width: 100%;*/
   height: 100% !important;
-  }
+}
+
+.card {
+  transition: none !important;
+  box-shadow: none !important;
+}
+
+.card:hover {
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+
