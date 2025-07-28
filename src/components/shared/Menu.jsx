@@ -55,9 +55,19 @@ const Menu = ({
                 Sobre Nosotros
               </Nav.Link>
               {usuarioRegistradoLog ? (
-                <Nav.Link as={Link} to="/favoritos" className="textNavFooter">
-                  Favoritos
-                </Nav.Link>
+                <>
+                  <Nav.Link as={Link} to="/favoritos" className="textNavFooter">
+                    Favoritos
+                  </Nav.Link>
+                     <Button
+                  className="textNavFooter textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3 px-4"
+                  as={Link}
+                  to="/carro-compras"
+                  
+                >
+                  <i className="bi bi-cart4"></i>
+                </Button>
+                </>
               ) : null}
               {usuarioLogeado ? (
                 <>
