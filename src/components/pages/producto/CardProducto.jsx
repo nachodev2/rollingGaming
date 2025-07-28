@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 import { Card, Button } from "react-bootstrap";
 import { FavoritosContext } from "../favoritos/FavoritosContext";
 import { Link } from "react-router";
+import Estrellas from "./Estrellas";
 
 const CardProducto = ({ juego, onAgregar }) => {
-  console.log("Desde la card")
+  console.log("Desde la card");
   console.log(juego);
   const { agregarAFavoritos, quitarDeFavoritos, favoritos } =
     useContext(FavoritosContext);
@@ -37,11 +38,7 @@ const CardProducto = ({ juego, onAgregar }) => {
             </Link>
             <div className="d-flex justify-content-between align-items-center mb-2">
               <Card.Text className="mb-0">
-                <i className="bi bi-star-fill me-1 text-secondary"></i>
-                <i className="bi bi-star-fill me-1 text-secondary"></i>
-                <i className="bi bi-star-fill me-1 text-secondary"></i>
-                <i className="bi bi-star-fill me-1 text-secondary"></i>
-                <i className="bi bi-star-fill me-1 text-secondary"></i>
+                <Estrellas puntuacion={juego.puntuacion} />
               </Card.Text>
 
               <Button
