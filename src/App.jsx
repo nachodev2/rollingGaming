@@ -19,9 +19,11 @@ import { CarritoProvider } from "./components/pages/carro-compras/CarroComprasCo
 import { FavoritosProvider } from "./components/pages/favoritos/FavoritosContext.jsx";
 import LayoutConMenuYFooter from "./components/layout/LayoutConMenuYFooter.jsx";
 import LayoutSinMenuNiFooter from "./components/layout/LayoutSinMenuNiFooter.jsx";
+import ProtectoRutas from "./components/routes/ProtectoRutas.jsx";
 
 function App() {
-  const juegosLocalStorage = JSON.parse(localStorage.getItem("juegosKey")) || [];
+  const juegosLocalStorage =
+    JSON.parse(localStorage.getItem("juegosKey")) || [];
   const [juegos, setJuegos] = useState(juegosLocalStorage);
 
   useEffect(() => {
@@ -39,7 +41,6 @@ function App() {
     return true;
   };
 
-
   const usuarioLogeadoStorage =
     JSON.parse(sessionStorage.getItem("usuarioLogeado")) || false;
   const [usuarioLogeado, setUsuarioLogeado] = useState(usuarioLogeadoStorage);
@@ -54,7 +55,6 @@ function App() {
     return juegos.find((juego) => juego.id.toString() === id.toString());
   };
   return (
-
     <>
       <FavoritosProvider>
         <CarritoProvider>
@@ -72,32 +72,69 @@ function App() {
                 }
               >
                 <Route path="/" element={<Inicio />} />
-                <Route path="/carro-compras" element={<CarroCompras />} />
-                <Route path="/detalle-producto/:id" element={<DetalleProducto buscarJuego={buscarJuego} />} />
+
+                <Route
+                  path="/detalle-producto/:id"
+                  element={<DetalleProducto buscarJuego={buscarJuego} />}
+                />
                 <Route path="/login" element={<Login />} />
                 <Route path="/registro" element={<Registro />} />
                 <Route
                   path="/administrador"
                   element={
-                    <Administrador
-                      cargarJuego={cargarJuego}
-                      juegos={juegos}
-                      setJuegos={setJuegos}
-                      borrarProducto={borrarProducto}
-                    />
+                    <ProtectoRutas
+                      usuarioLogeado={usuarioLogeado}
+                      usuarioRegistradoLog={usuarioRegistradoLog}
+                    >
+                      <Route
+                        index
+                        element={
+                          <Administrador
+                            cargarJuego={cargarJuego}
+                            juegos={juegos}
+                            setJuegos={setJuegos}
+                            borrarProducto={borrarProducto}
+                          />
+                        }
+                      ></Route>
+
+                      <Route
+                        path="formulario-producto"
+                        element={
+                          <FormularioProducto cargarJuego={cargarJuego} />
+                        }
+                      />
+                    </ProtectoRutas>
+                  }
+                />
+                <Route path="/favoritos-vacio" element={<ProtectoRutas
+                      usuarioLogeado={usuarioLogeado}
+                      usuarioRegistradoLog={usuarioRegistradoLog}
+                    >
+                    <FavoritosVacio />
+                    </ProtectoRutas>} />
+                <Route path="/favoritos" element={<ProtectoRutas
+                      usuarioLogeado={usuarioLogeado}
+                      usuarioRegistradoLog={usuarioRegistradoLog}
+                    >
+                    <Favoritos />
+                    </ProtectoRutas>} />
+                <Route
+                  path="/carro-compras"
+                  element={
+                    <ProtectoRutas
+                      usuarioLogeado={usuarioLogeado}
+                      usuarioRegistradoLog={usuarioRegistradoLog}
+                    >
+                      <CarroCompras/>
+                    </ProtectoRutas>
                   }
                 />
                 <Route path="/sobre-nosotros" element={<SobreNosotros />} />
                 <Route path="/tienda" element={<Tienda juegos={juegos} />} />
-                <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
-                <Route path="/favoritos" element={<Favoritos />} />
                 <Route
                   path="/fila-card-categorias"
                   element={<FilaCardCategorias />}
-                />
-                <Route
-                  path="/formulario-producto"
-                  element={<FormularioProducto cargarJuego={cargarJuego} />}
                 />
               </Route>
               <Route element={<LayoutSinMenuNiFooter />}>
