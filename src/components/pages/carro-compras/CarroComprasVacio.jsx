@@ -10,11 +10,10 @@ function CarroComprasVacio () {
             <Col>
                 <img src="/empty_cart.png" alt="Carro de Compras Vacío" id='cart-svg' className='mb-4 cart-svg' />
                 <h2 className="mb-3 text-center">¡Tu carro de compras está vacío!</h2>
-                <p className='mb-4'>¡Agrega productos! O iniciá sesión para comprobar si hay algo.</p>
+                <p className='mb-4'>¡Agrega productos!</p>
                 <Link to="/tienda">
                 <Button variant="primary" className='textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3'>Ir a la tienda</Button>
                 </Link>
-                <Login></Login>
             </Col>
         </Row>
     </Container>

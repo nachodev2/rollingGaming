@@ -21,7 +21,7 @@ const CarroCompras = () => {
   const ivaIncluido = calcularTotal() - subtotalSinImpuestos;
 
   return (
-    <Container className="my-5"> 
+    <Container className="my-5 py-5"> 
       <Row>
 
         <Col xs={12} lg={8}>
