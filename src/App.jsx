@@ -26,8 +26,14 @@ function App() {
     JSON.parse(localStorage.getItem("juegosKey")) || [];
   const [juegos, setJuegos] = useState(juegosLocalStorage);
 
+  
+    const usuariosLocalStorage =
+    JSON.parse(localStorage.getItem("usuariosKey")) || [];
+  const [usuarios, setUsuarios] = useState(usuariosLocalStorage);
+
   useEffect(() => {
     localStorage.setItem("juegosKey", JSON.stringify(juegos));
+    localStorage.setItem("usuariosKey", JSON.stringify(usuarios));
   }, [juegos]);
 
   const cargarJuego = (juegoNuevo) => {
@@ -42,21 +48,11 @@ function App() {
     return true;
   };
 
-    const usuariosLocalStorage =
-    JSON.parse(localStorage.getItem("usuariosKey")) || [];
-  const [usuarios, setUsuarios] = useState(usuariosLocalStorage);
-
-  useEffect(() => {
-    localStorage.setItem("usuariosKey", JSON.stringify(usuarios));
-  }, [usuarios]);
-
-
-  
-
   const cargarUsuarios = (usuarioNuevo)=> {
     setUsuarios([...usuarios, usuarioNuevo])
     return true;
   }
+  
   return (
     <>
       <FavoritosProvider>
