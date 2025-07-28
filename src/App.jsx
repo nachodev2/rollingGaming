@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route } from "react-router";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
@@ -20,6 +21,9 @@ import FormularioProducto from "./components/pages/administrador/FormularioProdu
 import ScrollToTop from "./components/shared/ScrollToTop.jsx";
 import { CarritoProvider } from "./components/pages/carro-compras/CarroComprasContext.jsx";
 import { FavoritosProvider } from "./components/pages/favoritos/FavoritosContext.jsx";
+import { v4 as uuidv4 } from "uuid";
+import LayoutConMenuYFooter from "./components/layout/LayoutConMenuYFooter.jsx";
+import LayoutSinMenuNiFooter from "./components/layout/LayoutSinMenuNiFooter.jsx";
 
 function App() {
   const juegosLocalStorage = JSON.parse(localStorage.getItem("juegosKey")) || [];
@@ -80,7 +84,7 @@ function App() {
         </BrowserRouter>
       </CarritoProvider>
     </FavoritosProvider>
-  );
+  )
 }
 
 export default App;
