@@ -89,6 +89,7 @@ const Menu = ({
                   <Login
                     setUsuarioLogeado={setUsuarioLogeado}
                     setUsuarioRegistradoLog={setUsuarioRegistradoLog}
+                    usuarioRegistradoLog={usuarioRegistradoLog}
                   />
                   <Link to="/registro">
                     <Button className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3">
