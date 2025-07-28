@@ -4,7 +4,7 @@ import { Table, Button } from "react-bootstrap";
 import usuariosPrueba from "../../../data/usuariosPrueba";
 
 let cargar = true;
-const TablaUsuarios = ({usuarios, setUsuarios}) => {
+const TablaUsuarios = ({usuarios, setUsuarios, borrarUsuario}) => {
   const cargarUsuariosPrueba = () => {
     if (cargar) {
       setUsuarios(usuariosPrueba);
@@ -43,6 +43,7 @@ const TablaUsuarios = ({usuarios, setUsuarios}) => {
               usuario={usuario}
               setUsuarios={setUsuarios}
               fila={index+1}
+              borrarUsuario={borrarUsuario}
             ></FilaUsuariosTabla>
           ))}
         </tbody>

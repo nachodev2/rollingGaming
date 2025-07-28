@@ -51,6 +51,11 @@ function App() {
     return true;
   };
 
+  const borrarUsuario = (idUsuario) => {
+    const usuariosFiltrados = usuarios.filter((usuario) => usuario.id !== idUsuario);
+    setUsuarios(usuariosFiltrados);
+    return true;}
+
   const cargarUsuarios = (usuarioNuevo)=> {
     setUsuarios([...usuarios, usuarioNuevo])
     return true;
@@ -107,6 +112,7 @@ function App() {
                       cargarUsuarios={cargarUsuarios}
                       usuarios={usuarios}
                       setUsuarios={setUsuarios}
+                      borrarUsuario={borrarUsuario}
                     />
                   }
                 />

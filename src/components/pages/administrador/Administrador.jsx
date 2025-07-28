@@ -11,26 +11,13 @@ const Administrador = ({
   cargarUsuarios,
   usuarios,
   setUsuarios,
+  borrarUsuario
 }) => {
   const [mostrarTablaJuegos, setMostrarTablaJuegos] = useState(true);
 
   const handleToggleChange = () => {
     setMostrarTablaJuegos(!mostrarTablaJuegos);
   };
-
-  // setUsuarios([{
-  //   id: 11, // Added ID
-  //   usuario: "AlessandraBL", // Username derived from name
-  //   nombre: "Alessandra Borges Licciardi",
-  //   fechaNacimiento: {
-  //     año: 1992,
-  //     mes: 3, // March
-  //     dia: 10,
-  //   },
-  //   correoElectronico: "alessandra.bl@example.com",
-  //   contrasena: "AlesPwd!123",
-  //   repetirContrasena: "AlesPwd!123",
-  // }])
 
   return (
     <Container>
@@ -90,7 +77,7 @@ const Administrador = ({
       
         setUsuarios={setUsuarios}
         usuarios={usuarios}
-
+        borrarUsuario={borrarUsuario}
         
         />
       )}
