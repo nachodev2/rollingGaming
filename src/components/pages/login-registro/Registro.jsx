@@ -1,24 +1,45 @@
 import { Form, Row, Col, Button, Container } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router";
 
 const Registro = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const password = watch("password") || "";
+  ;
+  const navegacion  = useNavigate()
+  const handleRegistro = (datos) => {
+  sessionStorage.setItem("usuarioRegistrado", JSON.stringify(datos));
+  navegacion ("/");
+};
   return (
     <Container className="my-5 px-4 border border-1 rounded-4 border-secondary">
       <h2 className="text-center my-4">Crear una Cuenta</h2>
-      <Form>
+      <Form onSubmit={handleSubmit(handleRegistro)}>
         <Row className="mb-3">
           <Form.Group as={Col} md="6" controlId="formUsuario">
             <Form.Label>Usuario</Form.Label>
             <Form.Control
               type="text"
               placeholder="Elige un nombre de usuario"
-              required
-              minLength={5}
-              maxLength={15}
+              {...register("usuario", {
+                required: "El nombre de usuario es obligatorio",
+                minLength: {
+                  value: 5,
+                  message: "El nombre de usuario debe tener al menos 5 caracteres",
+                },
+                maxLength: {
+                  value: 30,
+                  message: "El nombre de usuario no puede exceder los 30 caracteres",
+                },
+              })}
             />
             <Form.Text id="formTextUsuario" className="text-danger">
-              Your password must be 8-20 characters long, contain letters and
-              numbers, and must not contain spaces, special characters, or
-              emoji.
+              {errors.usuario?.message}
             </Form.Text>
           </Form.Group>
 
@@ -27,14 +48,20 @@ const Registro = () => {
             <Form.Control
               type="text"
               placeholder="Ingresa tu nombre"
-              required
-              minLength={5}
-              maxLength={25}
+              {...register("nombre", {
+                required: "El nombre es obligatorio",
+                minLength: {
+                  value: 2,
+                  message: "El nombre debe tener al menos 2 caracteres",
+                },
+                maxLength: {
+                  value: 50,
+                  message: "El nombre no puede exceder los 50 caracteres",
+                },
+              })}
             />
             <Form.Text id="formTextNombre" className="text-danger">
-              Your password must be 8-20 characters long, contain letters and
-              numbers, and must not contain spaces, special characters, or
-              emoji.
+              {errors.nombre?.message}
             </Form.Text>
           </Form.Group>
         </Row>
@@ -164,35 +191,48 @@ const Registro = () => {
           </Form.Group>
         </Row>
 
-        <Form.Group className="mb-3" controlId="formCorreo">
+        <Form.Group className="mb-3" controlId="formemail">
           <Form.Label>Correo Electrónico</Form.Label>
           <Form.Control
             type="email"
             placeholder="correo@rollinggaming.com"
-            required
-            minLength={5}
-            maxLength={25}
+            {...register("email", {
+              required: "El correo electrónico es obligatorio",
+              pattern: {
+                value: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+                message: "Formato de correo electrónico inválido",
+              },
+            })}
           />
           <Form.Text id="formTextCorreo" className="text-danger">
-            Your password must be 8-20 characters long, contain letters and
-            numbers, and must not contain spaces, special characters, or emoji.
+            {errors.email?.message}
           </Form.Text>
         </Form.Group>
 
         <Row className="mb-3">
-          <Form.Group as={Col} md="6" controlId="formContrasenia" >
+          <Form.Group as={Col} md="6" controlId="formpassword">
             <Form.Label>Contraseña</Form.Label>
             <Form.Control
               type="password"
               placeholder="Crea una contraseña"
-              required
-              minLength={5}
-              maxLength={25}
+              {...register("password", {
+              required: "La Contraseña es obligatorio",
+              pattern: {
+                value: /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/,
+                message: "La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula, al menos una mayúscula y al menos un caracter no alfanumérico",
+                minLength: {
+                  value: 8,
+                  message: "La contraseña debe tener al menos 8 caracteres",
+                },
+                maxLength: {
+                  value: 30,
+                  message: "La contraseña no debe tener más de 30 caracteres",
+                },
+              },
+            })}
             />
             <Form.Text id="formTextContrasenia" className="text-danger">
-              Your password must be 8-20 characters long, contain letters and
-              numbers, and must not contain spaces, special characters, or
-              emoji.
+              {errors.password?.message}
             </Form.Text>
           </Form.Group>
 
@@ -201,20 +241,20 @@ const Registro = () => {
             <Form.Control
               type="password"
               placeholder="Confirma la contraseña"
-              required
-              minLength={5}
-              maxLength={25}
+              {...register("confirmarContrasenia", {
+                required: "Debes repetir exactamente la misma contraseña",
+                validate: (value) =>
+                  value === password || "Las contraseñas no coinciden",
+              })}
             />
             <Form.Text id="formTextRepetirContrasenia" className="text-danger">
-              Your password must be 8-20 characters long, contain letters and
-              numbers, and must not contain spaces, special characters, or
-              emoji.
+              {errors.confirmarContrasenia?.message}
             </Form.Text>
           </Form.Group>
         </Row>
 
         <div className="d-grid my-4 ">
-          <Button variant="primary" type="submit" size="lg" >
+          <Button variant="primary" type="submit" size="lg">
             Registrarse
           </Button>
         </div>

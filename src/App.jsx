@@ -39,25 +39,44 @@ function App() {
     setJuegos([...juegos, juegoConIdYPunt]);
     return true;
   };
-
   const borrarProducto = (idJuego) => {
     const juegosFiltrados = juegos.filter((juego) => juego.id !== idJuego);
     setJuegos(juegosFiltrados);
     return true;
   };
 
+
+  const usuarioLogeadoStorage =
+    JSON.parse(sessionStorage.getItem("usuarioLogeado")) || false;
+  const [usuarioLogeado, setUsuarioLogeado] = useState(usuarioLogeadoStorage);
+
+  const usuarioRegistradoLogStorage =
+    sessionStorage.getItem("usuarioRegistradoLog") === "true";
+  const [usuarioRegistradoLog, setUsuarioRegistradoLog] = useState(
+    usuarioRegistradoLogStorage
+  );
+
   const buscarJuego = (id) => {
     return juegos.find((juego) => juego.id.toString() === id.toString());
   };
-
   return (
+
     <>
       <FavoritosProvider>
         <CarritoProvider>
           <BrowserRouter>
             <ScrollToTop />
             <Routes>
-              <Route element={<LayoutConMenuYFooter />}>
+              <Route
+                element={
+                  <LayoutConMenuYFooter
+                    setUsuarioLogeado={setUsuarioLogeado}
+                    usuarioLogeado={usuarioLogeado}
+                    setUsuarioRegistradoLog={setUsuarioRegistradoLog}
+                    usuarioRegistradoLog={usuarioRegistradoLog}
+                  />
+                }
+              >
                 <Route path="/" element={<Inicio />} />
                 <Route path="/carro-compras" element={<CarroCompras />} />
                 <Route
