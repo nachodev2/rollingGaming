@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route } from "react-router";
 import Inicio from "./components/pages/inicio/Inicio.jsx";
 import CarroCompras from "./components/pages/carro-compras/CarroCompras.jsx";
@@ -7,9 +8,7 @@ import Login from "./components/pages/login-registro/Login.jsx";
 import Registro from "./components/pages/login-registro/Registro.jsx";
 import Administrador from "./components/pages/administrador/Administrador.jsx";
 import Error404 from "./components/pages/error404/Error404.jsx";
-import Menu from "./components/shared/Menu.jsx";
 import SobreNosotros from "./components/pages/sobre-nosotros/SobreNosotros.jsx";
-import Footer from "./components/shared/Footer.jsx";
 import Tienda from "./components/pages/tienda/Tienda.jsx";
 import FavoritosVacio from "./components/pages/favoritos/FavoritosVacio.jsx";
 import Favoritos from "./components/pages/favoritos/Favoritos.jsx";
@@ -19,6 +18,8 @@ import ScrollToTop from "./components/shared/ScrollToTop.jsx";
 import { useEffect, useState } from "react";
 import FormularioProducto from "./components/pages/administrador/FormularioProducto.jsx";
 import { v4 as uuidv4 } from "uuid";
+import LayoutConMenuYFooter from "./components/layout/LayoutConMenuYFooter.jsx";
+import LayoutSinMenuNiFooter from "./components/layout/LayoutSinMenuNiFooter.jsx";
 
 function App() {
   const juegosLocalStorage =
@@ -35,7 +36,6 @@ function App() {
     return true;
   };
 
-  // Función para eliminar un juego
   const borrarProducto = (idJuego) => {
     const juegosFiltrados = juegos.filter((juego) => juego.id !== idJuego);
     setJuegos(juegosFiltrados);
@@ -48,9 +48,8 @@ function App() {
         <CarritoProvider>
           <BrowserRouter>
             <ScrollToTop />
-            <Menu />
-            <main className="h-100">
-              <Routes>
+            <Routes>
+              <Route element={<LayoutConMenuYFooter />}>
                 <Route path="/" element={<Inicio />} />
                 <Route path="/carro-compras" element={<CarroCompras />} />
                 <Route path="/detalle-producto" element={<DetalleProducto />} />
@@ -69,24 +68,22 @@ function App() {
                 />
                 <Route path="/sobre-nosotros" element={<SobreNosotros />} />
                 <Route path="/tienda" element={<Tienda juegos={juegos} />} />
-
                 <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
                 <Route path="/favoritos" element={<Favoritos />} />
-                <Route path="*" element={<Error404 />} />
-                <Route
-                  path="/fila-card-categorias"
-                  element={<FilaCardCategorias />}
-                />
+                <Route path="/fila-card-categorias" element={<FilaCardCategorias />} />
                 <Route
                   path="/formulario-producto"
                   element={<FormularioProducto cargarJuego={cargarJuego} />}
                 />
-              </Routes>
-            </main>
-            <Footer></Footer>
+              </Route>
+
+              <Route element={<LayoutSinMenuNiFooter />}>
+                <Route path="*" element={<Error404 />} />
+              </Route>
+            </Routes>
           </BrowserRouter>
-        </CarritoProvider>{" "}
-      </FavoritosProvider>{" "}
+        </CarritoProvider>
+      </FavoritosProvider>
     </>
   );
 }
