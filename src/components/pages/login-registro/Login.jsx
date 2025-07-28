@@ -6,7 +6,7 @@ import { Image } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 
-function Login({ setUsuarioLogeado }){
+function Login({ setUsuarioLogeado,setUsuarioRegistradoLog}){
   const {
     register,
     handleSubmit,
@@ -14,6 +14,18 @@ function Login({ setUsuarioLogeado }){
   } = useForm();
   
   const usuarioLogeado = (usuario) => {
+     const usuarioRegistrado = JSON.parse(sessionStorage.getItem("usuarioRegistrado"));
+        if (
+      usuarioRegistrado &&
+      usuario.email === usuarioRegistrado.email &&
+      usuario.password === usuarioRegistrado.password
+    ) {
+      setUsuarioRegistradoLog(true);
+      sessionStorage.setItem("usuarioRegistradoLog", true);
+      navigate("/");
+      handleClose();
+      return;
+    }
     if (
       usuario.email === import.meta.env.VITE_API_EMAIL &&
       usuario.password === import.meta.env.VITE_API_CONTRASENIA
@@ -25,7 +37,10 @@ function Login({ setUsuarioLogeado }){
     } else {
       console.log("Error en las credenciales");
     }
+   
   };
+  
+
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
   const handleClose = () => setShow(false);

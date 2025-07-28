@@ -2,13 +2,21 @@ import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router";
 import "./navFooter.css";
 import Login from "../pages/login-registro/Login";
-
-const Menu = ({ setUsuarioLogeado, usuarioLogeado }) => {
-const cerrarSesion = () => {
-  setUsuarioLogeado(false);
-  sessionStorage.removeItem("usuarioLogeado");
-  navigate("/");
-}
+import { useNavigate } from "react-router";
+const Menu = ({
+  setUsuarioLogeado,
+  usuarioLogeado,
+  usuarioRegistradoLog,
+  setUsuarioRegistradoLog,
+}) => {
+  const navigate = useNavigate();
+  const cerrarSesion = () => {
+    setUsuarioLogeado(false);
+    sessionStorage.removeItem("usuarioLogeado");
+    setUsuarioRegistradoLog(false);
+    sessionStorage.removeItem("usuarioRegistradoLog");
+    navigate("/");
+  };
 
   return (
     <div>
@@ -46,20 +54,37 @@ const cerrarSesion = () => {
               >
                 Sobre Nosotros
               </Nav.Link>
-              {
-                usuarioLogeado ? (<> <Nav.Link as={Link} to="/administrador" className="textNavFooter">Administrador</Nav.Link> </>) : null
-              }
+              {usuarioRegistradoLog ? (
+                <Nav.Link as={Link} to="/favoritos" className="textNavFooter">
+                  Favoritos
+                </Nav.Link>
+              ) : null}
+              {usuarioLogeado ? (
+                <Nav.Link
+                  as={Link}
+                  to="/administrador"
+                  className="textNavFooter"
+                >
+                  Administrador
+                </Nav.Link>
+              ) : null}
             </Nav>
             <Nav className="ms-auto d-flex flex-row align-items-center margenT">
-              {usuarioLogeado ? (
-                <>
-                  <Button className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3" as={Link} to="/" onClick={cerrarSesion}>
-                    Cerrar sesion
-                  </Button>
-                </>
+              {usuarioLogeado || usuarioRegistradoLog ? (
+                <Button
+                  className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3"
+                  as={Link}
+                  to="/"
+                  onClick={cerrarSesion}
+                >
+                  Cerrar sesión
+                </Button>
               ) : (
                 <>
-                  <Login setUsuarioLogeado={setUsuarioLogeado} />
+                  <Login
+                    setUsuarioLogeado={setUsuarioLogeado}
+                    setUsuarioRegistradoLog={setUsuarioRegistradoLog}
+                  />
                   <Link to="/registro">
                     <Button className="textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3">
                       Crear Cuenta

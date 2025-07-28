@@ -1,5 +1,6 @@
 import { Form, Row, Col, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router";
 
 const Registro = () => {
   const {
@@ -8,12 +9,17 @@ const Registro = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const password = watch("Contrasenia")
+  const password = watch("password") || "";
   ;
+  const navegacion  = useNavigate()
+  const handleRegistro = (datos) => {
+  sessionStorage.setItem("usuarioRegistrado", JSON.stringify(datos));
+  navegacion ("/");
+};
   return (
     <Container className="my-5 px-4 border border-1 rounded-4 border-secondary">
       <h2 className="text-center my-4">Crear una Cuenta</h2>
-      <Form onSubmit={handleSubmit()}>
+      <Form onSubmit={handleSubmit(handleRegistro)}>
         <Row className="mb-3">
           <Form.Group as={Col} md="6" controlId="formUsuario">
             <Form.Label>Usuario</Form.Label>
@@ -185,12 +191,12 @@ const Registro = () => {
           </Form.Group>
         </Row>
 
-        <Form.Group className="mb-3" controlId="formCorreo">
+        <Form.Group className="mb-3" controlId="formemail">
           <Form.Label>Correo Electrónico</Form.Label>
           <Form.Control
             type="email"
             placeholder="correo@rollinggaming.com"
-            {...register("correo", {
+            {...register("email", {
               required: "El correo electrónico es obligatorio",
               pattern: {
                 value: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
@@ -199,17 +205,17 @@ const Registro = () => {
             })}
           />
           <Form.Text id="formTextCorreo" className="text-danger">
-            {errors.correo?.message}
+            {errors.email?.message}
           </Form.Text>
         </Form.Group>
 
         <Row className="mb-3">
-          <Form.Group as={Col} md="6" controlId="formContrasenia">
+          <Form.Group as={Col} md="6" controlId="formpassword">
             <Form.Label>Contraseña</Form.Label>
             <Form.Control
               type="password"
               placeholder="Crea una contraseña"
-             {...register("Contrasenia", {
+              {...register("password", {
               required: "La Contraseña es obligatorio",
               pattern: {
                 value: /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/,
@@ -226,7 +232,7 @@ const Registro = () => {
             })}
             />
             <Form.Text id="formTextContrasenia" className="text-danger">
-              {errors.Contrasenia?.message}
+              {errors.password?.message}
             </Form.Text>
           </Form.Group>
 

@@ -37,15 +37,28 @@ function App() {
     setJuegos([...juegos, juegoNuevo]);
     return true;
   };
-  //funcion para guardar usuario
-  const usuarioLogeadoStorage = JSON.parse(sessionStorage.getItem("usuarioLogeado")) || false;
+  //funcion para guardar usuario admin
+  const usuarioLogeadoStorage =
+    JSON.parse(sessionStorage.getItem("usuarioLogeado")) || false;
   const [usuarioLogeado, setUsuarioLogeado] = useState(usuarioLogeadoStorage);
+  //para usuario registro
+  const usuarioRegistradoLogStorage =
+    sessionStorage.getItem("usuarioRegistradoLog") === "true";
+  const [usuarioRegistradoLog, setUsuarioRegistradoLog] = useState(
+    usuarioRegistradoLogStorage
+  );
+
   return (
     <>
       <FavoritosProvider>
         <BrowserRouter>
           <ScrollToTop />
-          <Menu setUsuarioLogeado={setUsuarioLogeado} usuarioLogeado={usuarioLogeado} />
+          <Menu
+            setUsuarioLogeado={setUsuarioLogeado}
+            usuarioLogeado={usuarioLogeado}
+            setUsuarioRegistradoLog={setUsuarioRegistradoLog}
+            usuarioRegistradoLog={usuarioRegistradoLog}
+          />
           <main className="h-100">
             <Routes>
               <Route path="/" element={<Inicio />} />
@@ -57,7 +70,13 @@ function App() {
               <Route path="/detalle-producto" element={<DetalleProducto />} />
               <Route
                 path="/login"
-                element={<Login setUsuarioLogeado={setUsuarioLogeado} />}
+                element={
+                  <Login
+                    setUsuarioLogeado={setUsuarioLogeado}
+                    setUsuarioRegistradoLog={setUsuarioRegistradoLog}
+                    usuarioRegistradoLog={usuarioRegistradoLog}
+                  />
+                }
               />
               <Route path="/registro" element={<Registro />} />
               <Route
