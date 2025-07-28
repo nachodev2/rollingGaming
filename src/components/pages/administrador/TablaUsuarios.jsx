@@ -1,17 +1,27 @@
+import { Link } from "react-router";
 import FilaUsuariosTabla from "./FilaUsuariosTabla";
 import { Table, Button } from "react-bootstrap";
+import usuariosPrueba from "../../../data/usuariosPrueba"
 
+let cargar = true;
+const TablaUsuarios = (usuarios, setUsuarios) => {
 
-const TablaUsuarios = () => {
+    const cargarUsuariosPrueba=()=>{
+      if (cargar) {
+        setUsuarios(usuariosPrueba)
+        cargar = false;
+      }
+    }
+
     return (
         <>
       <div className="d-flex justify-content-between align-items-center mt-5">
         <h1 className="fs-4">Tabla de Usuarios</h1>
         <div>
-          <Button className="btn btn-primary me-2">
+          <Link className="btn btn-primary me-2" to={'/Registro'}>
             <i className="bi bi-person-add"></i>
-          </Button>
-          <Button variant="info">
+          </Link>
+          <Button variant="info" onClick={cargarUsuariosPrueba}>
             <i className="bi bi-database-fill-up"></i>
           </Button>
         </div>

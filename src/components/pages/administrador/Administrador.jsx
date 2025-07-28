@@ -4,7 +4,7 @@ import TablaUsuarios from "./TablaUsuarios";
 import { useState } from "react";
 
 
-const Administrador = ({cargarJuego, juegos, setJuegos,borrarProducto}) => {
+const Administrador = ({cargarJuego, juegos, setJuegos,borrarProducto, cargarUsuarios, usuarios, setUsuarios}) => {
 
 
   const[mostrarTablaJuegos, setMostrarTablaJuegos] = useState(true);
