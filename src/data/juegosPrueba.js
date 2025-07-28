@@ -34,7 +34,7 @@ const productos = [
     nombreJuego: "Call of Duty: Modern Warfare III",
     desarrollador: "Infinity Ward",
     categoria: "Tiros",
-    precio: 69.0,
+    precio: 69.99,
     imagen: "https://cdn.akamai.steamstatic.com/steam/apps/2000950/header.jpg",
     descripcion: "Acción intensa y cinemática en una guerra moderna. Incluye campaña, modo multijugador y cooperativo.",
     requisitos: "CPU Ryzen 5 1600, 12 GB RAM, GTX 1660, 80 GB espacio, Windows 10."
@@ -54,7 +54,7 @@ const productos = [
     nombreJuego: "Age of Empires IV",
     desarrollador: "Relic Entertainment",
     categoria: "Estrategia",
-    precio: 39.9,
+    precio: 39.90,
     imagen: "https://cdn.akamai.steamstatic.com/steam/apps/1466860/header.jpg",
     descripcion: "Estrategia en tiempo real con campañas históricas, batallas épicas y gráficos renovados.",
     requisitos: "CPU Intel i5-6300U, 8 GB RAM, Intel HD 520, 50 GB espacio, Windows 10."

@@ -19,6 +19,7 @@ import ScrollToTop from "./components/shared/ScrollToTop.jsx";
 import { useEffect, useState } from "react";
 import FormularioProducto from "./components/pages/administrador/FormularioProducto.jsx";
 import { v4 as uuidv4 } from "uuid";
+import { set } from 'react-hook-form';
 
 function App() {
   // Obtener juegos del localStorage al iniciar
@@ -37,6 +38,11 @@ function App() {
     setJuegos([...juegos, juegoNuevo]);
     return true;
   };
+ const borrarProducto = (idJuego) => {
+  const juegosFiltrados = juegos.filter((juego) => juego.id !== idJuego);
+  setJuegos(juegosFiltrados);
+  return true;
+}
   //funcion para guardar usuario admin
   const usuarioLogeadoStorage =
     JSON.parse(sessionStorage.getItem("usuarioLogeado")) || false;
@@ -110,5 +116,4 @@ function App() {
     </>
   );
 }
-
 export default App;

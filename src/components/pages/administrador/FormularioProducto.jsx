@@ -12,7 +12,6 @@ const FormularioProducto = ({cargarJuego}) => {
   } = useForm();
 
   const onSubmit=(juego)=> {
-    console.log(juego);
     if (cargarJuego(juego)===true){
       Swal.fire({
           title: "Creaste un juego",

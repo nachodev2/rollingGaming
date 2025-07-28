@@ -60,13 +60,18 @@ const Menu = ({
                 </Nav.Link>
               ) : null}
               {usuarioLogeado ? (
-                <Nav.Link
-                  as={Link}
-                  to="/administrador"
-                  className="textNavFooter"
-                >
-                  Administrador
-                </Nav.Link>
+                <>
+                  <Nav.Link as={Link} to="/favoritos" className="textNavFooter">
+                    Favoritos
+                  </Nav.Link>
+                  <Nav.Link
+                    as={Link}
+                    to="/administrador"
+                    className="textNavFooter"
+                  >
+                    Administrador
+                  </Nav.Link>
+                </>
               ) : null}
             </Nav>
             <Nav className="ms-auto d-flex flex-row align-items-center margenT">

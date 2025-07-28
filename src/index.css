@@ -7,6 +7,7 @@
   flex-direction: column;
   min-height: 100vh;
 }
+
 main {
   flex-grow: 1;
 }
@@ -20,8 +21,21 @@ main {
 }
 
 .titulo-card {
-    font-family: "Inter", sans-serif;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
+
+.descripcion-card {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
 
 .card .btn-card {
     border: none;
@@ -52,4 +66,9 @@ main {
 
 .text-white {
     color: white;
+}
+
+.img-card{
+  object-fit: cover;
+  height: 180px;
 }
