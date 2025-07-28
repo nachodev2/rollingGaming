@@ -87,6 +87,7 @@ const Administrador = ({
         />
       ) : (
         <TablaUsuarios 
+      
         setUsuarios={setUsuarios}
         usuarios={usuarios}
 

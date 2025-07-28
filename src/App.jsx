@@ -34,7 +34,7 @@ function App() {
   useEffect(() => {
     localStorage.setItem("juegosKey", JSON.stringify(juegos));
     localStorage.setItem("usuariosKey", JSON.stringify(usuarios));
-  }, [juegos]);
+  }, [juegos, usuarios]);
 
   const cargarJuego = (juegoNuevo) => {
     juegoNuevo.id = uuidv4();

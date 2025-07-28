@@ -4,10 +4,9 @@ import { Table, Button } from "react-bootstrap";
 import usuariosPrueba from "../../../data/usuariosPrueba";
 
 let cargar = true;
-const TablaUsuarios = (usuarios, setUsuarios) => {
+const TablaUsuarios = ({usuarios, setUsuarios}) => {
   const cargarUsuariosPrueba = () => {
     if (cargar) {
-      console.log(usuariosPrueba);
       setUsuarios(usuariosPrueba);
       cargar = false;
     }
@@ -30,7 +29,7 @@ const TablaUsuarios = (usuarios, setUsuarios) => {
       <Table striped bordered hover responsive variant="dark">
         <thead>
           <tr>
-            <th>#</th>
+            <th>ID</th>
             <th>Usuario</th>
             <th>Nombre</th>
             <th>Email</th>
@@ -38,7 +37,14 @@ const TablaUsuarios = (usuarios, setUsuarios) => {
           </tr>
         </thead>
         <tbody>
-          <FilaUsuariosTabla></FilaUsuariosTabla>
+          {usuarios.map((usuario, index) => (
+            <FilaUsuariosTabla
+              key={index}
+              usuario={usuario}
+              setUsuarios={setUsuarios}
+              
+            ></FilaUsuariosTabla>
+          ))}
         </tbody>
       </Table>
     </>
