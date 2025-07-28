@@ -10,8 +10,6 @@ import Login from "./components/pages/login-registro/Login.jsx";
 import Registro from "./components/pages/login-registro/Registro.jsx";
 import Administrador from "./components/pages/administrador/Administrador.jsx";
 import Error404 from "./components/pages/error404/Error404.jsx";
-import Menu from "./components/shared/Menu.jsx";
-import Footer from "./components/shared/Footer.jsx";
 import SobreNosotros from "./components/pages/sobre-nosotros/SobreNosotros.jsx";
 import Tienda from "./components/pages/tienda/Tienda.jsx";
 import Favoritos from "./components/pages/favoritos/Favoritos.jsx";
@@ -48,42 +46,49 @@ function App() {
     return juegos.find((juego) => juego.id.toString() === id.toString());
   };
 
-  return (
-    <FavoritosProvider>
-      <CarritoProvider>
-        <BrowserRouter>
-          <ScrollToTop />
-          <Menu />
-          <main className="h-100">
+return (
+    <>
+      <FavoritosProvider>
+        <CarritoProvider>
+          <BrowserRouter>
+            <ScrollToTop />
             <Routes>
-              <Route path="/" element={<Inicio />} />
-              <Route path="/carro-compras" element={<CarroCompras />} />
-              <Route path="/carro-compras-vacio" element={<CarroComprasVacio />} />
-              <Route path="/detalle-producto/:id" element={<DetalleProducto buscarJuego={buscarJuego} />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/registro" element={<Registro />} />
-              <Route path="/administrador" element={
-                <Administrador
-                  cargarJuego={cargarJuego}
-                  juegos={juegos}
-                  setJuegos={setJuegos}
-                  borrarProducto={borrarProducto}
+              <Route element={<LayoutConMenuYFooter />}>
+                <Route path="/" element={<Inicio />} />
+                <Route path="/carro-compras" element={<CarroCompras />} />
+                <Route path="/detalle-producto/:id" element={<DetalleProducto buscarJuego={buscarJuego} />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/registro" element={<Registro />} />
+                <Route
+                  path="/administrador"
+                  element={
+                    <Administrador
+                      cargarJuego={cargarJuego}
+                      juegos={juegos}
+                      setJuegos={setJuegos}
+                      borrarProducto={borrarProducto}
+                    />
+                  }
                 />
-              } />
-              <Route path="/sobre-nosotros" element={<SobreNosotros />} />
-              <Route path="/tienda" element={<Tienda juegos={juegos} />} />
-              <Route path="/favoritos" element={<Favoritos />} />
-              <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
-              <Route path="/fila-card-categorias" element={<FilaCardCategorias />} />
-              <Route path="/formulario-producto" element={<FormularioProducto cargarJuego={cargarJuego} />} />
-              <Route path="*" element={<Error404 />} />
+                <Route path="/sobre-nosotros" element={<SobreNosotros />} />
+                <Route path="/tienda" element={<Tienda juegos={juegos} />} />
+                <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
+                <Route path="/favoritos" element={<Favoritos />} />
+                <Route path="/fila-card-categorias" element={<FilaCardCategorias />} />
+                <Route
+                  path="/formulario-producto"
+                  element={<FormularioProducto cargarJuego={cargarJuego} />}
+                />
+              </Route>
+              <Route element={<LayoutSinMenuNiFooter />}>
+                <Route path="*" element={<Error404 />} />
+              </Route>
             </Routes>
-          </main>
-          <Footer />
-        </BrowserRouter>
-      </CarritoProvider>
-    </FavoritosProvider>
-  )
+          </BrowserRouter>
+        </CarritoProvider>
+      </FavoritosProvider>
+    </>
+  );
 }
 
 export default App;
