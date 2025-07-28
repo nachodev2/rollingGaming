@@ -45,6 +45,7 @@ function App() {
     setJuegos([...juegos, juegoConIdYPunt]);
     return true;
   };
+
   const borrarProducto = (idJuego) => {
     const juegosFiltrados = juegos.filter((juego) => juego.id !== idJuego);
     setJuegos(juegosFiltrados);
@@ -76,10 +77,9 @@ function App() {
   };
 
   return (
-
     <>
       <FavoritosProvider>
-        <CarritoProvider>
+        <CarritoProvider juegosDisponibles={juegos}>
           <BrowserRouter>
             <ScrollToTop />
             <Routes>
