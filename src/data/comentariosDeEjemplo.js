@@ -40,6 +40,13 @@ const comentariosDeEjemplo = [
     texto: "No me gustó la historia, esperaba más.",
     fecha: "2025-07-15",
     puntuacion: 2.0,
+  },
+  {
+    id: 7,
+    usuario: "Emilse Arias",
+    texto: "Me encantó este juego, la historia es atrapante y los gráficos son impresionantes. ¡Muy recomendable!",
+    fecha: "2025-07-25",
+    puntuacion: 4.5
   }
 ];
 

@@ -44,7 +44,6 @@ const DetalleProducto = ({ buscarJuego }) => {
               <ListGroup className="list-group-flush ">
                 <ListGroup.Item><span className="fw-bold me-1">Desarrollado por: </span> {juegoBuscado.desarrollador}</ListGroup.Item>
                 <ListGroup.Item> <span className="fw-bold me-1">Precio: </span>  ${juegoBuscado.precio}</ListGroup.Item>
-                <ListGroup.Item><span className="fw-bold me-1">Puntuación: </span> {}</ListGroup.Item>
               </ListGroup>
               <Card.Footer className="d-flex justify-content-star gap-3" >
                 <ListGroup.Item><span className="fw-bold me-1">Categoría: </span> {juegoBuscado.categoria}</ListGroup.Item>
