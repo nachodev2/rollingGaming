@@ -73,3 +73,7 @@ main {
   object-fit: cover;
   height: 180px;
 }
+
+.container-btn-volver:hover{
+  background-color: #20265850;
+}
