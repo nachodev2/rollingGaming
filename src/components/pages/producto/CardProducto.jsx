@@ -16,60 +16,65 @@ const CardProducto = ({ juego, onAgregar }) => {
           to={`/detalle-producto/${juego.id}`}
           className="text-decoration-none"
         >
-        <Card.Img
-          variant="top"
-          className="img-card"
-          src={juego.imagen}
-          alt={juego.nombreJuego}
-        />
+          <Card.Img
+            variant="top"
+            className="img-card"
+            src={juego.imagen}
+            alt={juego.nombreJuego}
+          />
         </Link>
-          <Card.Body className="d-flex flex-column justify-content-between flex-grow-1 h-100">
-            <div>
+        <Card.Body className="d-flex flex-column justify-content-between flex-grow-1 h-100">
+          <div>
+            <Link
+              to={`/detalle-producto/${juego.id}`}
+              className="text-decoration-none"
+            >
               <Card.Title className="titulo-card text-light text-truncate">
                 {juego.nombreJuego}
               </Card.Title>
-
-              <div className="d-flex justify-content-between align-items-center mb-2">
-                <Card.Text className="mb-0">
-                  <i className="bi bi-star-fill me-1 text-secondary"></i>
-                  <i className="bi bi-star-fill me-1 text-secondary"></i>
-                  <i className="bi bi-star-fill me-1 text-secondary"></i>
-                  <i className="bi bi-star-fill me-1 text-secondary"></i>
-                  <i className="bi bi-star-fill me-1 text-secondary"></i>
-                </Card.Text>
-
-                <Button
-                  variant="link"
-                  className="text-danger p-0"
-                  onClick={() =>
-                    yaEstaEnFavoritos
-                      ? quitarDeFavoritos(juego.id)
-                      : agregarAFavoritos(juego)
-                  }
-                  title={
-                    yaEstaEnFavoritos
-                      ? "Quitar de favoritos"
-                      : "Agregar a favoritos"
-                  }>
-                  <i
-                    className={`text-secondary bi ${
-                      yaEstaEnFavoritos ? "bi-heart-fill" : "bi-heart"
-                    } fs-4`}
-                  ></i>
-                </Button>
-              </div>
-
-              <Card.Text className="descripcion-card">
-                {juego.descripcion}
+            </Link>
+            <div className="d-flex justify-content-between align-items-center mb-2">
+              <Card.Text className="mb-0">
+                <i className="bi bi-star-fill me-1 text-secondary"></i>
+                <i className="bi bi-star-fill me-1 text-secondary"></i>
+                <i className="bi bi-star-fill me-1 text-secondary"></i>
+                <i className="bi bi-star-fill me-1 text-secondary"></i>
+                <i className="bi bi-star-fill me-1 text-secondary"></i>
               </Card.Text>
+
+              <Button
+                variant="link"
+                className="text-danger p-0"
+                onClick={() =>
+                  yaEstaEnFavoritos
+                    ? quitarDeFavoritos(juego.id)
+                    : agregarAFavoritos(juego)
+                }
+                title={
+                  yaEstaEnFavoritos
+                    ? "Quitar de favoritos"
+                    : "Agregar a favoritos"
+                }
+              >
+                <i
+                  className={`text-secondary bi ${
+                    yaEstaEnFavoritos ? "bi-heart-fill" : "bi-heart"
+                  } fs-4`}
+                ></i>
+              </Button>
             </div>
 
-            <div className="mt-auto">
-              <Card.Text className="text-secondary fw-bold fs-4 mt-2">
-                ${juego.precio ? juego.precio.toLocaleString("es-AR") : "N/A"}
-              </Card.Text>
-            </div>
-          </Card.Body>
+            <Card.Text className="descripcion-card">
+              {juego.descripcion}
+            </Card.Text>
+          </div>
+
+          <div className="mt-auto">
+            <Card.Text className="text-secondary fw-bold fs-4 mt-2">
+              ${juego.precio ? juego.precio.toLocaleString("es-AR") : "N/A"}
+            </Card.Text>
+          </div>
+        </Card.Body>
         <div className="d-grid gap-2 mb-3">
           <Button
             className="btn btn-primary rounded-5 fw-bold py-2 btn-card mx-auto"
