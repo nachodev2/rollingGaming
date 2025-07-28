@@ -46,8 +46,8 @@ export const CarritoProvider = ({ children, juegosDisponibles }) => {
       setCarrito(carritoFiltrado);
       Swal.fire({
         icon: 'info',
-        title: '¡Carrito Actualizado!',
-        text: 'Se han eliminado productos de tu carrito que ya no están disponibles en la tienda.',
+        title: '¡Se ha eliminado el juego!',
+        text: 'Se han eliminado correctamente el juego de la tienda y se actualizaron los carros de compras.',
         timer: 3000,
         timerProgressBar: true,
         showConfirmButton: false,
