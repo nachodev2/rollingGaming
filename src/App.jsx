@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Inicio from "./components/pages/inicio/Inicio.jsx";
 import CarroCompras from "./components/pages/carro-compras/CarroCompras.jsx";
-import CarroComprasVacio from "./components/pages/carro-compras/CarroComprasVacio.jsx";
 import DetalleProducto from "./components/pages/producto/DetalleProducto.jsx";
 import Login from "./components/pages/login-registro/Login.jsx";
 import Registro from "./components/pages/login-registro/Registro.jsx";
