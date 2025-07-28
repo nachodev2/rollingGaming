@@ -5,7 +5,7 @@ import { Link } from "react-router";
 import Estrellas from "./Estrellas";
 
 const CardProducto = ({ juego, onAgregar }) => {
-  
+
   const { agregarAFavoritos, quitarDeFavoritos, favoritos } =
     useContext(FavoritosContext);
 
@@ -69,7 +69,7 @@ const CardProducto = ({ juego, onAgregar }) => {
 
           <div className="mt-auto">
             <Card.Text className="text-secondary fw-bold fs-4 mt-2">
-              ${juego.precio ? juego.precio.toLocaleString("es-AR") : "N/A"}
+              ${juego.precio ? juego.precio.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "N/A"}
             </Card.Text>
           </div>
         </Card.Body>

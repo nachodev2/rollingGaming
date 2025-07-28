@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route } from "react-router";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
@@ -22,7 +21,8 @@ import LayoutConMenuYFooter from "./components/layout/LayoutConMenuYFooter.jsx";
 import LayoutSinMenuNiFooter from "./components/layout/LayoutSinMenuNiFooter.jsx";
 
 function App() {
-  const juegosLocalStorage = JSON.parse(localStorage.getItem("juegosKey")) || [];
+  const juegosLocalStorage =
+    JSON.parse(localStorage.getItem("juegosKey")) || [];
   const [juegos, setJuegos] = useState(juegosLocalStorage);
 
   useEffect(() => {
@@ -32,6 +32,7 @@ function App() {
   const cargarJuego = (juegoNuevo) => {
     const juegoConIdYPunt = {
       ...juegoNuevo,
+      precio: parseFloat(juegoNuevo.precio), // ✅ fuerza que el precio sea número
       id: uuidv4(),
       puntuacion: +(Math.random() * 4 + 1).toFixed(1),
     };
@@ -49,7 +50,7 @@ function App() {
     return juegos.find((juego) => juego.id.toString() === id.toString());
   };
 
-return (
+  return (
     <>
       <FavoritosProvider>
         <CarritoProvider>
@@ -59,7 +60,10 @@ return (
               <Route element={<LayoutConMenuYFooter />}>
                 <Route path="/" element={<Inicio />} />
                 <Route path="/carro-compras" element={<CarroCompras />} />
-                <Route path="/detalle-producto/:id" element={<DetalleProducto buscarJuego={buscarJuego} />} />
+                <Route
+                  path="/detalle-producto/:id"
+                  element={<DetalleProducto buscarJuego={buscarJuego} />}
+                />
                 <Route path="/login" element={<Login />} />
                 <Route path="/registro" element={<Registro />} />
                 <Route
@@ -77,7 +81,10 @@ return (
                 <Route path="/tienda" element={<Tienda juegos={juegos} />} />
                 <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
                 <Route path="/favoritos" element={<Favoritos />} />
-                <Route path="/fila-card-categorias" element={<FilaCardCategorias />} />
+                <Route
+                  path="/fila-card-categorias"
+                  element={<FilaCardCategorias />}
+                />
                 <Route
                   path="/formulario-producto"
                   element={<FormularioProducto cargarJuego={cargarJuego} />}
