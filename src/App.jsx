@@ -30,8 +30,12 @@ function App() {
   }, [juegos]);
 
   const cargarJuego = (juegoNuevo) => {
-    juegoNuevo.id = uuidv4();
-    setJuegos([...juegos, juegoNuevo]);
+    const juegoConIdYPunt = {
+      ...juegoNuevo,
+      id: uuidv4(),
+      puntuacion: +(Math.random() * 4 + 1).toFixed(1),
+    };
+    setJuegos([...juegos, juegoConIdYPunt]);
     return true;
   };
 
