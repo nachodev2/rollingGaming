@@ -11,18 +11,17 @@ const CardProducto = ({ juego, onAgregar }) => {
 
   return (
     <div className="contenedor-card w-100 h-100">
-      <Link
-        to={`/detalle-producto/${juego.id}`}
-        className="text-decoration-none"
-      >
-        <Card className="p-0 rounded-4 overflow-hidden border-secondary h-100 d-flex flex-column">
-          <Card.Img
-            variant="top"
-            className="img-card"
-            src={juego.imagen}
-            alt={juego.nombreJuego}
-          />
-
+      <Card className="p-0 rounded-4 overflow-hidden border-secondary h-100 d-flex flex-column">
+        <Link
+          to={`/detalle-producto/${juego.id}`}
+          className="text-decoration-none"
+        >
+        <Card.Img
+          variant="top"
+          className="img-card"
+          src={juego.imagen}
+          alt={juego.nombreJuego}
+        />
           <Card.Body className="d-flex flex-column justify-content-between flex-grow-1 h-100">
             <div>
               <Card.Title className="titulo-card text-light text-truncate">
@@ -69,18 +68,18 @@ const CardProducto = ({ juego, onAgregar }) => {
               <Card.Text className="text-secondary fw-bold fs-4 mt-2">
                 ${juego.precio ? juego.precio.toLocaleString("es-AR") : "N/A"}
               </Card.Text>
-              <div className="d-grid gap-2">
-                <Button
-                  className="btn btn-primary rounded-5 fw-bold py-2 btn-card mx-auto"
-                  onClick={() => onAgregar(juego)}
-                >
-                  Comprar <i className="bi bi-cart3 ms-2"></i>
-                </Button>
-              </div>
             </div>
           </Card.Body>
-        </Card>
-      </Link>
+        </Link>
+        <div className="d-grid gap-2 mb-3">
+          <Button
+            className="btn btn-primary rounded-5 fw-bold py-2 btn-card mx-auto"
+            onClick={() => onAgregar(juego)}
+          >
+            Comprar <i className="bi bi-cart3 ms-2"></i>
+          </Button>
+        </div>
+      </Card>
     </div>
   );
 };

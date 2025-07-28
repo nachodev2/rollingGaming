@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Inicio from "./components/pages/inicio/Inicio.jsx";
