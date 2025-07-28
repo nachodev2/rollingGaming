@@ -19,7 +19,7 @@ const GridSection = () => {
     },
     {
       title: "Battlefield 6",
-      buttonText: "AGREGAR A LA LISTA DE DESEOS >",
+      buttonText: "HAZ CLICK PARA VER MÁS DETALLES >",
       leftBgColor: "#9f007cff",
       textColor: "#ffff",
       imageUrl:
