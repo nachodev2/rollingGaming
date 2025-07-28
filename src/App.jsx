@@ -21,7 +21,8 @@ import LayoutConMenuYFooter from "./components/layout/LayoutConMenuYFooter.jsx";
 import LayoutSinMenuNiFooter from "./components/layout/LayoutSinMenuNiFooter.jsx";
 
 function App() {
-  const juegosLocalStorage = JSON.parse(localStorage.getItem("juegosKey")) || [];
+  const juegosLocalStorage =
+    JSON.parse(localStorage.getItem("juegosKey")) || [];
   const [juegos, setJuegos] = useState(juegosLocalStorage);
 
   useEffect(() => {
@@ -29,8 +30,13 @@ function App() {
   }, [juegos]);
 
   const cargarJuego = (juegoNuevo) => {
-    juegoNuevo.id = uuidv4();
-    setJuegos([...juegos, juegoNuevo]);
+    const juegoConIdYPunt = {
+      ...juegoNuevo,
+      precio: parseFloat(juegoNuevo.precio),
+      id: uuidv4(),
+      puntuacion: +(Math.random() * 4 + 1).toFixed(1),
+    };
+    setJuegos([...juegos, juegoConIdYPunt]);
     return true;
   };
   const borrarProducto = (idJuego) => {
@@ -73,7 +79,10 @@ function App() {
               >
                 <Route path="/" element={<Inicio />} />
                 <Route path="/carro-compras" element={<CarroCompras />} />
-                <Route path="/detalle-producto/:id" element={<DetalleProducto buscarJuego={buscarJuego} />} />
+                <Route
+                  path="/detalle-producto/:id"
+                  element={<DetalleProducto buscarJuego={buscarJuego} />}
+                />
                 <Route path="/login" element={<Login />} />
                 <Route path="/registro" element={<Registro />} />
                 <Route
