@@ -25,9 +25,15 @@ function App() {
     JSON.parse(localStorage.getItem("juegosKey")) || [];
   const [juegos, setJuegos] = useState(juegosLocalStorage);
 
+  
+    const usuariosLocalStorage =
+    JSON.parse(localStorage.getItem("usuariosKey")) || [];
+  const [usuarios, setUsuarios] = useState(usuariosLocalStorage);
+
   useEffect(() => {
     localStorage.setItem("juegosKey", JSON.stringify(juegos));
-  }, [juegos]);
+    localStorage.setItem("usuariosKey", JSON.stringify(usuarios));
+  }, [juegos, usuarios]);
 
   const cargarJuego = (juegoNuevo) => {
     const juegoConIdYPunt = {
@@ -45,6 +51,16 @@ function App() {
     setJuegos(juegosFiltrados);
     return true;
   };
+
+  const borrarUsuario = (idUsuario) => {
+    const usuariosFiltrados = usuarios.filter((usuario) => usuario.id !== idUsuario);
+    setUsuarios(usuariosFiltrados);
+    return true;}
+
+  const cargarUsuarios = (usuarioNuevo)=> {
+    setUsuarios([...usuarios, usuarioNuevo])
+    return true;
+  }
 
   const usuarioLogeadoStorage =
     JSON.parse(sessionStorage.getItem("usuarioLogeado")) || false;
@@ -93,6 +109,10 @@ function App() {
                       juegos={juegos}
                       setJuegos={setJuegos}
                       borrarProducto={borrarProducto}
+                      cargarUsuarios={cargarUsuarios}
+                      usuarios={usuarios}
+                      setUsuarios={setUsuarios}
+                      borrarUsuario={borrarUsuario}
                     />
                   }
                 />
