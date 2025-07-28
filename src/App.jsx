@@ -32,7 +32,7 @@ function App() {
   const cargarJuego = (juegoNuevo) => {
     const juegoConIdYPunt = {
       ...juegoNuevo,
-      precio: parseFloat(juegoNuevo.precio), // ✅ fuerza que el precio sea número
+      precio: parseFloat(juegoNuevo.precio),
       id: uuidv4(),
       puntuacion: +(Math.random() * 4 + 1).toFixed(1),
     };

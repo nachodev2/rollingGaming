@@ -13,7 +13,7 @@ const juegosPrueba = [
     grafica: "GTX 1050Ti",
     almacenamiento: "60GB",
     sistemaOperativo: "PlayStation 5",
-    puntuacion: 1.3
+    puntuacion: 5
   },
   {
     id: 2,
@@ -125,7 +125,7 @@ const juegosPrueba = [
     grafica: "GTX 660",
     almacenamiento: "50GB",
     sistemaOperativo: "Windows 8.1",
-    puntuacion: 3.5
+    puntuacion: 5
   },
   {
     id: 9,
