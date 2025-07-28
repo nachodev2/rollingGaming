@@ -1,7 +1,13 @@
+
+import React, { useContext } from 'react';
 import './tienda.css';
 import FilaProducto from '../producto/FilaProducto';
+import { CarritoContext } from '../carro-compras/CarroComprasContext';
+
 
 const Tienda = ({ juegos }) => {
+  const { agregarAlCarrito } = useContext(CarritoContext);
+
   return (
     <div>
       <h1 className="text-center my-4 display-4 titulo-tienda">
@@ -14,19 +20,19 @@ const Tienda = ({ juegos }) => {
 
       <section className='desde-abajo py-3'>
         <h2 className='text-white text-center mb-5'>Últimas Novedades</h2>
-        <FilaProducto juegos={juegos} />
+        <FilaProducto juegos={juegos} onAgregar={agregarAlCarrito} />
       </section>
 
       <section className='py-3 desde-abajo'>
         <h2 className='text-white text-center mb-5'>Más Vendidos</h2>
-        <FilaProducto juegos={juegos} />
+        <FilaProducto juegos={juegos} onAgregar={agregarAlCarrito} />
       </section>
 
       <section className='py-3 desde-abajo'>
         <h2 className='text-white text-center mb-3'>Todos los Juegos</h2>
         <p className='text-center text-light mb-5 lead'>Nuestra colección completa te espera</p>
-        <FilaProducto juegos={juegos} />
-        <FilaProducto juegos={juegos} />
+        <FilaProducto juegos={juegos} onAgregar={agregarAlCarrito} />
+        <FilaProducto juegos={juegos} onAgregar={agregarAlCarrito} />
       </section>
     </div>
   );
