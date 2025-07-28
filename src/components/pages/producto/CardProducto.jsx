@@ -22,6 +22,7 @@ const CardProducto = ({ juego, onAgregar }) => {
           src={juego.imagen}
           alt={juego.nombreJuego}
         />
+        </Link>
           <Card.Body className="d-flex flex-column justify-content-between flex-grow-1 h-100">
             <div>
               <Card.Title className="titulo-card text-light text-truncate">
@@ -49,8 +50,7 @@ const CardProducto = ({ juego, onAgregar }) => {
                     yaEstaEnFavoritos
                       ? "Quitar de favoritos"
                       : "Agregar a favoritos"
-                  }
-                >
+                  }>
                   <i
                     className={`text-secondary bi ${
                       yaEstaEnFavoritos ? "bi-heart-fill" : "bi-heart"
@@ -70,7 +70,6 @@ const CardProducto = ({ juego, onAgregar }) => {
               </Card.Text>
             </div>
           </Card.Body>
-        </Link>
         <div className="d-grid gap-2 mb-3">
           <Button
             className="btn btn-primary rounded-5 fw-bold py-2 btn-card mx-auto"
