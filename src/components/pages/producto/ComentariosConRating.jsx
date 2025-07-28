@@ -3,7 +3,6 @@ import Stack from '@mui/material/Stack';
 import { Card, Container } from 'react-bootstrap';
 
 const ComentariosConRating = ({ comentarios }) => {
-    // Filtramos sólo los comentarios que estamos mostrando
     const comentariosValidos = comentarios.filter(com => typeof com.puntuacion === 'number');
 
     const promedio =
