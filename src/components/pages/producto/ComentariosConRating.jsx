@@ -4,15 +4,16 @@ import { Card, Container } from 'react-bootstrap';
 
 
 const ComentariosConRating = ({ comentarios }) => {
+    
   return (
     <Container className="mt-4">
       <h3>Reseñas</h3>
       {comentarios.length === 0 && <p>No hay reseñas aún.</p>}
       {comentarios.map(({ id, usuario, texto, fecha, puntuacion }) => (
-        <Card key={id} className="mb-3">
+        <Card key={id} className="my-3 border-1">
           <Card.Body>
             <Card.Title>{usuario}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">{fecha}</Card.Subtitle>
+            <Card.Subtitle className="my-2 text-muted">{fecha}</Card.Subtitle>
             <Stack spacing={1} direction="row" alignItems="center">
               <Rating
                 name={`rating-readonly-${id}`}

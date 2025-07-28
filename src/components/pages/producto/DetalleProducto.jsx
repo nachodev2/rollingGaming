@@ -5,15 +5,21 @@ import { useEffect, useState } from "react";
 import ComentariosConRating from "./ComentariosConRating";
 import comentariosDeEjemplo from "../../../data/comentariosDeEjemplo";
 
-const DetalleProducto = ({ buscarJuego }) => {
+const getTwoRandomComentarios = (comentarios) => {
+  const shuffled = [...comentarios].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, 2);
+};
 
+const DetalleProducto = ({ buscarJuego }) => {
   const { id } = useParams();
   const [juegoBuscado, setJuegoBuscado] = useState({});
+  const [comentariosFiltrados, setComentariosFiltrados] = useState([]);
 
   useEffect(() => {
     const juego = buscarJuego(id);
     setJuegoBuscado(juego);
-  }, []);
+    setComentariosFiltrados(getTwoRandomComentarios(comentariosDeEjemplo));
+  }, [id, buscarJuego]);
 
   return (
     <div>
@@ -30,17 +36,18 @@ const DetalleProducto = ({ buscarJuego }) => {
             </section>
           </Col>
           <Col sm={4} className="mt-5">
-            <Card className="detalleJuego ">
+            <Card className="detalleJuego border-1">
               <Card.Body>
                 <Card.Title className="taxtosCard">Descripción</Card.Title>
                 <Card.Text className="taxtosCard">{juegoBuscado.descripcion}</Card.Text>
               </Card.Body>
               <ListGroup className="list-group-flush ">
-                <ListGroup.Item>{juegoBuscado.desarrollador}</ListGroup.Item>
-                <ListGroup.Item>{juegoBuscado.precio}</ListGroup.Item>
+                <ListGroup.Item><span className="fw-bold me-1">Desarrollado por: </span> {juegoBuscado.desarrollador}</ListGroup.Item>
+                <ListGroup.Item> <span className="fw-bold me-1">Precio: </span>  ${juegoBuscado.precio}</ListGroup.Item>
+                <ListGroup.Item><span className="fw-bold me-1">Puntuación: </span> {}</ListGroup.Item>
               </ListGroup>
               <Card.Footer className="d-flex justify-content-star gap-3" >
-                <ListGroup.Item>{juegoBuscado.categoria}</ListGroup.Item>
+                <ListGroup.Item><span className="fw-bold me-1">Categoría: </span> {juegoBuscado.categoria}</ListGroup.Item>
               </Card.Footer>
             </Card>
           </Col>
@@ -79,7 +86,7 @@ const DetalleProducto = ({ buscarJuego }) => {
             </table>
           </Col>
           <Col className="mt-5" xs={12} lg={4}>
-            <ComentariosConRating comentarios={comentariosDeEjemplo}/>
+            <ComentariosConRating comentarios={comentariosFiltrados}/>
           </Col>
         </Row>
       </Container>

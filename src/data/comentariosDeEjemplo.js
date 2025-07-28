@@ -14,19 +14,12 @@ const comentariosDeEjemplo = [
     puntuacion: 3.0,
   },
   {
-    id: 6,
-    usuario: "José Romero",
-    texto: "No me gustó la historia, esperaba más.",
-    fecha: "2025-07-15",
-    puntuacion: 2.0,
+    id: 3,
+    usuario: "José David Baza",
+    texto: "Excelente juego, muy entretenido y con buenos desafíos.",
+    fecha: "2025-07-23",
+    puntuacion: 5.0,
   },
-  {
-  id: 3,
-  usuario: "José David Baza",
-  texto: "Excelente juego, muy entretenido y con buenos desafíos.",
-  fecha: "2025-07-23",
-  puntuacion: 5.0,
-}
   {
     id: 4,
     usuario: "Alessandra  Borges Licciardi",
@@ -41,6 +34,13 @@ const comentariosDeEjemplo = [
     fecha: "2025-07-21",
     puntuacion: 3.5,
   },
+  {
+    id: 6,
+    usuario: "José Romero",
+    texto: "No me gustó la historia, esperaba más.",
+    fecha: "2025-07-15",
+    puntuacion: 2.0,
+  }
 ];
 
 export default comentariosDeEjemplo
