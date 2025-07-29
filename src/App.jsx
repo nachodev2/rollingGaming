@@ -88,6 +88,21 @@ function App() {
   return usuarioBuscado
 }
 
+ const editarUsuario = (idUsuario, usuario) => {
+    const usuariosEditados = usuarios.map((itemUsuario)=>{
+      if(itemUsuario.id === (idUsuario)){
+        return {
+          ...itemUsuario, 
+          ...usuario
+        }
+      }
+      return itemUsuario
+    })
+    setUsuarios(usuariosEditados);
+    return true
+  } 
+
+
   const usuarioLogeadoStorage =
     JSON.parse(sessionStorage.getItem("usuarioLogeado")) || false;
   const [usuarioLogeado, setUsuarioLogeado] = useState(usuarioLogeadoStorage);
@@ -128,11 +143,11 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route
                   path="/registro"
-                  element={<Registro cargarUsuario={cargarUsuario} buscarUsuario={buscarUsuario} titulo={"Crear cuenta"}/>}
+                  element={<Registro cargarUsuario={cargarUsuario} buscarUsuario={buscarUsuario} titulo={"Crear cuenta"} botonEnviarRegistro={"Registrarse"}/>}
                 />
                 <Route
                   path="/editarUsuario/:id"
-                  element={<Registro cargarUsuario={cargarUsuario} buscarUsuario={buscarUsuario} titulo={"Editar usuario"}/>}
+                  element={<Registro cargarUsuario={cargarUsuario} buscarUsuario={buscarUsuario} editarUsuario={editarUsuario} titulo={"Editar usuario"}  botonEnviarRegistro={"Guardar cambios"} />}
                 />
                 <Route
                   element={<ProtectorRutasAdmin usuarioLogeado={usuarioLogeado} />}
