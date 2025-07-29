@@ -57,8 +57,10 @@ function App() {
     setUsuarios(usuariosFiltrados);
     return true;}
 
-  const cargarUsuarios = (usuarioNuevo)=> {
+  const cargarUsuario = (usuarioNuevo)=> {
     setUsuarios([...usuarios, usuarioNuevo])
+    usuarioNuevo.id=uuidv4()
+
     return true;
   }
 
@@ -100,7 +102,7 @@ function App() {
                   element={<DetalleProducto buscarJuego={buscarJuego} />}
                 />
                 <Route path="/login" element={<Login />} />
-                <Route path="/registro" element={<Registro />} />
+                <Route path="/registro" element={<Registro cargarUsuario={cargarUsuario} />} />
                 <Route
                   path="/administrador"
                   element={
@@ -109,7 +111,7 @@ function App() {
                       juegos={juegos}
                       setJuegos={setJuegos}
                       borrarProducto={borrarProducto}
-                      cargarUsuarios={cargarUsuarios}
+                      cargarUsuario={cargarUsuario}
                       usuarios={usuarios}
                       setUsuarios={setUsuarios}
                       borrarUsuario={borrarUsuario}

@@ -32,7 +32,7 @@ const TablaUsuarios = ({usuarios, setUsuarios, borrarUsuario}) => {
             <th>#</th>
             <th>Usuario</th>
             <th>Nombre</th>
-            <th>Email</th>
+            <th>CorreoElectrónico</th>
             <th>Acciones</th>
           </tr>
         </thead>
