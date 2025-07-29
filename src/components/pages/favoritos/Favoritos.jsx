@@ -1,11 +1,13 @@
 import './favoritos.css';
 import { useContext } from 'react';
 import { FavoritosContext } from './FavoritosContext.jsx';
+import { CarritoContext } from '../carro-compras/CarroComprasContext.jsx';
 import FavoritosVacio from './FavoritosVacio';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 
 const Favoritos = () => {
   const { favoritos, quitarDeFavoritos } = useContext(FavoritosContext);
+  const { agregarAlCarrito } = useContext(CarritoContext);
 
   if (favoritos.length === 0) {
     return <FavoritosVacio />;
@@ -26,12 +28,22 @@ const Favoritos = () => {
                 </div>
                 <div>
                   <p className="fw-bold text-danger fs-5">${juego.precio}</p>
-                  <Button
-                    variant="outline-primary"
-                    onClick={() => quitarDeFavoritos(juego.id)}
-                    className="w-100 rounded-3">
-                    Quitar de Favoritos <i className="bi bi-trash ms-2"></i>
-                  </Button>
+                  <div className="d-grid gap-2">
+                    <Button
+                      variant="primary"
+                      className="rounded-3"
+                      onClick={() => agregarAlCarrito(juego)}
+                    >
+                      Comprar <i className="bi bi-cart3 ms-2"></i>
+                    </Button>
+                    <Button
+                      variant="outline-danger"
+                      onClick={() => quitarDeFavoritos(juego.id)}
+                      className="rounded-3"
+                    >
+                      Quitar de Favoritos <i className="bi bi-trash ms-2"></i>
+                    </Button>
+                  </div>
                 </div>
               </Card.Body>
             </Card>
