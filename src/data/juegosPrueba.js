@@ -156,7 +156,7 @@ const juegosPrueba = [
     memoriaRam: "Desconocido",
     grafica: "Desconocido",
     almacenamiento: "Desconocido",
-    sistemaOperativo: "PlayStation 5"
+    sistemaOperativo: "Windows 8"
   },
   {
     id: "11",
@@ -171,7 +171,8 @@ const juegosPrueba = [
     memoriaRam: "8 GB RAM",
     grafica: "GTX 1060",
     almacenamiento: "100 GB",
-    sistemaOperativo: "Windows 11"
+    sistemaOperativo: "Windows 11",
+    puntuacion: 2.3
   },
   {
     id: "12",
@@ -186,7 +187,8 @@ const juegosPrueba = [
     memoriaRam: "4 GB RAM",
     grafica: "GTX 660",
     almacenamiento: "100 GB",
-    sistemaOperativo: "Windows 10"
+    sistemaOperativo: "Windows 10",
+    puntuacion: 4.2
   },
   {
     id: "13",
@@ -201,7 +203,8 @@ const juegosPrueba = [
     memoriaRam: "8 GB RAM",
     grafica: "GTX 1060",
     almacenamiento: "50 GB",
-    sistemaOperativo: "Windows 10"
+    sistemaOperativo: "Windows 10",
+    puntuacion: 5
   },
   {
     id: "14",
@@ -216,7 +219,8 @@ const juegosPrueba = [
     memoriaRam: "8 GB RAM",
     grafica: "GTX 660",
     almacenamiento: "4 GB",
-    sistemaOperativo: "Windows 10"
+    sistemaOperativo: "Windows 10",
+    puntuacion: 1.2
   },
   {
     id: "15",
@@ -231,7 +235,8 @@ const juegosPrueba = [
     memoriaRam: "8 GB RAM",
     grafica: "GTX 970",
     almacenamiento: "50 GB",
-    sistemaOperativo: "Windows 10"
+    sistemaOperativo: "Windows 10",
+    puntuacion: 3.7
   },
   {
     id: "16",
@@ -246,7 +251,8 @@ const juegosPrueba = [
     memoriaRam: "8 GB RAM",
     grafica: "GTX 750",
     almacenamiento: "20 GB",
-    sistemaOperativo: "Windows 10"
+    sistemaOperativo: "Windows 10",
+    puntuacion: 4.6
   }
 ];
 
