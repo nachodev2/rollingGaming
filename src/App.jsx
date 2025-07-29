@@ -79,6 +79,7 @@ function App() {
   const buscarJuego = (id) => {
     return juegos.find((juego) => juego.id.toString() === id.toString());
   };
+  
   return (
     <>
       <FavoritosProvider>
@@ -130,16 +131,13 @@ function App() {
                       />
                     }
                   />
-                  <Route
-                    path="/formulario-producto"
-                    element={<FormularioProducto cargarJuego={cargarJuego} />}
-                  />
+                  <Route path="crear" element={<FormularioProducto titulo={"Añadir un juego"} cargarJuego={cargarJuego}></FormularioProducto>}/>
+                  <Route path="editar/:id" element={<FormularioProducto titulo={"Editar juego"} buscarJuego={buscarJuego} cargarJuego={cargarJuego}></FormularioProducto>}/>
                   <Route path="/favoritos" element={<Favoritos />} />
                   <Route path="/carro-compras" element={<CarroCompras />} />
                   <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
                   <Route path="/carro-compras" element={<CarroCompras />} />
                 </Route>
-
                 <Route path="/sobre-nosotros" element={<SobreNosotros />} />
                 <Route path="/tienda" element={<Tienda juegos={juegos} />} />
                 <Route
