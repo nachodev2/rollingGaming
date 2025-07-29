@@ -105,15 +105,9 @@ function App() {
                 <Route path="/registro" element={<Registro />} />
                 <Route
                   element={
-                    <Administrador
-                      cargarJuego={cargarJuego}
-                      juegos={juegos}
-                      setJuegos={setJuegos}
-                      borrarProducto={borrarProducto}
-                      cargarUsuarios={cargarUsuarios}
-                      usuarios={usuarios}
-                      setUsuarios={setUsuarios}
-                      borrarUsuario={borrarUsuario}
+                    <ProtectoRutas
+                      usuarioLogeado={usuarioLogeado}
+                      usuarioRegistradoLog={usuarioRegistradoLog}
                     />
                   }
                 >
@@ -125,6 +119,10 @@ function App() {
                         juegos={juegos}
                         setJuegos={setJuegos}
                         borrarProducto={borrarProducto}
+                        cargarUsuarios={cargarUsuarios}
+                        usuarios={usuarios}
+                        setUsuarios={setUsuarios}
+                        borrarUsuario={borrarUsuario}
                       />
                     }
                   />
@@ -132,15 +130,6 @@ function App() {
                     path="/formulario-producto"
                     element={<FormularioProducto cargarJuego={cargarJuego} />}
                   />
-                </Route>
-                <Route
-                  element={
-                    <ProtectoRutas
-                      usuarioLogeado={usuarioLogeado}
-                      usuarioRegistradoLog={usuarioRegistradoLog}
-                    />
-                  }
-                >
                   <Route path="/favoritos" element={<Favoritos />} />
                   <Route path="/carro-compras" element={<CarroCompras />} />
                   <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
