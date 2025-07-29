@@ -139,7 +139,7 @@ const FormularioProducto = ({ titulo, cargarJuego, buscarJuego, editarJuego}) =>
               })}
             >
               <option value="">Elige una categoría</option>
-              <option value="Acción y Aventura">Acción y aventura</option>
+              <option value="Acción y Aventura">Acción y Aventura</option>
               <option value="Estrategia">Estrategia</option>
               <option value="Juego de Rol">Juego de Rol</option>
               <option value="Lucha">Lucha</option>
