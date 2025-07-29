@@ -49,7 +49,7 @@ const Tienda = ({ juegos }) => {
         </p>
         <Container>
           <Form>
-            <Form.Group className="mb-3" controlId="filtroNombreJuego">
+            <Form.Group className="mb-5" controlId="filtroNombreJuego">
               <Form.Control onChange={handleInputChange} value={terminoBusqueda} type="text" placeholder="Ingresa el nombre del juego que estas buscando" minLength={1} maxLength={200}/>
             </Form.Group>
           </Form>

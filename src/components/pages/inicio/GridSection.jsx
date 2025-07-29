@@ -19,7 +19,8 @@ const GridSection = () => {
     },
     {
       title: "Battlefield 6",
-      buttonText: "AGREGAR A LA LISTA DE DESEOS >",
+      buttonText: "HAZ CLICK PARA VER MÁS DETALLES >",
+      buttonLink: "/detalle-producto/11",
       leftBgColor: "#9f007cff",
       textColor: "#ffff",
       imageUrl:
@@ -34,7 +35,7 @@ const GridSection = () => {
       subtitle:
         "Encuentra tu centro. Juega con poder. Levántate para defender Pandaria.",
       buttonText: "CONSIGUELO AHORA",
-      buttonLink: "/tienda",
+      buttonLink: "/detalle-producto/12",
       leftBgColor: "#9f007cff",
       imageUrl:
         "https://cms-assets.xboxservices.com/assets/ae/2e/ae2e005f-d4b6-4373-933d-3b464221a62d.jpg?n=WoW-Classic-Mists_Small-tout-1084_475x534.jpg",
@@ -60,7 +61,7 @@ const GridSection = () => {
       title: "EA SPORTS™ College Football 26",
       subtitle: "Construye tu legado.",
       buttonText: "CONSÍGUELO AHORA",
-      buttonLink: "/tienda",
+      buttonLink: "/detalle-producto/13",
       leftBgColor: "#9f007cff",
       textColor: "#ffff",
       imageUrl:
@@ -75,7 +76,7 @@ const GridSection = () => {
       subtitle:
         "Rescata a los Pitufos de Gargamel en el nuevo DLC de los Pitufos",
       buttonText: "CONSÍGUELO AHORA",
-      buttonLink: "/tienda",
+      buttonLink: "/detalle-producto/14",
       leftBgColor: "#9f007cff",
       textColor: "#ffff",
       imageUrl:
@@ -88,7 +89,7 @@ const GridSection = () => {
       title: "Killing Floor 3",
       subtitle: "Mata zombis, gana dinero, equípate, repite.",
       buttonText: "CONSÍGUELO AHORA",
-      buttonLink: "/tienda",
+      buttonLink: "/detalle-producto/15",
       leftBgColor: "#9f007cff",
       textColor: "#ffff",
       imageUrl:
@@ -103,7 +104,7 @@ const GridSection = () => {
       subtitle:
         "Un juego de supervivencia y construcción guiado por la historia, ya disponible.",
       buttonText: "CONSÍGUELO AHORA",
-      buttonLink: "/tienda",
+      buttonLink: "/detalle-producto/16",
       leftBgColor: "#9f007cff",
       imageUrl:
         "https://cms-assets.xboxservices.com/assets/c0/62/c062e55b-0ceb-4b49-bf3a-9602dfed7320.jpg?n=Abiotic-Factor_Small-tout-1084_475x534.jpg",
