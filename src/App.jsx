@@ -19,14 +19,14 @@ import { CarritoProvider } from "./components/pages/carro-compras/CarroComprasCo
 import { FavoritosProvider } from "./components/pages/favoritos/FavoritosContext.jsx";
 import LayoutConMenuYFooter from "./components/layout/LayoutConMenuYFooter.jsx";
 import LayoutSinMenuNiFooter from "./components/layout/LayoutSinMenuNiFooter.jsx";
+import ProtectoRutas from "./components/routes/ProtectoRutas.jsx";
 
 function App() {
   const juegosLocalStorage =
     JSON.parse(localStorage.getItem("juegosKey")) || [];
   const [juegos, setJuegos] = useState(juegosLocalStorage);
 
-  
-    const usuariosLocalStorage =
+  const usuariosLocalStorage =
     JSON.parse(localStorage.getItem("usuariosKey")) || [];
   const [usuarios, setUsuarios] = useState(usuariosLocalStorage);
 
@@ -53,17 +53,19 @@ function App() {
   };
 
   const borrarUsuario = (idUsuario) => {
-    const usuariosFiltrados = usuarios.filter((usuario) => usuario.id !== idUsuario);
+    const usuariosFiltrados = usuarios.filter(
+      (usuario) => usuario.id !== idUsuario
+    );
     setUsuarios(usuariosFiltrados);
-    return true;}
+    return true;
+  };
 
-  const cargarUsuario = (usuarioNuevo)=> {
-    setUsuarios([...usuarios, usuarioNuevo])
-    usuarioNuevo.id=uuidv4()
+  const cargarUsuario = (usuarioNuevo) => {
+    setUsuarios([...usuarios, usuarioNuevo]);
+    usuarioNuevo.id = uuidv4();
 
     return true;
-  }
-
+  };
   const usuarioLogeadoStorage =
     JSON.parse(sessionStorage.getItem("usuarioLogeado")) || false;
   const [usuarioLogeado, setUsuarioLogeado] = useState(usuarioLogeadoStorage);
@@ -77,7 +79,6 @@ function App() {
   const buscarJuego = (id) => {
     return juegos.find((juego) => juego.id.toString() === id.toString());
   };
-
   return (
     <>
       <FavoritosProvider>
@@ -96,39 +97,54 @@ function App() {
                 }
               >
                 <Route path="/" element={<Inicio />} />
-                <Route path="/carro-compras" element={<CarroCompras />} />
+
                 <Route
                   path="/detalle-producto/:id"
                   element={<DetalleProducto buscarJuego={buscarJuego} />}
                 />
                 <Route path="/login" element={<Login />} />
-                <Route path="/registro" element={<Registro cargarUsuario={cargarUsuario} />} />
                 <Route
-                  path="/administrador"
+                  path="/registro"
+                  element={<Registro cargarUsuario={cargarUsuario} />}
+                />
+                <Route
                   element={
-                    <Administrador
-                      cargarJuego={cargarJuego}
-                      juegos={juegos}
-                      setJuegos={setJuegos}
-                      borrarProducto={borrarProducto}
-                      cargarUsuario={cargarUsuario}
-                      usuarios={usuarios}
-                      setUsuarios={setUsuarios}
-                      borrarUsuario={borrarUsuario}
+                    <ProtectoRutas
+                      usuarioLogeado={usuarioLogeado}
+                      usuarioRegistradoLog={usuarioRegistradoLog}
                     />
                   }
-                />
+                >
+                  <Route
+                    path="/administrador"
+                    element={
+                      <Administrador
+                        cargarJuego={cargarJuego}
+                        juegos={juegos}
+                        setJuegos={setJuegos}
+                        borrarProducto={borrarProducto}
+                        cargarUsuario={cargarUsuario}
+                        usuarios={usuarios}
+                        setUsuarios={setUsuarios}
+                        borrarUsuario={borrarUsuario}
+                      />
+                    }
+                  />
+                  <Route
+                    path="/formulario-producto"
+                    element={<FormularioProducto cargarJuego={cargarJuego} />}
+                  />
+                  <Route path="/favoritos" element={<Favoritos />} />
+                  <Route path="/carro-compras" element={<CarroCompras />} />
+                  <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
+                  <Route path="/carro-compras" element={<CarroCompras />} />
+                </Route>
+
                 <Route path="/sobre-nosotros" element={<SobreNosotros />} />
                 <Route path="/tienda" element={<Tienda juegos={juegos} />} />
-                <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
-                <Route path="/favoritos" element={<Favoritos />} />
                 <Route
                   path="/fila-card-categorias"
                   element={<FilaCardCategorias />}
-                />
-                <Route
-                  path="/formulario-producto"
-                  element={<FormularioProducto cargarJuego={cargarJuego} />}
                 />
               </Route>
               <Route element={<LayoutSinMenuNiFooter />}>
