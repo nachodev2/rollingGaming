@@ -49,7 +49,7 @@ function App() {
 
   const editarJuego = (idJuego, juego) => {
     const juegosEditados = juegos.map((itemJuego)=>{
-      if(itemJuego.id === Number(idJuego)){
+      if(itemJuego.id === (idJuego)){
         return {
           ...itemJuego, 
           ...juego
