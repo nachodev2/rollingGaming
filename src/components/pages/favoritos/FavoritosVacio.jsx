@@ -13,9 +13,8 @@ function FavoritosVacio() {
                 <h2 className="mb-3 text-center">¡Favoritos está vacío!</h2>
                 <p className='mb-4'>¡Agrega tus juegos favoritos!</p>
                 <Link to="/tienda">
-                <Button variant="primary" className='textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3'>Ir a la tienda</Button>
+                <Button variant="primary" className='textLogin colorLoginCrear rounded-3 border-2 mb-3'>Ir a la tienda</Button>
                 </Link>
-                <Login></Login>
             </Col>
         </Row>
     </Container>
