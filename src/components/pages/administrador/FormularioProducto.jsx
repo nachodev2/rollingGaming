@@ -19,6 +19,17 @@ const FormularioProducto = ({ titulo, cargarJuego, buscarJuego }) => {
   useEffect(() => {
     if (titulo === "Editar juego") {
       const juegoAEditar = buscarJuego(id);
+      setValue("nombreJuego", juegoAEditar.nombreJuego);
+      setValue("desarrollador", juegoAEditar.desarrollador);
+      setValue("categoria", juegoAEditar.categoria);
+      setValue("precio", juegoAEditar.precio);
+      setValue("imagen", juegoAEditar.imagen);
+      setValue("descripcion", juegoAEditar.descripcion);
+      setValue("microprocesador", juegoAEditar.microprocesador);
+      setValue("memoriaRam", juegoAEditar.memoriaRam);
+      setValue("grafica", juegoAEditar.grafica);
+      setValue("almacenamiento", juegoAEditar.almacenamiento);
+      setValue("sistemaOperativo", juegoAEditar.sistemaOperativo);
     }
   }, []);
 
@@ -47,7 +58,6 @@ const FormularioProducto = ({ titulo, cargarJuego, buscarJuego }) => {
         });
       }
     } else {
-
     }
   };
 
