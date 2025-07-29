@@ -12,8 +12,22 @@ const Tienda = ({ juegos }) => {
     // Aquí puedes manejar el cambio del input si es necesario
     setTerminoBusqueda(e.target.value);
   }
+
   // Filtrar los juegos según el término de búsqueda
   const juegosFiltrados = juegos.filter((juego) => juego.nombreJuego.toLowerCase().includes(terminoBusqueda.toLowerCase()));
+
+  // Obtener 4 juegos aleatorios para "Últimas Novedades"
+  const obtenerJuegosAleatorios = (array, cantidad) => {
+    if (!array || array.length === 0) return [];
+    const copia = [...array];
+    // Mezclar el array
+    for (let i = copia.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copia[i], copia[j]] = [copia[j], copia[i]];
+    }
+    return copia.slice(0, cantidad);
+  };
+  const novedades = obtenerJuegosAleatorios(juegos, 4);
 
   return (
     <div>
@@ -29,7 +43,7 @@ const Tienda = ({ juegos }) => {
 
       <section className="desde-abajo py-3 w-100">
         <h2 className="text-white text-center mb-5">Últimas Novedades</h2>
-        <FilaProducto juegos={juegos} onAgregar={agregarAlCarrito} />
+        <FilaProducto juegos={novedades} onAgregar={agregarAlCarrito} />
       </section>
 
       <section className="py-3 desde-abajo w-100">
