@@ -19,6 +19,7 @@ import { CarritoProvider } from "./components/pages/carro-compras/CarroComprasCo
 import { FavoritosProvider } from "./components/pages/favoritos/FavoritosContext.jsx";
 import LayoutConMenuYFooter from "./components/layout/LayoutConMenuYFooter.jsx";
 import LayoutSinMenuNiFooter from "./components/layout/LayoutSinMenuNiFooter.jsx";
+import ProtectorRutasAdmin from "./components/routes/ProtectorRutasAdmin.jsx";
 import ProtectoRutas from "./components/routes/ProtectoRutas.jsx";
 
 function App() {
@@ -125,12 +126,7 @@ function App() {
                   element={<Registro cargarUsuario={cargarUsuario} />}
                 />
                 <Route
-                  element={
-                    <ProtectoRutas
-                      usuarioLogeado={usuarioLogeado}
-                      usuarioRegistradoLog={usuarioRegistradoLog}
-                    />
-                  }
+                  element={<ProtectorRutasAdmin usuarioLogeado={usuarioLogeado} />}
                 >
                   <Route
                     path="/administrador"
@@ -147,12 +143,19 @@ function App() {
                       />
                     }
                   />
-                  <Route path="crear" element={<FormularioProducto titulo={"Añadir un juego"} cargarJuego={cargarJuego}></FormularioProducto>}/>
+                  <Route path="formulario-producto" element={<FormularioProducto titulo={"Añadir un juego"} cargarJuego={cargarJuego}></FormularioProducto>}/>
                   <Route path="editar/:id" element={<FormularioProducto titulo={"Editar juego"} buscarJuego={buscarJuego} cargarJuego={cargarJuego} editarJuego={editarJuego}></FormularioProducto>}/>
+                </Route>
+                <Route
+                  element={
+                    <ProtectoRutas
+                      usuarioRegistradoLog={usuarioRegistradoLog}
+                    />
+                  }
+                >
                   <Route path="/favoritos" element={<Favoritos />} />
                   <Route path="/carro-compras" element={<CarroCompras />} />
                   <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
-                  <Route path="/carro-compras" element={<CarroCompras />} />
                 </Route>
                 <Route path="/sobre-nosotros" element={<SobreNosotros />} />
                 <Route path="/tienda" element={<Tienda juegos={juegos} />} />

@@ -9,7 +9,7 @@ const usuarios = [
       dia: 10,
     },
     email: "alessandra.bl@example.com",
-    contrasena: "AlesPwd!123",
+    password: "AlesPwd!123",
     repetirContrasena: "AlesPwd!123",
   },
   {
@@ -22,7 +22,7 @@ const usuarios = [
       dia: 25,
     },
     email: "tomas.ir@example.com",
-    contrasena: "TomasSecure#4",
+    password: "TomasSecure#4",
     repetirContrasena: "TomasSecure#4",
   },
   {
@@ -35,7 +35,7 @@ const usuarios = [
       dia: 5,
     },
     email: "ximena.b@example.com",
-    contrasena: "XimenaPass_5",
+    password: "XimenaPass_5",
     repetirContrasena: "XimenaPass_5",
   },
   {
@@ -48,7 +48,7 @@ const usuarios = [
       dia: 18,
     },
     email: "jose.db@example.com",
-    contrasena: "JosePwd2025!",
+    password: "JosePwd2025!",
     repetirContrasena: "JosePwd2025!",
   },
   {
@@ -61,7 +61,7 @@ const usuarios = [
       dia: 2,
     },
     email: "luciana.r@example.com",
-    contrasena: "LuciStrong#7",
+    password: "LuciStrong#7",
     repetirContrasena: "LuciStrong#7",
   },
   {
@@ -74,7 +74,7 @@ const usuarios = [
       dia: 22,
     },
     email: "jose.r@example.com",
-    contrasena: "RomeroDev@8",
+    password: "RomeroDev@8",
     repetirContrasena: "RomeroDev@8",
   },
 ];
