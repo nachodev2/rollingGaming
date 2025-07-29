@@ -1,17 +1,20 @@
 import { Form, Row, Col, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 import Swal from "sweetalert2";
 
 const Registro = ({ cargarUsuario }) => {
   const {
     register,
     handleSubmit,
+    reset,
     watch,
     formState: { errors },
   } = useForm();
   const password = watch("password") || "";
   const navegacion = useNavigate();
+  
+  const usuarioLogeado = JSON.parse(sessionStorage.getItem("usuarioLogeado"))
   const handleRegistro = (datos) => {
     if (cargarUsuario(datos) === true) {
       Swal.fire({
@@ -20,9 +23,12 @@ const Registro = ({ cargarUsuario }) => {
         icon: "success",
       });
       sessionStorage.setItem("usuarioRegistrado", JSON.stringify(datos));
-      navegacion("/");
-
       reset();
+       if (usuarioLogeado?.rol === "admin") {
+        navegacion("/administrador");
+      } else {
+        navegacion("/");
+      }
     } else {
       Swal.fire({
         title: "Error al crear usuario",
@@ -30,8 +36,6 @@ const Registro = ({ cargarUsuario }) => {
         icon: "error",
       });
     }
-    sessionStorage.setItem("usuarioRegistrado", JSON.stringify(datos));
-    navegacion("/");
   };
   return (
     <Container className="my-5 px-4 border border-1 rounded-4 border-secondary">
