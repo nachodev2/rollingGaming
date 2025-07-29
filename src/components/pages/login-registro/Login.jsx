@@ -15,6 +15,7 @@ function Login({ setUsuarioLogeado,setUsuarioRegistradoLog}){
   
   const usuarioLogeado = (usuario) => {
      const usuarioRegistrado = JSON.parse(sessionStorage.getItem("usuarioRegistrado"));
+     const usuariosCargados = JSON.parse(localStorage.getItem("usuariosKey")) || [];
         if (
       usuarioRegistrado &&
       usuario.email === usuarioRegistrado.email &&
@@ -22,6 +23,18 @@ function Login({ setUsuarioLogeado,setUsuarioRegistradoLog}){
     ) {
       setUsuarioRegistradoLog(true);
       sessionStorage.setItem("usuarioRegistradoLog", true);
+      navigate("/");
+      handleClose();
+      return;
+    }
+
+  const usuarioExistente = usuariosCargados.find(
+      (a) => a.email === usuario.email && a.password === usuario.password
+    );
+    if (usuarioExistente){
+      setUsuarioRegistradoLog(true);
+      sessionStorage.setItem("usuarioRegistradoLog", true);
+       sessionStorage.setItem("usuarioRegistrado", JSON.stringify(usuarioExistente))
       navigate("/");
       handleClose();
       return;
