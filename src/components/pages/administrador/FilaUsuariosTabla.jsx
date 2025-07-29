@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import { Link } from "react-router";
 
 
-const FilaUsuariosTabla = ({usuario, fila, borrarUsuario}) => {
+const FilaUsuariosTabla = ({usuario, fila, borrarUsuario, buscarUsuario}) => {
 
   const eliminarUsuario = () => {
       Swal.fire({
@@ -17,7 +17,6 @@ const FilaUsuariosTabla = ({usuario, fila, borrarUsuario}) => {
         cancelButtonText: "Cancelar",
       }).then((result) => {
         if (result.isConfirmed) {
-          //invocar a la funcion que sabe borrar que esta en App.jsx
           if (borrarUsuario(usuario.id)) {
             Swal.fire({
               title: "Usuario Eliminado",
@@ -43,7 +42,7 @@ const FilaUsuariosTabla = ({usuario, fila, borrarUsuario}) => {
       <td>{usuario.nombre}</td>
       <td>{usuario.email}</td>
       <td className="">
-        <Link className="me-2 mb-2 mb-md-1 btn btn-primary">
+        <Link className="me-2 mb-2 mb-md-1 btn btn-primary" to={ `/editarUsuario/${usuario.id}`}>
           <i className="bi bi-pencil-square"></i>
         </Link>
         <Button className="mb-2 mb-md-1 btn btn-danger" onClick={eliminarUsuario}>

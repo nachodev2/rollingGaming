@@ -2,20 +2,56 @@ import { Form, Row, Col, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useNavigate, useLocation } from "react-router";
 import Swal from "sweetalert2";
+import { useParams } from "react-router";
+import { useEffect } from "react";
 
-const Registro = ({ cargarUsuario }) => {
+
+const Registro = ({ cargarUsuario, buscarUsuario, titulo, botonEnviarRegistro, editarUsuario  }) => {
   const {
     register,
     handleSubmit,
     reset,
+    setValue,
     watch,
     formState: { errors },
   } = useForm();
   const password = watch("password") || "";
   const navegacion = useNavigate();
-  
+  const {id} = useParams();
+  useEffect(()=>{
+    if(titulo==="Editar usuario"){const usuarioEditar=buscarUsuario(id)
+      setValue("usuario", usuarioEditar.usuario)
+      setValue("nombre", usuarioEditar.nombre)
+      setValue("email", usuarioEditar.email)
+      setValue("año", usuarioEditar.año)
+      setValue("mes", usuarioEditar.mes)
+      setValue("dia", usuarioEditar.dia)
+      setValue("password", usuarioEditar.password)
+    ;
+    }
+  },[])
+
   const usuarioLogeado = JSON.parse(sessionStorage.getItem("usuarioLogeado"))
   const handleRegistro = (datos) => {
+    console.log("guardar cambios")
+  if (id) {
+    // Modo edición
+    if (editarUsuario(id, datos)) {
+      Swal.fire({
+        title: "Usuario Editado",
+        text: `El usuario ${datos.nombre} fue editado correctamente`,
+        icon: "success",
+      });
+      navigate("/administrador");
+    } else {
+      Swal.fire({
+        title: "Error al editar usuario",
+        text: `El usuario ${datos.nombre} no pudo ser editado`,
+        icon: "error",
+      });
+    }
+  } else {
+    // Modo creación
     if (cargarUsuario(datos) === true) {
       Swal.fire({
         title: "Usuario Creado",
@@ -24,7 +60,7 @@ const Registro = ({ cargarUsuario }) => {
       });
       sessionStorage.setItem("usuarioRegistrado", JSON.stringify(datos));
       reset();
-       if (usuarioLogeado?.rol === "admin") {
+      if (usuarioLogeado?.rol === "admin") {
         navegacion("/administrador");
       } else {
         navegacion("/");
@@ -36,10 +72,11 @@ const Registro = ({ cargarUsuario }) => {
         icon: "error",
       });
     }
-  };
+  }
+};
   return (
     <Container className="my-5 px-4 border border-1 rounded-4 border-secondary">
-      <h2 className="text-center my-4">Crear una Cuenta</h2>
+      <h2 className="text-center my-4">{titulo}</h2>
       <Form onSubmit={handleSubmit(handleRegistro)}>
         <Row className="mb-3">
           <Form.Group as={Col} md="6" controlId="formUsuario">
@@ -92,7 +129,9 @@ const Registro = ({ cargarUsuario }) => {
         <Row className="mb-3">
           <Form.Label>Fecha de Nacimiento</Form.Label>
           <Form.Group as={Col} md="4" controlId="formFechaAnio">
-            <Form.Select required>
+            <Form.Select required {...register("año", {
+                required: "Debe seleccionar un año",
+              })}>
               <option>Año</option>
               <option value="2010">2010</option>
               <option value="2009">2009</option>
@@ -159,7 +198,9 @@ const Registro = ({ cargarUsuario }) => {
           </Form.Group>
 
           <Form.Group as={Col} md="4" controlId="formFechaMes">
-            <Form.Select required>
+            <Form.Select required {...register("mes", {
+                required: "Debe seleccionar un mes",
+              })}>
               <option>Mes</option>
               <option value="1">Enero</option>
               <option value="2">Febrero</option>
@@ -177,7 +218,9 @@ const Registro = ({ cargarUsuario }) => {
           </Form.Group>
 
           <Form.Group as={Col} md="4" controlId="formFechaDia">
-            <Form.Select required>
+            <Form.Select required {...register("dia", {
+                required: "Debe seleccionar un dia",
+              })}>
               <option>Día</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -281,7 +324,7 @@ const Registro = ({ cargarUsuario }) => {
 
         <div className="d-grid my-4 ">
           <Button variant="primary" type="submit" size="lg">
-            Registrarse
+            {botonEnviarRegistro}
           </Button>
         </div>
       </Form>
