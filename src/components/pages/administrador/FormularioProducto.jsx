@@ -98,12 +98,12 @@ const FormularioProducto = ({cargarJuego}) => {
               })}
             >
               <option value="">Elige una categoría</option>
-              <option value="accionAventura">Acción y aventura</option>
-              <option value="estrategia">Estrategia</option>
-              <option value="juegoRol">Juego de Rol</option>
-              <option value="lucha">Lucha</option>
-              <option value="simulacion">Simulación</option>
-              <option value="tiros">Tiros</option>
+              <option value="Acción y Aventura">Acción y aventura</option>
+              <option value="Estrategia">Estrategia</option>
+              <option value="Juego de Rol">Juego de Rol</option>
+              <option value="Lucha">Lucha</option>
+              <option value="Simulación">Simulación</option>
+              <option value="Tiros">Tiros</option>
             </Form.Select>
             <Form.Text className="text-danger">
               {errors.categoria?.message}
