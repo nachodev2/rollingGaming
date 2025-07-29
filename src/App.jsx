@@ -80,7 +80,7 @@ function App() {
 
     return true;
   };
-  
+
   const usuarioLogeadoStorage =
     JSON.parse(sessionStorage.getItem("usuarioLogeado")) || false;
   const [usuarioLogeado, setUsuarioLogeado] = useState(usuarioLogeadoStorage);
@@ -147,7 +147,7 @@ function App() {
                     }
                   />
                   <Route path="crear" element={<FormularioProducto titulo={"Añadir un juego"} cargarJuego={cargarJuego}></FormularioProducto>}/>
-                  <Route path="editar/:id" element={<FormularioProducto titulo={"Editar juego"} buscarJuego={buscarJuego} cargarJuego={cargarJuego}></FormularioProducto>}/>
+                  <Route path="editar/:id" element={<FormularioProducto titulo={"Editar juego"} buscarJuego={buscarJuego} cargarJuego={cargarJuego} editarJuego={editarJuego}></FormularioProducto>}/>
                   <Route path="/favoritos" element={<Favoritos />} />
                   <Route path="/carro-compras" element={<CarroCompras />} />
                   <Route path="/favoritos-vacio" element={<FavoritosVacio />} />

@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { useNavigate, useParams } from "react-router";
 import { useEffect } from "react";
 
-const FormularioProducto = ({ titulo, cargarJuego, buscarJuego }) => {
+const FormularioProducto = ({ titulo, cargarJuego, buscarJuego, editarJuego}) => {
   const navigate = useNavigate();
   const {
     register,
@@ -38,7 +38,7 @@ const FormularioProducto = ({ titulo, cargarJuego, buscarJuego }) => {
       if (cargarJuego(juego) === true) {
         Swal.fire({
           title: "Creaste un juego",
-          text: `El producto ${juego.nombreJuego} fue creado correctamente`,
+          text: `El juego ${juego.nombreJuego} fue creado correctamente`,
           icon: "success",
           confirmButtonText: "Volver al administrador",
           showCancelButton: true,
@@ -58,7 +58,14 @@ const FormularioProducto = ({ titulo, cargarJuego, buscarJuego }) => {
         });
       }
     } else {
-      
+      if(editarJuego(id, juego)){
+        Swal.fire({
+          title: "Editaste un juego",
+          text: `El juego ${juego.nombreJuego} fue editado correctamente`,
+          icon: "success",
+        });
+        navigate("/administrador");
+      }
     }
   };
 
