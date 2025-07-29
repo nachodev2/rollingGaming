@@ -1,6 +1,6 @@
 const juegosPrueba = [
   {
-    id: 1,
+    id: "1",
     nombreJuego: "God of War: Ragnarök",
     desarrollador: "Santa Monica Studio",
     categoria: "Acción y Aventura",
@@ -16,7 +16,7 @@ const juegosPrueba = [
     puntuacion: 5
   },
   {
-    id: 2,
+    id: "2",
     nombreJuego: "The Witcher 3: Wild Hunt",
     desarrollador: "CD Projekt RED",
     categoria: "Juego de Rol",
@@ -32,7 +32,7 @@ const juegosPrueba = [
     puntuacion: 3.4
   },
   {
-    id: 3,
+    id: "3",
     nombreJuego: "FIFA 24",
     desarrollador: "EA Sports",
     categoria: "Simulación",
@@ -48,7 +48,7 @@ const juegosPrueba = [
     puntuacion: 4.2
   },
   {
-    id: 4,
+    id: "4",
     nombreJuego: "Call of Duty: Modern Warfare III",
     desarrollador: "Infinity Ward",
     categoria: "Tiros",
@@ -64,7 +64,7 @@ const juegosPrueba = [
     puntuacion: 2.9
   },
   {
-    id: 5,
+    id: "5",
     nombreJuego: "Street Fighter 6",
     desarrollador: "Capcom",
     categoria: "Lucha",
@@ -80,7 +80,7 @@ const juegosPrueba = [
     puntuacion: 3.6
   },
   {
-    id: 6,
+    id: "6",
     nombreJuego: "Age of Empires IV",
     desarrollador: "Relic Entertainment",
     categoria: "Estrategia",
@@ -96,7 +96,7 @@ const juegosPrueba = [
     puntuacion: 2
   },
   {
-    id: 7,
+    id: "7",
     nombreJuego: "Final Fantasy XVI",
     desarrollador: "Square Enix",
     categoria: "Juego de Rol",
@@ -112,7 +112,7 @@ const juegosPrueba = [
     puntuacion: 4.4
   },
   {
-    id: 8,
+    id: "8",
     nombreJuego: "It Takes Two",
     desarrollador: "Hazelight Studios",
     categoria: "Acción y Aventura",
@@ -128,7 +128,7 @@ const juegosPrueba = [
     puntuacion: 5
   },
   {
-    id: 9,
+    id: "9",
     nombreJuego: "Mortal Kombat 1",
     desarrollador: "NetherRealm Studios",
     categoria: "Lucha",
@@ -144,7 +144,7 @@ const juegosPrueba = [
     puntuacion: 4
   },
   {
-    id: 10,
+    id: "10",
     nombreJuego: "Gran Turismo 7",
     desarrollador: "Polyphony Digital",
     categoria: "Simulación",
@@ -159,7 +159,7 @@ const juegosPrueba = [
     sistemaOperativo: "PlayStation 5"
   },
   {
-    id: 11,
+    id: "11",
     nombreJuego: "Battlefield 6",
     desarrollador: "Electronics Arts",
     categoria: "Guerra",
@@ -174,7 +174,7 @@ const juegosPrueba = [
     sistemaOperativo: "Windows 11"
   },
   {
-    id: 12,
+    id: "12",
     nombreJuego: "World of Warcraft®: Mists of Pandaria Classic™",
     desarrollador: "Blizzard Entertainment",
     categoria: "Juego de Rol",
@@ -189,7 +189,7 @@ const juegosPrueba = [
     sistemaOperativo: "Windows 10"
   },
   {
-    id: 13,
+    id: "13",
     nombreJuego: "EA SPORTS™ College Football 26",
     desarrollador: "Electronic Arts",
     categoria: "Deportes",
@@ -204,7 +204,7 @@ const juegosPrueba = [
     sistemaOperativo: "Windows 10"
   },
   {
-    id: 14,
+    id: "14",
     nombreJuego: "Minecraft",
     desarrollador: "Mojang Studios",
     categoria: "Aventura",
@@ -219,7 +219,7 @@ const juegosPrueba = [
     sistemaOperativo: "Windows 10"
   },
   {
-    id: 15,
+    id: "15",
     nombreJuego: "Killing Floor 3",
     desarrollador: "Tripwire Interactive",
     categoria: "Terror",
@@ -234,7 +234,7 @@ const juegosPrueba = [
     sistemaOperativo: "Windows 10"
   },
   {
-    id: 16,
+    id: "16",
     nombreJuego: "Abiotic Factor",
     desarrollador: "Indie Studio",
     categoria: "Aventura",
