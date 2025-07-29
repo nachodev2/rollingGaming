@@ -2,7 +2,6 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './favoritos.css';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router';
-import Login from '../login-registro/Login';
 
 function FavoritosVacio() {
   return (
