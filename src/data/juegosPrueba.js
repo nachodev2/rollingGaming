@@ -246,8 +246,7 @@ const juegosPrueba = [
     memoriaRam: "8 GB RAM",
     grafica: "GTX 750",
     almacenamiento: "20 GB",
-    sistemaOperativo: "Windows 10",
-    puntuacion: 3.3
+    sistemaOperativo: "Windows 10"
   }
 ];
 

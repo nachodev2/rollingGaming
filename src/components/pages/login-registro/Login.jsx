@@ -6,16 +6,20 @@ import { Image } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 
-function Login({ setUsuarioLogeado,setUsuarioRegistradoLog}){
+function Login({ setUsuarioLogeado, setUsuarioRegistradoLog }) {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  
+
   const usuarioLogeado = (usuario) => {
-     const usuarioRegistrado = JSON.parse(sessionStorage.getItem("usuarioRegistrado"));
-        if (
+    const usuarioRegistrado = JSON.parse(
+      sessionStorage.getItem("usuarioRegistrado")
+    );
+    const usuariosCargados =
+      JSON.parse(localStorage.getItem("usuariosKey")) || [];
+    if (
       usuarioRegistrado &&
       usuario.email === usuarioRegistrado.email &&
       usuario.password === usuarioRegistrado.password
@@ -26,20 +30,36 @@ function Login({ setUsuarioLogeado,setUsuarioRegistradoLog}){
       handleClose();
       return;
     }
+
+    const usuarioExistente = usuariosCargados.find(
+      (a) => a.email === usuario.email && a.password === usuario.password
+    );
+    if (usuarioExistente) {
+      setUsuarioRegistradoLog(true);
+      sessionStorage.setItem("usuarioRegistradoLog", true);
+      sessionStorage.setItem(
+        "usuarioRegistrado",
+        JSON.stringify(usuarioExistente)
+      );
+      navigate("/");
+      handleClose();
+      return;
+    }
     if (
       usuario.email === import.meta.env.VITE_API_EMAIL &&
       usuario.password === import.meta.env.VITE_API_CONTRASENIA
     ) {
+      const admin = {
+        email: usuario.email,
+        rol: "admin",
+      };
       setUsuarioLogeado(true);
-      sessionStorage.setItem("usuarioLogeado", true);
+      sessionStorage.setItem("usuarioLogeado", JSON.stringify(admin));
+      setUsuarioLogeado(admin);
       navigate("/");
-      handleClose();
-    } else {
-      console.log("Error en las credenciales");
+      return;
     }
-   
   };
-  
 
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
