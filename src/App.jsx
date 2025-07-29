@@ -60,11 +60,12 @@ function App() {
     return true;
   };
 
-  const cargarUsuarios = (usuarioNuevo) => {
+  const cargarUsuario = (usuarioNuevo) => {
     setUsuarios([...usuarios, usuarioNuevo]);
+    usuarioNuevo.id = uuidv4();
+
     return true;
   };
-
   const usuarioLogeadoStorage =
     JSON.parse(sessionStorage.getItem("usuarioLogeado")) || false;
   const [usuarioLogeado, setUsuarioLogeado] = useState(usuarioLogeadoStorage);
@@ -96,13 +97,16 @@ function App() {
                 }
               >
                 <Route path="/" element={<Inicio />} />
-               
+
                 <Route
                   path="/detalle-producto/:id"
                   element={<DetalleProducto buscarJuego={buscarJuego} />}
                 />
                 <Route path="/login" element={<Login />} />
-                <Route path="/registro" element={<Registro />} />
+                <Route
+                  path="/registro"
+                  element={<Registro cargarUsuario={cargarUsuario} />}
+                />
                 <Route
                   element={
                     <ProtectoRutas
@@ -119,7 +123,7 @@ function App() {
                         juegos={juegos}
                         setJuegos={setJuegos}
                         borrarProducto={borrarProducto}
-                        cargarUsuarios={cargarUsuarios}
+                        cargarUsuario={cargarUsuario}
                         usuarios={usuarios}
                         setUsuarios={setUsuarios}
                         borrarUsuario={borrarUsuario}
@@ -133,7 +137,7 @@ function App() {
                   <Route path="/favoritos" element={<Favoritos />} />
                   <Route path="/carro-compras" element={<CarroCompras />} />
                   <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
-                   <Route path="/carro-compras" element={<CarroCompras />} />
+                  <Route path="/carro-compras" element={<CarroCompras />} />
                 </Route>
 
                 <Route path="/sobre-nosotros" element={<SobreNosotros />} />

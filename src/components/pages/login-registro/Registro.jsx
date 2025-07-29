@@ -1,8 +1,9 @@
 import { Form, Row, Col, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
+import Swal from "sweetalert2";
 
-const Registro = () => {
+const Registro = ({ cargarUsuario }) => {
   const {
     register,
     handleSubmit,
@@ -10,12 +11,28 @@ const Registro = () => {
     formState: { errors },
   } = useForm();
   const password = watch("password") || "";
-  ;
-  const navegacion  = useNavigate()
+  const navegacion = useNavigate();
   const handleRegistro = (datos) => {
-  sessionStorage.setItem("usuarioRegistrado", JSON.stringify(datos));
-  navegacion ("/");
-};
+    if (cargarUsuario(datos) === true) {
+      Swal.fire({
+        title: "Usuario Creado",
+        text: `El usuario ${datos.usuario} fue creado correctamente`,
+        icon: "success",
+      });
+      sessionStorage.setItem("usuarioRegistrado", JSON.stringify(datos));
+      navegacion("/");
+
+      reset();
+    } else {
+      Swal.fire({
+        title: "Error al crear usuario",
+        text: `El usuario ${datos.nombre} no pudo ser creado`,
+        icon: "error",
+      });
+    }
+    sessionStorage.setItem("usuarioRegistrado", JSON.stringify(datos));
+    navegacion("/");
+  };
   return (
     <Container className="my-5 px-4 border border-1 rounded-4 border-secondary">
       <h2 className="text-center my-4">Crear una Cuenta</h2>
@@ -30,11 +47,13 @@ const Registro = () => {
                 required: "El nombre de usuario es obligatorio",
                 minLength: {
                   value: 5,
-                  message: "El nombre de usuario debe tener al menos 5 caracteres",
+                  message:
+                    "El nombre de usuario debe tener al menos 5 caracteres",
                 },
                 maxLength: {
                   value: 30,
-                  message: "El nombre de usuario no puede exceder los 30 caracteres",
+                  message:
+                    "El nombre de usuario no puede exceder los 30 caracteres",
                 },
               })}
             />
@@ -199,7 +218,8 @@ const Registro = () => {
             {...register("email", {
               required: "El correo electrónico es obligatorio",
               pattern: {
-                value: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+                value:
+                  /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
                 message: "Formato de correo electrónico inválido",
               },
             })}
@@ -216,20 +236,22 @@ const Registro = () => {
               type="password"
               placeholder="Crea una contraseña"
               {...register("password", {
-              required: "La Contraseña es obligatorio",
-              pattern: {
-                value: /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/,
-                message: "La contraseña debe tener al entre 8 y 30 caracteres, al menos un dígito, al menos una minúscula, al menos una mayúscula y al menos un caracter no alfanumérico",
-                minLength: {
-                  value: 8,
-                  message: "La contraseña debe tener al menos 8 caracteres",
+                required: "La Contraseña es obligatorio",
+                pattern: {
+                  value:
+                    /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/,
+                  message:
+                    "La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula, al menos una mayúscula y al menos un caracter no alfanumérico",
+                  minLength: {
+                    value: 8,
+                    message: "La contraseña debe tener al menos 8 caracteres",
+                  },
+                  maxLength: {
+                    value: 30,
+                    message: "La contraseña no debe tener más de 30 caracteres",
+                  },
                 },
-                maxLength: {
-                  value: 30,
-                  message: "La contraseña no debe tener más de 30 caracteres",
-                },
-              },
-            })}
+              })}
             />
             <Form.Text id="formTextContrasenia" className="text-danger">
               {errors.password?.message}
