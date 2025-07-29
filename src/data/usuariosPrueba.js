@@ -8,7 +8,7 @@ const usuarios = [
       mes: 3, // March
       dia: 10,
     },
-    correoElectronico: "alessandra.bl@example.com",
+    email: "alessandra.bl@example.com",
     contrasena: "AlesPwd!123",
     repetirContrasena: "AlesPwd!123",
   },
@@ -21,7 +21,7 @@ const usuarios = [
       mes: 7, // July
       dia: 25,
     },
-    correoElectronico: "tomas.ir@example.com",
+    email: "tomas.ir@example.com",
     contrasena: "TomasSecure#4",
     repetirContrasena: "TomasSecure#4",
   },
@@ -34,7 +34,7 @@ const usuarios = [
       mes: 1, // January
       dia: 5,
     },
-    correoElectronico: "ximena.b@example.com",
+    email: "ximena.b@example.com",
     contrasena: "XimenaPass_5",
     repetirContrasena: "XimenaPass_5",
   },
@@ -47,7 +47,7 @@ const usuarios = [
       mes: 11, // November
       dia: 18,
     },
-    correoElectronico: "jose.db@example.com",
+    email: "jose.db@example.com",
     contrasena: "JosePwd2025!",
     repetirContrasena: "JosePwd2025!",
   },
@@ -60,7 +60,7 @@ const usuarios = [
       mes: 9, // September
       dia: 2,
     },
-    correoElectronico: "luciana.r@example.com",
+    email: "luciana.r@example.com",
     contrasena: "LuciStrong#7",
     repetirContrasena: "LuciStrong#7",
   },
@@ -73,7 +73,7 @@ const usuarios = [
       mes: 4, // April
       dia: 22,
     },
-    correoElectronico: "jose.r@example.com",
+    email: "jose.r@example.com",
     contrasena: "RomeroDev@8",
     repetirContrasena: "RomeroDev@8",
   },
