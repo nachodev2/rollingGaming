@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import "./tienda.css";
 import FilaProducto from "../producto/FilaProducto";
 import { CarritoContext } from "../carro-compras/CarroComprasContext";
@@ -6,6 +6,13 @@ import { Container, Form } from "react-bootstrap";
 
 const Tienda = ({ juegos }) => {
   const { agregarAlCarrito } = useContext(CarritoContext);
+  const [terminoBusqueda, setTerminoBusqueda] = useState("");
+
+  const handleInputChange = (e) => {
+    // Aquí puedes manejar el cambio del input si es necesario
+    setTerminoBusqueda(e.target.value);
+
+  }
 
   return (
     <div>
@@ -32,7 +39,7 @@ const Tienda = ({ juegos }) => {
         <Container>
           <Form>
             <Form.Group className="mb-3" controlId="filtroNombreJuego">
-              <Form.Control type="text" placeholder="Ingresa el nombre del juego que estas buscando" minLength={1} maxLength={200}/>
+              <Form.Control onChange={handleInputChange} value={terminoBusqueda} type="text" placeholder="Ingresa el nombre del juego que estas buscando" minLength={1} maxLength={200}/>
             </Form.Group>
           </Form>
         </Container>
