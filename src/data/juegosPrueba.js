@@ -156,7 +156,6 @@ const juegosPrueba = [
     memoriaRam: "Desconocido",
     grafica: "Desconocido",
     almacenamiento: "Desconocido",
-<<<<<<< HEAD
     sistemaOperativo: "PlayStation 5"
   },
   {
@@ -247,11 +246,8 @@ const juegosPrueba = [
     memoriaRam: "8 GB RAM",
     grafica: "GTX 750",
     almacenamiento: "20 GB",
-    sistemaOperativo: "Windows 10"
-=======
-    sistemaOperativo: "PlayStation 5",
+    sistemaOperativo: "Windows 10",
     puntuacion: 3.3
->>>>>>> 21b4d6432246448980bae808bfdc4080baf17bc3
   }
 ];
 
