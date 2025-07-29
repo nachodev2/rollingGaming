@@ -2,14 +2,13 @@ import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router";
 import "./navFooter.css";
 import Login from "../pages/login-registro/Login";
-import { useNavigate } from "react-router";
+
 const Menu = ({
   setUsuarioLogeado,
   usuarioLogeado,
   usuarioRegistradoLog,
   setUsuarioRegistradoLog,
 }) => {
-  const navigate = useNavigate();
   const cerrarSesion = () => {
     setUsuarioLogeado(false);
     sessionStorage.removeItem("usuarioLogeado");
@@ -50,15 +49,20 @@ const Menu = ({
               <Nav.Link
                 as={Link}
                 to="/sobre-nosotros"
-                className="textNavFooter"
+                className="textNavFooter "
               >
                 Sobre Nosotros
               </Nav.Link>
               {usuarioRegistradoLog ? (
                 <>
-                  <Nav.Link as={Link} to="/favoritos" className="textNavFooter">
-                    Favoritos
-                  </Nav.Link>
+                      <Button
+                  className="textNavFooter textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3 px-4"
+                  as={Link}
+                  to="/favoritos"
+                  
+                >
+                  <i className="bi bi-heart-fill"></i>
+                </Button>
                      <Button
                   className="textNavFooter textLogin me-4 colorLoginCrear rounded-3 border-2 mb-3 px-4"
                   as={Link}

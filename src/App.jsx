@@ -19,26 +19,68 @@ import { CarritoProvider } from "./components/pages/carro-compras/CarroComprasCo
 import { FavoritosProvider } from "./components/pages/favoritos/FavoritosContext.jsx";
 import LayoutConMenuYFooter from "./components/layout/LayoutConMenuYFooter.jsx";
 import LayoutSinMenuNiFooter from "./components/layout/LayoutSinMenuNiFooter.jsx";
+import ProtectoRutas from "./components/routes/ProtectoRutas.jsx";
 
 function App() {
-  const juegosLocalStorage = JSON.parse(localStorage.getItem("juegosKey")) || [];
+  const juegosLocalStorage =
+    JSON.parse(localStorage.getItem("juegosKey")) || [];
   const [juegos, setJuegos] = useState(juegosLocalStorage);
+
+  const usuariosLocalStorage =
+    JSON.parse(localStorage.getItem("usuariosKey")) || [];
+  const [usuarios, setUsuarios] = useState(usuariosLocalStorage);
 
   useEffect(() => {
     localStorage.setItem("juegosKey", JSON.stringify(juegos));
-  }, [juegos]);
+    localStorage.setItem("usuariosKey", JSON.stringify(usuarios));
+  }, [juegos, usuarios]);
 
   const cargarJuego = (juegoNuevo) => {
-    juegoNuevo.id = uuidv4();
-    setJuegos([...juegos, juegoNuevo]);
+    const juegoConIdYPunt = {
+      ...juegoNuevo,
+      precio: parseFloat(juegoNuevo.precio),
+      id: uuidv4(),
+      puntuacion: +(Math.random() * 4 + 1).toFixed(1),
+    };
+    setJuegos([...juegos, juegoConIdYPunt]);
     return true;
   };
+
+  const editarJuego = (idJuego, juego) => {
+    const juegosEditados = juegos.map((itemJuego)=>{
+      if(itemJuego.id === Number(idJuego)){
+        return {
+          ...itemJuego, 
+          ...juego
+        }
+      }
+      return itemJuego
+    })
+    setJuegos(juegosEditados);
+    console.log(juegos);
+    return true
+  }
+
   const borrarProducto = (idJuego) => {
     const juegosFiltrados = juegos.filter((juego) => juego.id !== idJuego);
     setJuegos(juegosFiltrados);
     return true;
   };
 
+  const borrarUsuario = (idUsuario) => {
+    const usuariosFiltrados = usuarios.filter(
+      (usuario) => usuario.id !== idUsuario
+    );
+    setUsuarios(usuariosFiltrados);
+    return true;
+  };
+
+  const cargarUsuario = (usuarioNuevo) => {
+    setUsuarios([...usuarios, usuarioNuevo]);
+    usuarioNuevo.id = uuidv4();
+
+    return true;
+  };
 
   const usuarioLogeadoStorage =
     JSON.parse(sessionStorage.getItem("usuarioLogeado")) || false;
@@ -53,11 +95,11 @@ function App() {
   const buscarJuego = (id) => {
     return juegos.find((juego) => juego.id.toString() === id.toString());
   };
-  return (
 
+  return (
     <>
       <FavoritosProvider>
-        <CarritoProvider>
+        <CarritoProvider juegosDisponibles={juegos}>
           <BrowserRouter>
             <ScrollToTop />
             <Routes>
@@ -72,32 +114,51 @@ function App() {
                 }
               >
                 <Route path="/" element={<Inicio />} />
-                <Route path="/carro-compras" element={<CarroCompras />} />
-                <Route path="/detalle-producto/:id" element={<DetalleProducto buscarJuego={buscarJuego} />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/registro" element={<Registro />} />
+
                 <Route
-                  path="/administrador"
+                  path="/detalle-producto/:id"
+                  element={<DetalleProducto buscarJuego={buscarJuego} />}
+                />
+                <Route path="/login" element={<Login />} />
+                <Route
+                  path="/registro"
+                  element={<Registro cargarUsuario={cargarUsuario} />}
+                />
+                <Route
                   element={
-                    <Administrador
-                      cargarJuego={cargarJuego}
-                      juegos={juegos}
-                      setJuegos={setJuegos}
-                      borrarProducto={borrarProducto}
+                    <ProtectoRutas
+                      usuarioLogeado={usuarioLogeado}
+                      usuarioRegistradoLog={usuarioRegistradoLog}
                     />
                   }
-                />
+                >
+                  <Route
+                    path="/administrador"
+                    element={
+                      <Administrador
+                        cargarJuego={cargarJuego}
+                        juegos={juegos}
+                        setJuegos={setJuegos}
+                        borrarProducto={borrarProducto}
+                        cargarUsuario={cargarUsuario}
+                        usuarios={usuarios}
+                        setUsuarios={setUsuarios}
+                        borrarUsuario={borrarUsuario}
+                      />
+                    }
+                  />
+                  <Route path="crear" element={<FormularioProducto titulo={"Añadir un juego"} cargarJuego={cargarJuego}></FormularioProducto>}/>
+                  <Route path="editar/:id" element={<FormularioProducto titulo={"Editar juego"} buscarJuego={buscarJuego} cargarJuego={cargarJuego} editarJuego={editarJuego}></FormularioProducto>}/>
+                  <Route path="/favoritos" element={<Favoritos />} />
+                  <Route path="/carro-compras" element={<CarroCompras />} />
+                  <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
+                  <Route path="/carro-compras" element={<CarroCompras />} />
+                </Route>
                 <Route path="/sobre-nosotros" element={<SobreNosotros />} />
                 <Route path="/tienda" element={<Tienda juegos={juegos} />} />
-                <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
-                <Route path="/favoritos" element={<Favoritos />} />
                 <Route
                   path="/fila-card-categorias"
                   element={<FilaCardCategorias />}
-                />
-                <Route
-                  path="/formulario-producto"
-                  element={<FormularioProducto cargarJuego={cargarJuego} />}
                 />
               </Route>
               <Route element={<LayoutSinMenuNiFooter />}>

@@ -3,7 +3,7 @@ const juegosPrueba = [
     id: 1,
     nombreJuego: "God of War: Ragnarök",
     desarrollador: "Santa Monica Studio",
-    categoria: "Accion y Aventura",
+    categoria: "Acción y Aventura",
     precio: 69.99,
     imagen: "https://cdn1.epicgames.com/spt-assets/edaff839f0734d16bc89d2ddb1dc9339/steel-magnolia-1h9av.jpg",
     descripcion: "La esperada secuela de God of War (2018), donde Kratos y su hijo Atreus enfrentan el apocalipsis nórdico. Gráficos espectaculares, combate brutal y una historia cargada de emociones.",
@@ -12,7 +12,8 @@ const juegosPrueba = [
     memoriaRam: "10GB",
     grafica: "GTX 1050Ti",
     almacenamiento: "60GB",
-    sistemaOperativo: "PlayStation 5"
+    sistemaOperativo: "PlayStation 5",
+    puntuacion: 5
   },
   {
     id: 2,
@@ -27,7 +28,8 @@ const juegosPrueba = [
     memoriaRam: "6GB",
     grafica: "GTX 770",
     almacenamiento: "35GB",
-    sistemaOperativo: "Windows 7+"
+    sistemaOperativo: "Windows 7+",
+    puntuacion: 3.4
   },
   {
     id: 3,
@@ -42,7 +44,8 @@ const juegosPrueba = [
     memoriaRam: "8GB",
     grafica: "GTX 1050Ti",
     almacenamiento: "50GB",
-    sistemaOperativo: "Windows 10"
+    sistemaOperativo: "Windows 10",
+    puntuacion: 4.2
   },
   {
     id: 4,
@@ -57,7 +60,8 @@ const juegosPrueba = [
     memoriaRam: "12GB",
     grafica: "GTX 1660",
     almacenamiento: "80GB",
-    sistemaOperativo: "Windows 10"
+    sistemaOperativo: "Windows 10",
+    puntuacion: 2.9
   },
   {
     id: 5,
@@ -72,7 +76,8 @@ const juegosPrueba = [
     memoriaRam: "8GB",
     grafica: "GTX 1060",
     almacenamiento: "60GB",
-    sistemaOperativo: "Windows 10"
+    sistemaOperativo: "Windows 10",
+    puntuacion: 3.6
   },
   {
     id: 6,
@@ -87,7 +92,8 @@ const juegosPrueba = [
     memoriaRam: "8GB",
     grafica: "Intel HD 520",
     almacenamiento: "50GB",
-    sistemaOperativo: "Windows 10"
+    sistemaOperativo: "Windows 10",
+    puntuacion: 2
   },
   {
     id: 7,
@@ -102,13 +108,14 @@ const juegosPrueba = [
     memoriaRam: "Desconocido",
     grafica: "Desconocido",
     almacenamiento: "Desconocido",
-    sistemaOperativo: "PlayStation 5"
+    sistemaOperativo: "PlayStation 5",
+    puntuacion: 4.4
   },
   {
     id: 8,
     nombreJuego: "It Takes Two",
     desarrollador: "Hazelight Studios",
-    categoria: "Accion y Aventura",
+    categoria: "Acción y Aventura",
     precio: 29.99,
     imagen: "https://cdn.akamai.steamstatic.com/steam/apps/1426210/header.jpg",
     descripcion: "Juego cooperativo con mecánicas únicas y narrativa emotiva sobre el trabajo en equipo y la reconciliación.",
@@ -117,7 +124,8 @@ const juegosPrueba = [
     memoriaRam: "8GB",
     grafica: "GTX 660",
     almacenamiento: "50GB",
-    sistemaOperativo: "Windows 8.1"
+    sistemaOperativo: "Windows 8.1",
+    puntuacion: 5
   },
   {
     id: 9,
@@ -132,7 +140,8 @@ const juegosPrueba = [
     memoriaRam: "8GB",
     grafica: "RTX 2070",
     almacenamiento: "100GB",
-    sistemaOperativo: "Windows 10"
+    sistemaOperativo: "Windows 10",
+    puntuacion: 4
   },
   {
     id: 10,
@@ -147,6 +156,7 @@ const juegosPrueba = [
     memoriaRam: "Desconocido",
     grafica: "Desconocido",
     almacenamiento: "Desconocido",
+<<<<<<< HEAD
     sistemaOperativo: "PlayStation 5"
   },
   {
@@ -238,6 +248,10 @@ const juegosPrueba = [
     grafica: "GTX 750",
     almacenamiento: "20 GB",
     sistemaOperativo: "Windows 10"
+=======
+    sistemaOperativo: "PlayStation 5",
+    puntuacion: 3.3
+>>>>>>> 21b4d6432246448980bae808bfdc4080baf17bc3
   }
 ];
 
