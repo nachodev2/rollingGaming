@@ -41,7 +41,7 @@ const FilaUsuariosTabla = ({usuario, fila, borrarUsuario}) => {
       <td>{fila}</td>
       <td>{usuario.usuario}</td>
       <td>{usuario.nombre}</td>
-      <td>{usuario.correoElectronico}</td>
+      <td>{usuario.email}</td>
       <td className="">
         <Link className="me-2 mb-2 mb-md-1 btn btn-primary">
           <i className="bi bi-pencil-square"></i>
