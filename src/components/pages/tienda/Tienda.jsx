@@ -31,9 +31,8 @@ const Tienda = ({ juegos }) => {
         </p>
         <Container>
           <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
+            <Form.Group className="mb-3" controlId="filtroNombreJuego">
+              <Form.Control type="text" placeholder="Ingresa el nombre del juego que estas buscando" minLength={1} maxLength={200}/>
             </Form.Group>
           </Form>
         </Container>
