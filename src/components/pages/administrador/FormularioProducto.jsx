@@ -1,8 +1,10 @@
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router";
 
 const FormularioProducto = ({cargarJuego}) => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -11,22 +13,30 @@ const FormularioProducto = ({cargarJuego}) => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit=(juego)=> {
-    if (cargarJuego(juego)===true){
+  const onSubmit = (juego) => {
+    if (cargarJuego(juego) === true) {
       Swal.fire({
-          title: "Creaste un juego",
-          text: `El producto ${juego.nombreJuego} fue creado correctamente`,
-          icon: "success",
-        })
-        reset();
-    }else{
+        title: "Creaste un juego",
+        text: `El producto ${juego.nombreJuego} fue creado correctamente`,
+        icon: "success",
+        confirmButtonText: 'Volver al administrador',
+        showCancelButton: true,
+        cancelButtonText: 'Seguir creando',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/administrador");
+        } else {
+          reset();
+        }
+      });
+    } else {
       Swal.fire({
-          title: "Error al crear el juego",
-          text: `El producto ${juego.nombreJuego} no pudo ser creado`,
-          icon: "error",
-        })
+        title: "Error al crear el juego",
+        text: `El producto ${juego.nombreJuego} no pudo ser creado`,
+        icon: "error",
+      });
     }
-  }
+  };
 
   return (
     <Container className="mt-3">
@@ -300,8 +310,11 @@ const FormularioProducto = ({cargarJuego}) => {
             </Form.Text>
           </Form.Group>
         </Row>
-        <Button variant="primary" type="submit" className="mb-3">
-          Enviar
+        <Button variant="primary" type="submit" className="mb-3 me-2">
+          Cargar
+        </Button>
+        <Button variant="secondary" className="mb-3" onClick={() => navigate("/administrador")}>
+          <i className="bi bi-arrow-left"></i> Volver
         </Button>
       </Form>
     </Container>
