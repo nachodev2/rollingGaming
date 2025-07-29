@@ -96,7 +96,7 @@ function App() {
                 }
               >
                 <Route path="/" element={<Inicio />} />
-                <Route path="/carro-compras" element={<CarroCompras />} />
+               
                 <Route
                   path="/detalle-producto/:id"
                   element={<DetalleProducto buscarJuego={buscarJuego} />}
@@ -133,6 +133,7 @@ function App() {
                   <Route path="/favoritos" element={<Favoritos />} />
                   <Route path="/carro-compras" element={<CarroCompras />} />
                   <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
+                   <Route path="/carro-compras" element={<CarroCompras />} />
                 </Route>
 
                 <Route path="/sobre-nosotros" element={<SobreNosotros />} />
