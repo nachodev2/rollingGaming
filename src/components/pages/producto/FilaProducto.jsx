@@ -2,12 +2,15 @@ import { Row, Col } from "react-bootstrap";
 import CardProducto from "./CardProducto"; 
 
 
-const FilaProducto = ({ juegos, onAgregar }) => { 
+
+const FilaProducto = ({ juegos, onAgregar, juegosFiltrados }) => {
+  // Usar juegosFiltrados si está definido, si no usar juegos
+  const listaJuegos = juegosFiltrados !== undefined ? juegosFiltrados : juegos;
   return (
     <div className="px-5">
-      {juegos && juegos.length > 0 ? (
+      {listaJuegos && listaJuegos.length > 0 ? (
         <Row xs={1} md={3} lg={4} className="mb-4 g-4">
-          {juegos.map((juego) => (
+          {listaJuegos.map((juego) => (
             <Col key={juego.id} className="h-100 d-flex">
               <CardProducto juego={juego} onAgregar={onAgregar} />
             </Col>

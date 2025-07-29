@@ -11,8 +11,9 @@ const Tienda = ({ juegos }) => {
   const handleInputChange = (e) => {
     // Aquí puedes manejar el cambio del input si es necesario
     setTerminoBusqueda(e.target.value);
-
   }
+  // Filtrar los juegos según el término de búsqueda
+  const juegosFiltrados = juegos.filter((juego) => juego.nombreJuego.toLowerCase().includes(terminoBusqueda.toLowerCase()));
 
   return (
     <div>
@@ -43,7 +44,7 @@ const Tienda = ({ juegos }) => {
             </Form.Group>
           </Form>
         </Container>
-        <FilaProducto juegos={juegos} onAgregar={agregarAlCarrito} />
+        <FilaProducto juegos={juegosFiltrados} onAgregar={agregarAlCarrito} />
       </section>
     </div>
   );
