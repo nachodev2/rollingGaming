@@ -27,7 +27,7 @@ const Administrador = ({
             <Card border="primary">
               <Card.Body>
                 <Card.Text>
-                  Juegos: <strong className="text-light">11</strong>
+                  Juegos: <strong className="text-light">{juegos ? juegos.length : 0}</strong>
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -36,7 +36,7 @@ const Administrador = ({
             <Card border="primary">
               <Card.Body>
                 <Card.Text>
-                  Usuarios: <strong className="text-light">11</strong>
+                  Usuarios: <strong className="text-light">{usuarios ? usuarios.length : 0}</strong>
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -45,7 +45,7 @@ const Administrador = ({
             <Card border="primary">
               <Card.Body>
                 <Card.Text>
-                  Categorias: <strong className="text-light">11</strong>
+                  Categorias: <strong className="text-light">6</strong>
                 </Card.Text>
               </Card.Body>
             </Card>
