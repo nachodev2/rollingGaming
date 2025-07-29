@@ -26,18 +26,42 @@ function App() {
     JSON.parse(localStorage.getItem("juegosKey")) || [];
   const [juegos, setJuegos] = useState(juegosLocalStorage);
 
+  const usuariosLocalStorage =
+    JSON.parse(localStorage.getItem("usuariosKey")) || [];
+  const [usuarios, setUsuarios] = useState(usuariosLocalStorage);
+
   useEffect(() => {
     localStorage.setItem("juegosKey", JSON.stringify(juegos));
-  }, [juegos]);
+    localStorage.setItem("usuariosKey", JSON.stringify(usuarios));
+  }, [juegos, usuarios]);
 
   const cargarJuego = (juegoNuevo) => {
-    juegoNuevo.id = uuidv4();
-    setJuegos([...juegos, juegoNuevo]);
+    const juegoConIdYPunt = {
+      ...juegoNuevo,
+      precio: parseFloat(juegoNuevo.precio),
+      id: uuidv4(),
+      puntuacion: +(Math.random() * 4 + 1).toFixed(1),
+    };
+    setJuegos([...juegos, juegoConIdYPunt]);
     return true;
   };
+
   const borrarProducto = (idJuego) => {
     const juegosFiltrados = juegos.filter((juego) => juego.id !== idJuego);
     setJuegos(juegosFiltrados);
+    return true;
+  };
+
+  const borrarUsuario = (idUsuario) => {
+    const usuariosFiltrados = usuarios.filter(
+      (usuario) => usuario.id !== idUsuario
+    );
+    setUsuarios(usuariosFiltrados);
+    return true;
+  };
+
+  const cargarUsuarios = (usuarioNuevo) => {
+    setUsuarios([...usuarios, usuarioNuevo]);
     return true;
   };
 
@@ -57,7 +81,7 @@ function App() {
   return (
     <>
       <FavoritosProvider>
-        <CarritoProvider>
+        <CarritoProvider juegosDisponibles={juegos}>
           <BrowserRouter>
             <ScrollToTop />
             <Routes>
@@ -72,7 +96,7 @@ function App() {
                 }
               >
                 <Route path="/" element={<Inicio />} />
-
+                <Route path="/carro-compras" element={<CarroCompras />} />
                 <Route
                   path="/detalle-producto/:id"
                   element={<DetalleProducto buscarJuego={buscarJuego} />}
@@ -81,9 +105,15 @@ function App() {
                 <Route path="/registro" element={<Registro />} />
                 <Route
                   element={
-                    <ProtectoRutas
-                      usuarioLogeado={usuarioLogeado}
-                      usuarioRegistradoLog={usuarioRegistradoLog}
+                    <Administrador
+                      cargarJuego={cargarJuego}
+                      juegos={juegos}
+                      setJuegos={setJuegos}
+                      borrarProducto={borrarProducto}
+                      cargarUsuarios={cargarUsuarios}
+                      usuarios={usuarios}
+                      setUsuarios={setUsuarios}
+                      borrarUsuario={borrarUsuario}
                     />
                   }
                 >

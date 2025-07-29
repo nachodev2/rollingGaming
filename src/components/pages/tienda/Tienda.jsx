@@ -1,5 +1,5 @@
 
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import './tienda.css';
 import FilaProducto from '../producto/FilaProducto';
 import { CarritoContext } from '../carro-compras/CarroComprasContext';
@@ -31,7 +31,6 @@ const Tienda = ({ juegos }) => {
       <section className='py-3 desde-abajo'>
         <h2 className='text-white text-center mb-3'>Todos los Juegos</h2>
         <p className='text-center text-light mb-5 lead'>Nuestra colección completa te espera</p>
-        <FilaProducto juegos={juegos} onAgregar={agregarAlCarrito} />
         <FilaProducto juegos={juegos} onAgregar={agregarAlCarrito} />
       </section>
     </div>

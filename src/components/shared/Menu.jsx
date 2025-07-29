@@ -2,14 +2,13 @@ import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router";
 import "./navFooter.css";
 import Login from "../pages/login-registro/Login";
-import { useNavigate } from "react-router";
+
 const Menu = ({
   setUsuarioLogeado,
   usuarioLogeado,
   usuarioRegistradoLog,
   setUsuarioRegistradoLog,
 }) => {
-  const navigate = useNavigate();
   const cerrarSesion = () => {
     setUsuarioLogeado(false);
     sessionStorage.removeItem("usuarioLogeado");

@@ -5,14 +5,13 @@ import { Link } from "react-router";
 
 let cargar = true;
 
-const TablaJuegos = ({juegos, setJuegos,cargarJuego,borrarProducto}) => {
-
+const TablaJuegos = ({ juegos, setJuegos, cargarJuego, borrarProducto }) => {
   const cargarJuegosPrueba = () => {
     if (cargar) {
-        setJuegos(juegosPrueba)
-        cargar = false;
-      }
+      setJuegos(juegosPrueba);
+      cargar = false;
     }
+  };
 
   return (
     <>
@@ -39,9 +38,14 @@ const TablaJuegos = ({juegos, setJuegos,cargarJuego,borrarProducto}) => {
           </tr>
         </thead>
         <tbody>
-          {
-            juegos.map((juego, index) => <FilaProductoTabla key={index} juego = {juego} setJuegos = {setJuegos} borrarProducto={borrarProducto}></FilaProductoTabla>)
-          }
+          {juegos.map((juego, index) => (
+            <FilaProductoTabla
+              key={index}
+              juego={juego}
+              setJuegos={setJuegos}
+              borrarProducto={borrarProducto}
+            ></FilaProductoTabla>
+          ))}
         </tbody>
       </Table>
     </>
