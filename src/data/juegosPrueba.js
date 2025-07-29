@@ -156,7 +156,8 @@ const juegosPrueba = [
     memoriaRam: "Desconocido",
     grafica: "Desconocido",
     almacenamiento: "Desconocido",
-    sistemaOperativo: "Windows 8"
+    sistemaOperativo: "Windows 8",
+    puntuacion: 3
   },
   {
     id: "11",
