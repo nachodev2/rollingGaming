@@ -9,18 +9,14 @@ const Tienda = ({ juegos }) => {
   const [terminoBusqueda, setTerminoBusqueda] = useState("");
 
   const handleInputChange = (e) => {
-    // Aquí puedes manejar el cambio del input si es necesario
     setTerminoBusqueda(e.target.value);
   }
 
-  // Filtrar los juegos según el término de búsqueda
   const juegosFiltrados = juegos.filter((juego) => juego.nombreJuego.toLowerCase().includes(terminoBusqueda.toLowerCase()));
 
-  // Obtener 4 juegos aleatorios para "Últimas Novedades"
   const obtenerJuegosAleatorios = (array, cantidad) => {
     if (!array || array.length === 0) return [];
     const copia = [...array];
-    // Mezclar el array
     for (let i = copia.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [copia[i], copia[j]] = [copia[j], copia[i]];
