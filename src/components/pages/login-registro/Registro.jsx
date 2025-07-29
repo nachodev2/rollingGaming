@@ -2,8 +2,9 @@ import { Form, Row, Col, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useNavigate, useLocation } from "react-router";
 import Swal from "sweetalert2";
+import { useParams } from "react-router";
 
-const Registro = ({ cargarUsuario }) => {
+const Registro = ({ cargarUsuario, buscarUsuario, titulo }) => {
   const {
     register,
     handleSubmit,
@@ -13,7 +14,7 @@ const Registro = ({ cargarUsuario }) => {
   } = useForm();
   const password = watch("password") || "";
   const navegacion = useNavigate();
-  
+  const {id} = useParams();
   const usuarioLogeado = JSON.parse(sessionStorage.getItem("usuarioLogeado"))
   const handleRegistro = (datos) => {
     if (cargarUsuario(datos) === true) {
@@ -39,7 +40,7 @@ const Registro = ({ cargarUsuario }) => {
   };
   return (
     <Container className="my-5 px-4 border border-1 rounded-4 border-secondary">
-      <h2 className="text-center my-4">Crear una Cuenta</h2>
+      <h2 className="text-center my-4">{titulo}</h2>
       <Form onSubmit={handleSubmit(handleRegistro)}>
         <Row className="mb-3">
           <Form.Group as={Col} md="6" controlId="formUsuario">
