@@ -219,7 +219,7 @@ const Registro = () => {
               required: "La Contraseña es obligatorio",
               pattern: {
                 value: /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/,
-                message: "La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula, al menos una mayúscula y al menos un caracter no alfanumérico",
+                message: "La contraseña debe tener al entre 8 y 30 caracteres, al menos un dígito, al menos una minúscula, al menos una mayúscula y al menos un caracter no alfanumérico",
                 minLength: {
                   value: 8,
                   message: "La contraseña debe tener al menos 8 caracteres",
