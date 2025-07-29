@@ -46,7 +46,7 @@ const FilaProductoTabla = ({ juego, borrarProducto }) => {
       <td>USD {juego.precio}</td>
       <td>
         <Link
-          to={"/formulario-producto"}
+          to={`/editar/${juego.id}`}
           className="me-2 mb-2 mb-md-1 btn btn-primary"
         >
           <i className="bi bi-pencil-square"></i>

@@ -1,9 +1,10 @@
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
+import { useEffect } from "react";
 
-const FormularioProducto = ({cargarJuego}) => {
+const FormularioProducto = ({ titulo, cargarJuego, buscarJuego, editarJuego}) => {
   const navigate = useNavigate();
   const {
     register,
@@ -13,34 +14,64 @@ const FormularioProducto = ({cargarJuego}) => {
     formState: { errors },
   } = useForm();
 
+  const { id } = useParams();
+
+  useEffect(() => {
+    if (titulo === "Editar juego") {
+      const juegoAEditar = buscarJuego(id);
+      setValue("nombreJuego", juegoAEditar.nombreJuego);
+      setValue("desarrollador", juegoAEditar.desarrollador);
+      setValue("categoria", juegoAEditar.categoria);
+      setValue("precio", juegoAEditar.precio);
+      setValue("imagen", juegoAEditar.imagen);
+      setValue("descripcion", juegoAEditar.descripcion);
+      setValue("microprocesador", juegoAEditar.microprocesador);
+      setValue("memoriaRam", juegoAEditar.memoriaRam);
+      setValue("grafica", juegoAEditar.grafica);
+      setValue("almacenamiento", juegoAEditar.almacenamiento);
+      setValue("sistemaOperativo", juegoAEditar.sistemaOperativo);
+    }
+  }, []);
+
   const onSubmit = (juego) => {
-    if (cargarJuego(juego) === true) {
-      Swal.fire({
-        title: "Creaste un juego",
-        text: `El producto ${juego.nombreJuego} fue creado correctamente`,
-        icon: "success",
-        confirmButtonText: 'Volver al administrador',
-        showCancelButton: true,
-        cancelButtonText: 'Seguir creando',
-      }).then((result) => {
-        if (result.isConfirmed) {
-          navigate("/administrador");
-        } else {
-          reset();
-        }
-      });
+    if (titulo === "Añadir un juego") {
+      if (cargarJuego(juego) === true) {
+        Swal.fire({
+          title: "Creaste un juego",
+          text: `El juego ${juego.nombreJuego} fue creado correctamente`,
+          icon: "success",
+          confirmButtonText: "Volver al administrador",
+          showCancelButton: true,
+          cancelButtonText: "Seguir creando",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            navigate("/administrador");
+          } else {
+            reset();
+          }
+        });
+      } else {
+        Swal.fire({
+          title: "Error al crear el juego",
+          text: `El producto ${juego.nombreJuego} no pudo ser creado`,
+          icon: "error",
+        });
+      }
     } else {
-      Swal.fire({
-        title: "Error al crear el juego",
-        text: `El producto ${juego.nombreJuego} no pudo ser creado`,
-        icon: "error",
-      });
+      if(editarJuego(id, juego)){
+        Swal.fire({
+          title: "Editaste un juego",
+          text: `El juego ${juego.nombreJuego} fue editado correctamente`,
+          icon: "success",
+        });
+        navigate("/administrador");
+      }
     }
   };
 
   return (
     <Container className="mt-3">
-      <h1>Añadir un juego</h1>
+      <h1>{titulo}</h1>
       <hr />
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Row>
@@ -108,7 +139,7 @@ const FormularioProducto = ({cargarJuego}) => {
               })}
             >
               <option value="">Elige una categoría</option>
-              <option value="Acción y Aventura">Acción y aventura</option>
+              <option value="Acción y Aventura">Acción y Aventura</option>
               <option value="Estrategia">Estrategia</option>
               <option value="Juego de Rol">Juego de Rol</option>
               <option value="Lucha">Lucha</option>
@@ -211,8 +242,7 @@ const FormularioProducto = ({cargarJuego}) => {
                 required: "El Microprocesador es un dato obligatorio",
                 minLength: {
                   value: 2,
-                  message:
-                    "El microprocesador debe tener almenos 2 caracteres",
+                  message: "El microprocesador debe tener almenos 2 caracteres",
                 },
                 maxLength: {
                   value: 20,
@@ -227,28 +257,35 @@ const FormularioProducto = ({cargarJuego}) => {
           </Form.Group>
           <Form.Group as={Col} className="mb-3" controlId="memoriaRam">
             <Form.Label>RAM</Form.Label>
-            <Form.Control type="text" required placeholder="Ej: 8GB" minLength={2}
+            <Form.Control
+              type="text"
+              required
+              placeholder="Ej: 8GB"
+              minLength={2}
               maxLength={5}
               {...register("memoriaRam", {
                 required: "La memoria RAM es un dato obligatorio",
                 minLength: {
                   value: 2,
-                  message:
-                    "La memoria RAM debe tener almenos 2 caracteres",
+                  message: "La memoria RAM debe tener almenos 2 caracteres",
                 },
                 maxLength: {
                   value: 5,
-                  message:
-                    "La memoria RAM debe tener como maximo 5 caracteres",
+                  message: "La memoria RAM debe tener como maximo 5 caracteres",
                 },
-              })}/>
+              })}
+            />
             <Form.Text className="text-danger">
               {errors.memoriaRam?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group as={Col} className="mb-3" controlId="grafica">
             <Form.Label>Gráfica</Form.Label>
-            <Form.Control type="text" required placeholder="Ej: NVIDIA GTX 750" minLength={2}
+            <Form.Control
+              type="text"
+              required
+              placeholder="Ej: NVIDIA GTX 750"
+              minLength={2}
               maxLength={20}
               {...register("grafica", {
                 required: "La tarjeta gráfica es un dato obligatorio",
@@ -262,35 +299,43 @@ const FormularioProducto = ({cargarJuego}) => {
                   message:
                     "La tarjeta gráfica debe tener como maximo 20 caracteres",
                 },
-              })} />
+              })}
+            />
             <Form.Text className="text-danger">
               {errors.grafica?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group as={Col} className="mb-3" controlId="almacenamiento">
             <Form.Label>Almacenamiento</Form.Label>
-            <Form.Control type="text" required placeholder="480 GB" minLength={2}
+            <Form.Control
+              type="text"
+              required
+              placeholder="480 GB"
+              minLength={2}
               maxLength={5}
               {...register("almacenamiento", {
                 required: "Almacenamiento es un dato obligatorio",
                 minLength: {
                   value: 2,
-                  message:
-                    "Almacenamiento debe tener almenos 2 caracteres",
+                  message: "Almacenamiento debe tener almenos 2 caracteres",
                 },
                 maxLength: {
                   value: 5,
-                  message:
-                    "Almacenamiento debe tener como maximo 5 caracteres",
+                  message: "Almacenamiento debe tener como maximo 5 caracteres",
                 },
-              })}/>
+              })}
+            />
             <Form.Text className="text-danger">
               {errors.almacenamiento?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group as={Col} className="mb-3" controlId="sistemaOperativo">
             <Form.Label>Sist. Operativo</Form.Label>
-            <Form.Control type="text" required placeholder="Windows 10"  minLength={2}
+            <Form.Control
+              type="text"
+              required
+              placeholder="Windows 10"
+              minLength={2}
               maxLength={20}
               {...register("sistemaOperativo", {
                 required: "El sistema operativo es un dato obligatorio",
@@ -304,7 +349,8 @@ const FormularioProducto = ({cargarJuego}) => {
                   message:
                     "El sistema operativo debe tener como maximo 20 caracteres",
                 },
-              })}/>
+              })}
+            />
             <Form.Text className="text-danger">
               {errors.sistemaOperativo?.message}
             </Form.Text>
@@ -313,7 +359,11 @@ const FormularioProducto = ({cargarJuego}) => {
         <Button variant="primary" type="submit" className="mb-3 me-2">
           Cargar
         </Button>
-        <Button variant="secondary" className="mb-3" onClick={() => navigate("/administrador")}>
+        <Button
+          variant="secondary"
+          className="mb-3"
+          onClick={() => navigate("/administrador")}
+        >
           <i className="bi bi-arrow-left"></i> Volver
         </Button>
       </Form>

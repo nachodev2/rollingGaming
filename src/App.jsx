@@ -46,6 +46,21 @@ function App() {
     return true;
   };
 
+  const editarJuego = (idJuego, juego) => {
+    const juegosEditados = juegos.map((itemJuego)=>{
+      if(itemJuego.id === Number(idJuego)){
+        return {
+          ...itemJuego, 
+          ...juego
+        }
+      }
+      return itemJuego
+    })
+    setJuegos(juegosEditados);
+    console.log(juegos);
+    return true
+  }
+
   const borrarProducto = (idJuego) => {
     const juegosFiltrados = juegos.filter((juego) => juego.id !== idJuego);
     setJuegos(juegosFiltrados);
@@ -66,6 +81,7 @@ function App() {
 
     return true;
   };
+
   const usuarioLogeadoStorage =
     JSON.parse(sessionStorage.getItem("usuarioLogeado")) || false;
   const [usuarioLogeado, setUsuarioLogeado] = useState(usuarioLogeadoStorage);
@@ -79,6 +95,7 @@ function App() {
   const buscarJuego = (id) => {
     return juegos.find((juego) => juego.id.toString() === id.toString());
   };
+
   return (
     <>
       <FavoritosProvider>
@@ -130,16 +147,13 @@ function App() {
                       />
                     }
                   />
-                  <Route
-                    path="/formulario-producto"
-                    element={<FormularioProducto cargarJuego={cargarJuego} />}
-                  />
+                  <Route path="crear" element={<FormularioProducto titulo={"Añadir un juego"} cargarJuego={cargarJuego}></FormularioProducto>}/>
+                  <Route path="editar/:id" element={<FormularioProducto titulo={"Editar juego"} buscarJuego={buscarJuego} cargarJuego={cargarJuego} editarJuego={editarJuego}></FormularioProducto>}/>
                   <Route path="/favoritos" element={<Favoritos />} />
                   <Route path="/carro-compras" element={<CarroCompras />} />
                   <Route path="/favoritos-vacio" element={<FavoritosVacio />} />
                   <Route path="/carro-compras" element={<CarroCompras />} />
                 </Route>
-
                 <Route path="/sobre-nosotros" element={<SobreNosotros />} />
                 <Route path="/tienda" element={<Tienda juegos={juegos} />} />
                 <Route
