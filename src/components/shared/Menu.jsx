@@ -75,9 +75,6 @@ const Menu = ({
               ) : null}
               {usuarioLogeado ? (
                 <>
-                  <Nav.Link as={Link} to="/favoritos" className="textNavFooter">
-                    Favoritos
-                  </Nav.Link>
                   <Nav.Link
                     as={Link}
                     to="/administrador"
