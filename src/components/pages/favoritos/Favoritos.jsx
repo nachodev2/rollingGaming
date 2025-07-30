@@ -20,7 +20,7 @@ const Favoritos = () => {
         {favoritos.map((juego, idx) => (
           <Col key={juego.id || idx}>
             <Card className="h-100 border-info rounded-4 overflow-hidden card-favoritos">
-              <Card.Img variant="top" src={juego.imagen} />
+              <Card.Img variant="top" src={juego.imagen} className='img-fluid-fav' />
               <Card.Body className='d-flex flex-column justify-content-between'>
                 <div>
                   <Card.Title>{juego.titulo}</Card.Title>
