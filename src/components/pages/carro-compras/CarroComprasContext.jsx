@@ -53,9 +53,28 @@ export const CarritoProvider = ({ children, juegosDisponibles }) => {
         showConfirmButton: false,
       });
     }
-  }, [juegosDisponibles, carrito]); // Agregué 'carrito' como dependencia para evitar un loop infinito en algunos escenarios
+  }, [juegosDisponibles, carrito]);
 
   const agregarAlCarrito = (productoAAgregar) => {
+    const usuarioLogeado = sessionStorage.getItem("usuarioLogeado");
+    const usuarioRegistradoLog = sessionStorage.getItem("usuarioRegistradoLog");
+
+    if (!usuarioLogeado && !usuarioRegistradoLog) {
+      Swal.fire({
+        icon: 'warning',
+        title: '¡Debes iniciar sesión!',
+        text: 'Para agregar productos al carrito, primero debes crearte una cuenta.',
+        confirmButtonText: 'Crear Cuenta',
+        showCancelButton: true,
+        cancelButtonText: 'Cancelar',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = '/registro';
+        }
+      });
+      return; 
+    }
+
     const productoExistente = carrito.find(
       (item) => item.id === productoAAgregar.id
     );
