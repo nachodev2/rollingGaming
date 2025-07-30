@@ -4,16 +4,6 @@
 
 Este proyecto es el **frontend completo** de una tienda de e-commerce de juegos digitales, diseñado para ofrecer una interacción intuitiva y visualmente atractiva con el catálogo de juegos.
 
----
-
-## 🔐 Credenciales por defecto (entorno de desarrollo)
-
-VITE_API_EMAIL=admingames@gmail.com
-VITE_API_CONTRASENIA=Rollinggames1!
-
-
----
-
 ## 🚀 Tecnologías Utilizadas
 
 Este proyecto ha sido construido exclusivamente con tecnologías frontend, utilizando las siguientes librerías y herramientas para asegurar un rendimiento óptimo y una excelente experiencia de usuario:
