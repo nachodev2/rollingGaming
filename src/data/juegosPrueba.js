@@ -1,6 +1,6 @@
 const juegosPrueba = [
   {
-    id: 1,
+    id: "1",
     nombreJuego: "God of War: Ragnarök",
     desarrollador: "Santa Monica Studio",
     categoria: "Acción y Aventura",
@@ -16,7 +16,7 @@ const juegosPrueba = [
     puntuacion: 5
   },
   {
-    id: 2,
+    id: "2",
     nombreJuego: "The Witcher 3: Wild Hunt",
     desarrollador: "CD Projekt RED",
     categoria: "Juego de Rol",
@@ -32,7 +32,7 @@ const juegosPrueba = [
     puntuacion: 3.4
   },
   {
-    id: 3,
+    id: "3",
     nombreJuego: "FIFA 24",
     desarrollador: "EA Sports",
     categoria: "Simulación",
@@ -48,7 +48,7 @@ const juegosPrueba = [
     puntuacion: 4.2
   },
   {
-    id: 4,
+    id: "4",
     nombreJuego: "Call of Duty: Modern Warfare III",
     desarrollador: "Infinity Ward",
     categoria: "Tiros",
@@ -64,7 +64,7 @@ const juegosPrueba = [
     puntuacion: 2.9
   },
   {
-    id: 5,
+    id: "5",
     nombreJuego: "Street Fighter 6",
     desarrollador: "Capcom",
     categoria: "Lucha",
@@ -80,7 +80,7 @@ const juegosPrueba = [
     puntuacion: 3.6
   },
   {
-    id: 6,
+    id: "6",
     nombreJuego: "Age of Empires IV",
     desarrollador: "Relic Entertainment",
     categoria: "Estrategia",
@@ -96,7 +96,7 @@ const juegosPrueba = [
     puntuacion: 2
   },
   {
-    id: 7,
+    id: "7",
     nombreJuego: "Final Fantasy XVI",
     desarrollador: "Square Enix",
     categoria: "Juego de Rol",
@@ -112,7 +112,7 @@ const juegosPrueba = [
     puntuacion: 4.4
   },
   {
-    id: 8,
+    id: "8",
     nombreJuego: "It Takes Two",
     desarrollador: "Hazelight Studios",
     categoria: "Acción y Aventura",
@@ -128,7 +128,7 @@ const juegosPrueba = [
     puntuacion: 5
   },
   {
-    id: 9,
+    id: "9",
     nombreJuego: "Mortal Kombat 1",
     desarrollador: "NetherRealm Studios",
     categoria: "Lucha",
@@ -144,7 +144,7 @@ const juegosPrueba = [
     puntuacion: 4
   },
   {
-    id: 10,
+    id: "10",
     nombreJuego: "Gran Turismo 7",
     desarrollador: "Polyphony Digital",
     categoria: "Simulación",
@@ -156,8 +156,104 @@ const juegosPrueba = [
     memoriaRam: "Desconocido",
     grafica: "Desconocido",
     almacenamiento: "Desconocido",
-    sistemaOperativo: "PlayStation 5",
-    puntuacion: 3.3
+    sistemaOperativo: "Windows 8",
+    puntuacion: 3
+  },
+  {
+    id: "11",
+    nombreJuego: "Battlefield 6",
+    desarrollador: "Electronics Arts",
+    categoria: "Tiros",
+    precio: 59.99,
+    imagen: "https://cms-assets.xboxservices.com/assets/12/24/12243f96-6935-4fcb-bd49-cdb7d3455f21.jpg?n=944371_Small-tout-1084_Wishlist_475x534.jpg",
+    descripcion: "Prepárate para la experiencia definitiva de la guerra total. Con batallas masivas, destrucción dinámica y un enfoque en la jugabilidad táctica.",
+    requisitos: "CPU Intel i5-6600K, 8 GB RAM, GTX 1060, 50 GB espacio, Windows 10.",
+    microprocesador: "Intel i5-6600K",
+    memoriaRam: "8 GB RAM",
+    grafica: "GTX 1060",
+    almacenamiento: "100 GB",
+    sistemaOperativo: "Windows 11",
+    puntuacion: 2.3
+  },
+  {
+    id: "12",
+    nombreJuego: "World of Warcraft®: Mists of Pandaria Classic™",
+    desarrollador: "Blizzard Entertainment",
+    categoria: "Juego de Rol",
+    precio: 29.99,
+    imagen: "https://cms-assets.xboxservices.com/assets/ae/2e/ae2e005f-d4b6-4373-933d-3b464221a62d.jpg?n=WoW-Classic-Mists_Small-tout-1084_475x534.jpg",
+    descripcion: "Vuelve a explorar el mundo de Azeroth con la expansión clásica de Mists of Pandaria. Descubre nuevas razas, clases y una historia épica.",
+    requisitos: "CPU Intel i5-3450, 4 GB RAM, GTX 660, 100 GB espacio, Windows 10.",
+    microprocesador: "Intel i5-3450",
+    memoriaRam: "4 GB RAM",
+    grafica: "GTX 660",
+    almacenamiento: "100 GB",
+    sistemaOperativo: "Windows 10",
+    puntuacion: 4.2
+  },
+  {
+    id: "13",
+    nombreJuego: "EA SPORTS™ College Football 26",
+    desarrollador: "Electronic Arts",
+    categoria: "Juego de Rol",
+    precio: 59.99,
+    imagen: "https://cms-assets.xboxservices.com/assets/3d/ba/3dba8da9-8836-43da-95fc-54065e2147f0.jpg?n=EA-CF26_Small-tout-1084_Launch_475x534.jpg",
+    descripcion: "Vive la emoción del fútbol universitario con EA SPORTS™ College Football 26. Juega con tus equipos favoritos y compite por el campeonato nacional.",
+    requisitos: "CPU Intel i5-8400, 8 GB RAM, GTX 1060, 50 GB espacio, Windows 10.",
+    microprocesador: "Intel i5-8400",
+    memoriaRam: "8 GB RAM",
+    grafica: "GTX 1060",
+    almacenamiento: "50 GB",
+    sistemaOperativo: "Windows 10",
+    puntuacion: 5
+  },
+  {
+    id: "14",
+    nombreJuego: "Minecraft",
+    desarrollador: "Mojang Studios",
+    categoria: "Acción y Aventura",
+    precio: 13.99, 
+    imagen: "https://cms-assets.xboxservices.com/assets/fe/c1/fec1f909-2048-428f-ac33-ad6a147a0abb.jpg?n=Minecraft_Small-tout-1084_Smurfs-DLC_475x534.jpg",
+    descripcion: "Explora, construye y sobrevive en un mundo de bloques. Con el nuevo DLC de los Pitufos, rescata a los personajes icónicos y disfruta de nuevas aventuras.",
+    requisitos: "CPU Intel i5-4690, 8 GB RAM, GTX 660, 4 GB espacio, Windows 10.",
+    microprocesador: "Intel i5-4690",
+    memoriaRam: "8 GB RAM",
+    grafica: "GTX 660",
+    almacenamiento: "4 GB",
+    sistemaOperativo: "Windows 10",
+    puntuacion: 1.2
+  },
+  {
+    id: "15",
+    nombreJuego: "Killing Floor 3",
+    desarrollador: "Tripwire Interactive",
+    categoria: "Lucha",
+    precio: 29.99,
+    imagen: "https://cms-assets.xboxservices.com/assets/f3/92/f392a30c-9d64-45ba-85b8-28646df1de04.jpg?n=KF3_Small-tout-1084_475x534.jpg",
+    descripcion: "Mata zombis, gana dinero, equípate y repite. Con un sistema de combate visceral y una atmósfera aterradora, Killing Floor 3 te sumerge en el horror de la supervivencia.",
+    requisitos: "CPU Intel i5-6600K, 8 GB RAM, GTX 970, 50 GB espacio, Windows 10.",
+    microprocesador: "Intel i5-6600K",
+    memoriaRam: "8 GB RAM",
+    grafica: "GTX 970",
+    almacenamiento: "50 GB",
+    sistemaOperativo: "Windows 10",
+    puntuacion: 3.7
+  },
+  {
+    id: "16",
+    nombreJuego: "Abiotic Factor",
+    desarrollador: "Indie Studio",
+    categoria: "Acción y Aventura",
+    precio: 19.99,
+    imagen: "https://cms-assets.xboxservices.com/assets/c0/62/c062e55b-0ceb-4b49-bf3a-9602dfed7320.jpg?n=Abiotic-Factor_Small-tout-1084_475x534.jpg",
+    descripcion: "Un juego de supervivencia y construcción guiado por la historia, donde debes explorar un mundo hostil, recolectar recursos y sobrevivir a los peligros que te rodean.",
+    requisitos: "CPU Intel i5-2400, 8 GB RAM, GTX 750, 20 GB espacio, Windows 10.",
+    microprocesador: "Intel i5-2400",
+    memoriaRam: "8 GB RAM",
+    grafica: "GTX 750",
+    almacenamiento: "20 GB",
+    sistemaOperativo: "Windows 10",
+    puntuacion: 4.6
   }
 ];
 

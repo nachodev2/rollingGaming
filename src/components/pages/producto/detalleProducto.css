@@ -2,7 +2,7 @@
 .detalleImg{
   width: 100%;
   height: 500px;
-  object-fit: cover;
+  object-fit: contain;
 }
 /* tabla de detalle productos */
 .tablaCeldas {
@@ -19,7 +19,6 @@
 
 /* card en detalle producto */
 .detalleJuego{
-  /*width: 100%;*/
   height: 100% !important;
 }
 

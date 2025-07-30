@@ -48,11 +48,6 @@ const Footer = () => {
               Estrategia
             </Link>
           </li>
-          <li className="mb-3">
-            <Link to="/juegos" className="textListFooter">
-              Ver todos los juegos
-            </Link>
-          </li>
         </ul>
       </section>
       <section>

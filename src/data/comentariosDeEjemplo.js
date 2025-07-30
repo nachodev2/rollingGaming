@@ -1,4 +1,4 @@
-const comentariosDeEjemplo = [
+let comentariosDeEjemplo = [
   {
     id: 1,
     usuario: "Luciana Ruiz",

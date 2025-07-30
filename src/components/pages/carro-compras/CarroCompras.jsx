@@ -1,8 +1,7 @@
 
-import React, { useContext } from 'react';
 import { Link } from 'react-router';
 import Swal from 'sweetalert2';
-import { Container, Row, Col, Card, Button, Alert, ListGroup } from 'react-bootstrap'; // <--- Importa los componentes de react-bootstrap
+import { Container, Row, Col, Card, Button, Alert} from 'react-bootstrap'; 
 import './carroCompras.css';
 import { CarritoContext } from "./CarroComprasContext";
 import CarroComprasVacio from './CarroComprasVacio';

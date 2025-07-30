@@ -15,7 +15,6 @@ const FilaProductoTabla = ({ juego, borrarProducto }) => {
       cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
-        //invocar a la funcion que sabe borrar que esta en App.jsx
         if (borrarProducto(juego.id)) {
           Swal.fire({
             title: "Juego eliminado",

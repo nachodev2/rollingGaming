@@ -8,7 +8,6 @@ const Administrador = ({
   juegos,
   setJuegos,
   borrarProducto,
-  cargarUsuarios,
   usuarios,
   setUsuarios,
   borrarUsuario
