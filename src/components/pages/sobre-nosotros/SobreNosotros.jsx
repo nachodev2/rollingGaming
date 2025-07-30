@@ -2,12 +2,12 @@ import { Link } from 'react-router';
 import './sobreNosotros.css';
 
 const integrantes = [
-  { nombre: 'Alessandra Borges Licciardi', rol: 'Developer', descripcion: 'Siempre atrasada.', img: '/public/avatar_1.png' },
-  { nombre: 'Tomás Ignacio Ruiz', rol: 'Developer', descripcion: 'Experto en prompts.', img: '/public/avatar_3.png' },
-  { nombre: 'Ximena Barrientos', rol: 'Developer', descripcion: 'Mamá del grupo.', img: '/public/avatar_4.png' },
-  { nombre: 'José David Baza', rol: 'Developer', descripcion: 'NPC de la programación.', img: '/public/avatar_2.png' },
-  { nombre: 'Luciana Ruiz', rol: 'Developer', descripcion: 'Rubén Ruiz.', img: '/public/avatar_5.png' },
-  { nombre: 'José Romero', rol: 'Developer', descripcion: 'Programador silencioso.', img: '/public/avatar_6.png' },
+  { nombre: 'Alessandra Borges Licciardi', rol: 'Developer', descripcion: 'Siempre atrasada.', img: '/avatar_1.png' },
+  { nombre: 'Tomás Ignacio Ruiz', rol: 'Developer', descripcion: 'Experto en prompts.', img: '/avatar_3.png' },
+  { nombre: 'Ximena Barrientos', rol: 'Developer', descripcion: 'Mamá del grupo.', img: '/avatar_4.png' },
+  { nombre: 'José David Baza', rol: 'Developer', descripcion: 'NPC de la programación.', img: '/avatar_2.png' },
+  { nombre: 'Luciana Ruiz', rol: 'Developer', descripcion: 'Rubén Ruiz.', img: '/avatar_5.png' },
+  { nombre: 'José Romero', rol: 'Developer', descripcion: 'Programador silencioso.', img: '/avatar_6.png' },
 ];
 
 const valores = [
