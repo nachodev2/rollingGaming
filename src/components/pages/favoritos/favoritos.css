@@ -1,0 +1,12 @@
+
+.bi-heart {
+  font-size: 5rem;
+}
+
+.card-favoritos {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-favoritos:hover {
+  transform: scale(1.03);
+}

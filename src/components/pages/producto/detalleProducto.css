@@ -1,0 +1,34 @@
+/* imagenes de fdetalle  */
+.detalleImg{
+  width: 100%;
+  height: 500px;
+  object-fit: contain;
+}
+/* tabla de detalle productos */
+.tablaCeldas {
+  padding: 16px 12px; 
+  text-align: left;
+  border-bottom: 2px solid #9d24a3 !important; 
+}
+.tablaEstilizada {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  margin-top: 20px;
+}
+
+/* card en detalle producto */
+.detalleJuego{
+  height: 100% !important;
+}
+
+.card {
+  box-shadow: none !important;
+}
+
+.card:hover {
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+

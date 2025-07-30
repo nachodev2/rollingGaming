@@ -1,0 +1,83 @@
+.logoNav {
+  position: relative;
+  width: 100%;
+  max-width: 125px;
+  height: 100%;
+  max-height: 125px;
+}
+
+.logoFooter {
+  position: relative;
+  max-width: 250px;
+}
+.colorNavbar {
+  background-color: #0f1546;
+}
+.colorToggle{
+  background-color: #EA39B8 !important
+  
+} 
+.textLogin{
+  color: rgb(253, 252, 252) !important;
+  transition: 1s;
+}
+
+.textNavFooter {
+  font-weight: 800;
+  font-size: 18px !important;
+  color: #f8f8f8 !important;
+  text-shadow: 2px 2px 4px #818de0;
+  transition: 1s
+}
+.textNavFooter:hover{
+font-size: 20px !important;
+}
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem;
+  gap: 1rem;
+}
+footer section {
+  flex: 1 1 250px;
+  min-width: 200px;
+}
+.textListFooter{
+
+  text-decoration: none;
+  color: #818de0
+
+}
+.tituloNav{
+     font-weight: 1000;
+  font-size: 25px !important;
+  color: #818de0 !important;
+  text-shadow: 2px 2px 4px #818de0;
+}
+/* media pequeños */
+@media (max-width: 576px) {
+ footer {
+    justify-content: center;
+  }
+
+  footer section {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+  .margenT{
+    margin-top: 8px;
+  }
+}
+/* media grandes */
+@media (min-width: 577px) and (max-width: 1124px) {
+ 
+ footer {
+    justify-content: center;
+  }
+
+  footer section {
+    flex: 1 1 45%;
+    max-width: 45%;
+ }
+  }

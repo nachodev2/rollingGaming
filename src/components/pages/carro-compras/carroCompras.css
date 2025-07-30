@@ -1,0 +1,141 @@
+
+#cart-svg {
+  width: 15vh;
+}
+
+.container.my-5 {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+}
+
+/* Título del Carrito */
+.titulo-carrito {
+    font-size: 2.5rem;
+    color: #9d24a3;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Alerta de "CORRE" */
+.carrito-alerta {
+    background-color: #6f42c1 !important; 
+    color: #fff !important; 
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+.carrito-alerta .bi {
+    font-size: 1.5rem;
+}
+
+/* Tarjeta de Producto Individual en el Carrito */
+.producto-carrito-card {
+    background-color: #6f42c1 !important; 
+    border: 1px solid #00bcd4; 
+    border-radius: 0.75rem;
+    overflow: hidden; 
+}
+
+.producto-carrito-card .producto-imagen {
+    max-height: 120px;
+    object-fit: contain;
+    background-color: #ffffff; 
+    border-radius: 0.5rem;
+}
+
+.producto-carrito-card .card-body {
+    padding: 0.75rem;
+}
+
+.producto-carrito-card .card-title {
+    color: #e0e0e0; 
+}
+
+.producto-carrito-card .card-text.text-muted {
+    color: #b0b0b0 !important; 
+}
+
+.producto-carrito-card .card-text.fw-bold {
+    color: #00bcd4; 
+}
+
+.producto-carrito-card .eliminar-producto-btn {
+    font-size: 1.2rem;
+    color: #ff4d4d; 
+    border-color: #ff4d4d;
+}
+.producto-carrito-card .eliminar-producto-btn:hover {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+/* Botón Vaciar Carrito */
+.vaciar-carrito-btn {
+    background-color: transparent !important;
+    border-color: #b0b0b0 !important;
+    color: #b0b0b0 !important;
+}
+.vaciar-carrito-btn:hover {
+    background-color: #ff4d4d !important;
+    color: #2a2a4a !important;
+}
+
+
+/* Sección de Resumen del Pedido */
+.resumen-pedido-card {
+    background-color: #2a2a4a !important; 
+    border: 1px solid #00bcd4; /* Borde de acento */
+    border-radius: 0.75rem;
+    color: #e0e0e0;
+}
+
+.resumen-pedido-card .list-group-item {
+    background-color: transparent !important; 
+    border-color: #4a4a6a !important; 
+    color: #e0e0e0;
+}
+.resumen-pedido-card .item-resumen {
+    padding-left: 0;
+    padding-right: 0;
+}
+.resumen-pedido-card .total-resumen {
+    color: #00bcd4; 
+}
+.resumen-pedido-card .item-resumen-small small {
+    color: #b0b0b0 !important; 
+}
+
+/* Botón "IR A PAGAR" */
+.pagar-btn {
+    background-color: #28a745 !important; 
+    border-color: #28a745 !important;
+    color: white !important;
+    font-weight: bold;
+}
+.pagar-btn:hover {
+    background-color: #218838 !important;
+    border-color: #1e7e34 !important;
+}
+
+/* Estilo para la flecha del botón "IR A PAGAR" */
+.pagar-btn .arrow {
+    margin-left: 0.5rem;
+    font-size: 1.2em; 
+}
+
+/* Botón "Seguir Comprando" */
+.seguir-comprando-btn {
+    border-color: #00bcd4 !important;
+    color: #00bcd4 !important;
+}
+.seguir-comprando-btn:hover {
+    background-color: #00bcd4 !important;
+    color: white !important;
+}
+
+/* Ajustes para el enlace de código promocional */
+.checkout-summary a.text-black {
+    color: #00bcd4 !important; 
+}
+.checkout-summary a.text-black:hover {
+    color: #008c9e !important; 
+}
