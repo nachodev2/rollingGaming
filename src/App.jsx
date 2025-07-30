@@ -83,6 +83,26 @@ function App() {
     return true;
   };
 
+  const buscarUsuario = (idUsuario) => {
+  const usuarioBuscado = usuarios.find((usuarioEditado) => usuarioEditado.id === idUsuario)
+  return usuarioBuscado
+}
+
+ const editarUsuario = (idUsuario, usuario) => {
+    const usuariosEditados = usuarios.map((itemUsuario)=>{
+      if(itemUsuario.id === (idUsuario)){
+        return {
+          ...itemUsuario, 
+          ...usuario
+        }
+      }
+      return itemUsuario
+    })
+    setUsuarios(usuariosEditados);
+    return true
+  } 
+
+
   const usuarioLogeadoStorage =
     JSON.parse(sessionStorage.getItem("usuarioLogeado")) || false;
   const [usuarioLogeado, setUsuarioLogeado] = useState(usuarioLogeadoStorage);
@@ -123,7 +143,11 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route
                   path="/registro"
-                  element={<Registro cargarUsuario={cargarUsuario} />}
+                  element={<Registro cargarUsuario={cargarUsuario} buscarUsuario={buscarUsuario} titulo={"Crear cuenta"} botonEnviarRegistro={"Registrarse"}/>}
+                />
+                <Route
+                  path="/editarUsuario/:id"
+                  element={<Registro cargarUsuario={cargarUsuario} buscarUsuario={buscarUsuario} editarUsuario={editarUsuario} titulo={"Editar usuario"}  botonEnviarRegistro={"Guardar cambios"} />}
                 />
                 <Route
                   element={<ProtectorRutasAdmin usuarioLogeado={usuarioLogeado} />}
@@ -140,6 +164,7 @@ function App() {
                         usuarios={usuarios}
                         setUsuarios={setUsuarios}
                         borrarUsuario={borrarUsuario}
+                        buscarUsuario={buscarUsuario}
                       />
                     }
                   />
