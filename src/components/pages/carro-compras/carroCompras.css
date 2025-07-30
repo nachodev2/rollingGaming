@@ -134,8 +134,8 @@
 
 /* Ajustes para el enlace de código promocional */
 .checkout-summary a.text-black {
-    color: #00bcd4 !important; /* Color de acento para el enlace */
+    color: #00bcd4 !important; 
 }
 .checkout-summary a.text-black:hover {
-    color: #008c9e !important; /* Color de acento más oscuro al pasar el ratón */
+    color: #008c9e !important; 
 }

@@ -2,7 +2,7 @@
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import './carroCompras.css'; 
 import { Link } from 'react-router';
-import Login from '../login-registro/Login';
+
 function CarroComprasVacio () {
   return (
     <Container className="text-center my-5 ">
