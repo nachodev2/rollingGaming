@@ -1,6 +1,6 @@
 import { Form, Row, Col, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useNavigate, useLocation } from "react-router";
+import { useNavigate} from "react-router";
 import Swal from "sweetalert2";
 
 const Registro = ({ cargarUsuario }) => {

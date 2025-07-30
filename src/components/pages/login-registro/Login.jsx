@@ -4,14 +4,21 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { Image } from "react-bootstrap";
 import { useNavigate } from "react-router";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
+import Contrasenia from "./Contrasenia";
 
 function Login({ setUsuarioLogeado, setUsuarioRegistradoLog }) {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      password: "",
+      email: "",
+    },
+  });
 
   const usuarioLogeado = (usuario) => {
     const usuarioRegistrado = JSON.parse(
@@ -122,11 +129,12 @@ function Login({ setUsuarioLogeado, setUsuarioRegistradoLog }) {
               </Form.Text>
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formContrasenia">
+            <Form.Group className="mb-3">
               <Form.Label className="text-light">Contraseña</Form.Label>
-              <Form.Control
-                type="password"
-                {...register("password", {
+              <Controller
+                name="password"
+                control={control}
+                rules={{
                   required: "Este campo es obligatorio",
                   pattern: {
                     value:
@@ -143,9 +151,10 @@ function Login({ setUsuarioLogeado, setUsuarioRegistradoLog }) {
                     message:
                       "La contraseña no puede tener más de 50 caracteres",
                   },
-                })}
+                }}
+                render={({ field }) => <Contrasenia {...field} />}
               />
-              <Form.Text id="formTextNombre" className="text-danger">
+              <Form.Text className="text-danger">
                 {errors.password?.message}
               </Form.Text>
             </Form.Group>
